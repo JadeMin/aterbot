@@ -1,0 +1,6 @@
+{
+	"host": "Enter your server ip or url.",
+	"port": "Enter your server port. (If you don't know about this, the default is 25565)",
+	"username": "Enter the AFKBot's username you want. (Whatever doesn't matter)",
+	"logger": [true, "comment here"]
+}

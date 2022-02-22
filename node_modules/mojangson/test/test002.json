@@ -1,0 +1,199 @@
+{
+  "type": "compound",
+  "value": {
+    "extra": {
+      "type": "list",
+      "value": {
+        "type": "compound",
+        "value": [
+          {
+            "text": {
+              "value": "§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f",
+              "type": "string"
+            }
+          },
+          {
+            "hoverEvent": {
+              "type": "compound",
+              "value": {
+                "action": {
+                  "value": "show_text",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "list",
+                  "value": {
+                    "type": "compound",
+                    "value": [
+                      {
+                        "extra": {
+                          "type": "list",
+                          "value": {
+                            "type": "compound",
+                            "value": [
+                              {
+                                "color": {
+                                  "value": "green",
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "value": "Click to message ",
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "bold": {
+                                  "type": "boolean",
+                                  "value": true
+                                },
+                                "color": {
+                                  "value": "green",
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "value": "*Emmers2075",
+                                  "type": "string"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "value": "",
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "text": {
+              "value": "§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§l§f§f§f§lIRON ",
+              "type": "string"
+            }
+          },
+          {
+            "clickEvent": {
+              "type": "compound",
+              "value": {
+                "action": {
+                  "value": "suggest_command",
+                  "type": "string"
+                },
+                "value": {
+                  "value": "/msg *Emmers2075 ",
+                  "type": "string"
+                }
+              }
+            },
+            "hoverEvent": {
+              "type": "compound",
+              "value": {
+                "action": {
+                  "value": "show_text",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "list",
+                  "value": {
+                    "type": "compound",
+                    "value": [
+                      {
+                        "extra": {
+                          "type": "list",
+                          "value": {
+                            "type": "compound",
+                            "value": [
+                              {
+                                "color": {
+                                  "value": "green",
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "value": "Click to message ",
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "bold": {
+                                  "type": "boolean",
+                                  "value": true
+                                },
+                                "color": {
+                                  "value": "green",
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "value": "*Emmers2075",
+                                  "type": "string"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "value": "",
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "text": {
+              "value": "§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§e§e§e§e*Emmers2075§e§e§7§7§7§7: §7§7§7§7§7§7§7§7§7§f§f§f§f",
+              "type": "string"
+            }
+          },
+          {
+            "text": {
+              "value": "§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f§f",
+              "type": "string"
+            }
+          },
+          {
+            "hoverEvent": {
+              "type": "compound",
+              "value": {
+                "action": {
+                  "value": "show_item",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "list",
+                  "value": {
+                    "type": "compound",
+                    "value": [
+                      {
+                        "text": {
+                          "value": "{id:\"minecraft:netherite_sword\",tag:{RepairCost:7,\"ae_enchantment;headless\":1,Enchantments:[{id:\"minecraft:fire_aspect\",lvl:2s},{id:\"minecraft:mending\",lvl:1s},{id:\"minecraft:sharpness\",lvl:4s}],souls:48,Damage:6,\"ae_enchantment;obliterate\":2,mobtrak:\"7590\",\"ae_enchantment;insomnia\":4,\"ae_enchantment;featherweight\":2,\"ae_enchantment;trap\":2,slots:5,display:{Name:'{\"text\":\"Nightmare\"}',Lore:['{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Insomnia IV\"}],\"text\":\"\"}','{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Obliterate II\"}],\"text\":\"\"}','{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Headless I\"}],\"text\":\"\"}','{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Featherweight II\"}],\"text\":\"\"}','{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"aqua\",\"text\":\"Trap II\"}],\"text\":\"\"}','{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_aqua\",\"text\":\"MobTrak Kills: \"},{\"italic\":false,\"color\":\"white\",\"text\":\"7590\"}],\"text\":\"\"}']}},Count:1b}",
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "text": {
+              "value": "§f§f§f§f§f§f§f[§f§f§f§b§b§b§b§b§b§b§b§b§f§f§f§f§b§b§f§f§f§b§b§b§bNightmare§b§b§f§f§f§f §f§f§bx1§f]",
+              "type": "string"
+            }
+          },
+          {
+            "text": {
+              "value": "§f§f§f§f§f§f§f §f§f§f§f§f§f§f§f§fmy §f§f§f§f§f§f§f§f§fsword",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "text": {
+      "value": "",
+      "type": "string"
+    }
+  }
+}

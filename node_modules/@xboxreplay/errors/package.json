@@ -1,0 +1,29 @@
+{
+    "name": "@xboxreplay/errors",
+    "description": "Common package used by `@xboxreplay` modules.",
+    "version": "0.1.0",
+    "keywords": [
+        "xboxreplay"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/XboxReplay/errors"
+    },
+    "license": "MIT",
+    "types": "./index.d.ts",
+    "main": "./dist/index.js",
+    "author": {
+        "name": "Alexis Bize",
+        "email": "alexis.bize@gmail.com"
+    },
+    "scripts": {
+        "prepublishOnly": "npm run test && npm run build",
+        "build": "npm run clean && ./node_modules/.bin/tsc",
+        "clean": "rm -rf ./dist",
+        "test": "echo \"No tests specified\""
+    },
+    "devDependencies": {
+        "@types/node": "^12.0.10",
+        "typescript": "^3.5.2"
+    }
+}

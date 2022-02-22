@@ -1,0 +1,38 @@
+name: Minecraft Data release
+on:
+  repository_dispatch:
+    types: [mcData-release]
+jobs:
+  update-mcdata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Update minecraft data
+        run: 'cd minecraft-data/ && git fetch --all --tags && git checkout ${{ github.event.client_payload.tag }}'
+      - name: Update package.json
+        run: >
+          sed -i -E 's/^  "version": "[0-9]+\.[0-9]+\.[0-9]+"/  "version": "${{ github.event.client_payload.tag }}"/g' package.json
+      - name: Update doc/history.md
+        run: echo -e "## ${{ github.event.client_payload.tag }}\n* update mcdata\n\n$(cat doc/history.md)" > doc/history.md
+      - name: Create commits
+        run: |
+          git config user.name 'rom1504bot'
+          git config user.email 'rom1504bot@users.noreply.github.com'
+          git add minecraft-data
+          git commit -m "Update Minecraft Data"
+          git add package.json doc/history.md
+          git commit -m "Release ${{ github.event.client_payload.tag }}"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PAT_PASSWORD }}
+          committer: rom1504bot <rom1504bot@users.noreply.github.com>
+          author: rom1504bot <rom1504bot@users.noreply.github.com>
+          signoff: false
+          branch: release-${{ github.event.client_payload.tag }}
+          delete-branch: true
+          title: 'Release ${{ github.event.client_payload.tag }}'
+          body: |
+            A new version of minecraft-data was released.

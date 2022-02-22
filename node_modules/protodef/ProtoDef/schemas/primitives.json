@@ -1,0 +1,26 @@
+{
+  "bool": {
+    "enum": ["bool"]
+  },
+  "cstring": {
+    "items": [
+      {
+        "enum": ["cstring"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "encoding": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": []
+      }
+    ],
+    "additionalItems": false
+  },
+  "void": {
+    "enum": ["void"]
+  }
+}

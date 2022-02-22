@@ -1,0 +1,260 @@
+{
+  "type": "compound",
+  "value": {
+    "id": {
+      "value": "minecraft:diamond_pickaxe",
+      "type": "string"
+    },
+    "tag": {
+      "type": "compound",
+      "value": {
+        "display": {
+          "type": "compound",
+          "value": {
+            "Name": {
+              "type": "compound",
+              "value": {
+                "text": {
+                  "value": "Кирка хлебушка",
+                  "type": "string"
+                }
+              }
+            },
+            "Lore": {
+              "type": "list",
+              "value": {
+                "type": "compound",
+                "value": [
+                  {
+                    "text": {
+                      "value": "MLG PICKAXE DORITOS 420NOSCOPEBLAZEIT",
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "text": {
+                      "value": "OH BABY A TRIPLE MOM GET THE CAMERA",
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "Enchantments": {
+          "type": "list",
+          "value": {
+            "type": "compound",
+            "value": [
+              {
+                "id": {
+                  "value": "minecraft:efficiency",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 20,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:fire_aspect",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 2,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:fortune",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 10,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:knockback",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 16959,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:looting",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 10,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:sharpness",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 16959,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:silk_touch",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 1,
+                  "type": "short"
+                }
+              },
+              {
+                "id": {
+                  "value": "minecraft:smite",
+                  "type": "string"
+                },
+                "lvl": {
+                  "value": 16959,
+                  "type": "short"
+                }
+              }
+            ]
+          }
+        },
+        "Unbreakable": {
+          "value": 1,
+          "type": "byte"
+        },
+        "Damage": {
+          "value": 0,
+          "type": "int"
+        },
+        "AttributeModifiers": {
+          "type": "list",
+          "value": {
+            "type": "compound",
+            "value": [
+              {
+                "Name": {
+                  "value": "generic.maxHealth",
+                  "type": "string"
+                },
+                "AttributeName": {
+                  "value": "generic.maxHealth",
+                  "type": "string"
+                },
+                "Operation": {
+                  "value": 0,
+                  "type": "int"
+                },
+                "UUIDMost": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "UUIDLeast": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "Amount": {
+                  "value": 20,
+                  "type": "double"
+                }
+              },
+              {
+                "Name": {
+                  "value": "generic.movementSpeed",
+                  "type": "string"
+                },
+                "AttributeName": {
+                  "value": "generic.movementSpeed",
+                  "type": "string"
+                },
+                "Operation": {
+                  "value": 0,
+                  "type": "int"
+                },
+                "UUIDMost": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "UUIDLeast": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "Amount": {
+                  "value": 2,
+                  "type": "double"
+                }
+              },
+              {
+                "Name": {
+                  "value": "generic.knockbackResistance",
+                  "type": "string"
+                },
+                "AttributeName": {
+                  "value": "generic.knockbackResistance",
+                  "type": "string"
+                },
+                "Operation": {
+                  "value": 0,
+                  "type": "int"
+                },
+                "UUIDMost": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "UUIDLeast": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "Amount": {
+                  "value": 0.2,
+                  "type": "double"
+                }
+              },
+              {
+                "Name": {
+                  "value": "generic.attackDamage",
+                  "type": "string"
+                },
+                "AttributeName": {
+                  "value": "generic.attackDamage",
+                  "type": "string"
+                },
+                "Operation": {
+                  "value": 0,
+                  "type": "int"
+                },
+                "UUIDMost": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "UUIDLeast": {
+                  "value": 0,
+                  "type": "long"
+                },
+                "Amount": {
+                  "value": 0,
+                  "type": "double"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Count": {
+      "value": 1,
+      "type": "byte"
+    }
+  }
+}
