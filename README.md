@@ -20,7 +20,7 @@ What You'll need
 
 
 # Setup ⚙
-1. Fork this repository, and edit the ``config.json`` file from you've forked to you want.
+1. Fork this repository, and edit the ``config.json`` file from you forked to you want.
 
 2. Go to https://dashboard.heroku.com/ and create a new application.
 3. Once you've created a new application, Right click on the ``Open App`` button at the top and click a button like ``Copy Link``.
