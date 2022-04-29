@@ -1,4 +1,6 @@
-# Aternos AFKBot ✨
+# Aternos AFKBot ✨  
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
+
 ### This AFK bot will keep your Aternos server alive 24/7.  
 Mainly Supports Minecraft version ``1.8``, ``1.9``, ``1.10``, ``1.11``, ``1.12``, ``1.13``, ``1.14``, ``1.15`` and ``1.16``
 <br/>
