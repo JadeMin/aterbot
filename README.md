@@ -1,8 +1,8 @@
 # Aternos AFKBot ✨  
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
 
-### This AFK bot will keep your Aternos server alive 24/7.  
-Mainly Supports Minecraft version ``1.8``, ``1.9``, ``1.10``, ``1.11``, ``1.12``, ``1.13``, ``1.14``, ``1.15`` and ``1.16``
+### This AFK Bot will keep your Aternos server alive 24/7.  
+Mainly Supports Minecraft version ````1.8`` ~ ``1.16``  
 <br/>
 <br/>
 
@@ -16,14 +16,14 @@ What You'll need
 
 2. An UptimeRobot account. (It's also free and simple)  
 	Sign up at: https://uptimerobot.com/signUp
+
 2. An Aternos server or Any Minecraft server you owned.  
-	nd make sure your server settings ``online-mode`` set to ``false``.
-3. A Github account. (obviously)
+	And make sure your server settings ``online-mode`` set to ``false``.
+3. A Github account.
 
 
 # Setup ⚙
-1. Fork this repository, and edit the ``config.json`` file from you forked to you want.
-
+1. Fork this repository, and edit the ``config.json`` file.
 2. Go to https://dashboard.heroku.com/ and create a new application.
 3. Once you've created a new application, Right click on the ``Open App`` button at the top and click a button like ``Copy Link``.
 4. Go to the ``Deploy`` section and select the repository that you forked.

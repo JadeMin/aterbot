@@ -1,15 +1,15 @@
 {
-  "name": "atornes-afkbot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "KlartNET",
-  "license": "ISC",
-  "description": "",
-  "private": true,
-  "dependencies": {
-    "mineflayer": "^4.0.0"
-  }
+	"name": "atornes-afkbot",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"author": "JadeMin",
+	"license": "GPL-3.0",
+	"description": "Aternos AFKBot",
+	"private": true,
+	"dependencies": {
+		"mineflayer": "^4.0.0"
+	}
 }
