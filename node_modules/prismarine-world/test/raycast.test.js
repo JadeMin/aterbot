@@ -1,4 +1,4 @@
-/* eslint-env jest */
+/* eslint-env mocha */
 
 const World = require('prismarine-world')('1.16.4')
 const Chunk = require('prismarine-chunk')('1.16.4')

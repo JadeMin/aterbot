@@ -1,4 +1,4 @@
-/* eslint-env jest */
+/* eslint-env mocha */
 
 const flatMap = require('flatmap')
 const range = require('range').range
@@ -28,11 +28,11 @@ describe('saving and loading works', function () {
   }
 
   const regionPath = 'world/testRegion'
-  beforeAll((cb) => {
+  before((cb) => {
     mkdirp(regionPath, cb)
   })
 
-  afterAll(cb => {
+  after(cb => {
     rimraf(regionPath, cb)
   })
 
@@ -87,11 +87,11 @@ describe('Synchronous saving and loading works', function () {
   }
 
   const regionPath = 'world/testRegionSync'
-  beforeAll((cb) => {
+  before((cb) => {
     mkdirp(regionPath, cb)
   })
 
-  afterAll(cb => {
+  after(cb => {
     rimraf(regionPath, cb)
   })
 

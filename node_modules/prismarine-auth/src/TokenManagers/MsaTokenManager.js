@@ -76,7 +76,6 @@ class MsaTokenManager {
     return new Promise((resolve, reject) => {
       this.msalApp.acquireTokenByRefreshToken(refreshTokenRequest).then((response) => {
         debug('[msa] refreshed token', JSON.stringify(response))
-        this.reloadCache()
         resolve(response)
       }).catch((error) => {
         debug('[msa] failed to refresh', JSON.stringify(error))

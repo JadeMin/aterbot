@@ -129,7 +129,7 @@ export class Window extends EventEmitter {
      * Return the id of the first empty slot in the inventory, start looking in the hotbar first if the flag is set
      * @param hotbarFirst DEFAULT: true
      */
-    firstEmptyInventorySlot(hotbarFirst: boolean): number | null;
+    firstEmptyInventorySlot(hotbarFirst?: boolean): number | null;
 
     /**
      * Returns how many item you have of the given type, between slots start and end

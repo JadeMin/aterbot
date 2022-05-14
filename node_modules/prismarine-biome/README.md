@@ -34,6 +34,10 @@ Numerical id.
 
 ## History
 
+### 1.3.0
+
+* Bump mcdata
+
 ### 1.2.1
 * Handle registry without biome info
 

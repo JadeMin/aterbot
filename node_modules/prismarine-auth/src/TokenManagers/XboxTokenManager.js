@@ -7,7 +7,7 @@ const { exportJWK } = require('jose')
 const fetch = require('node-fetch')
 
 const { Endpoints } = require('../common/Constants')
-const { checkStatus } = require('../common/Util')
+const { checkStatus, createHash } = require('../common/Util')
 
 const UUID = require('uuid-1345')
 const nextUUID = () => UUID.v3({ namespace: '6ba7b811-9dad-11d1-80b4-00c04fd430c8', name: Date.now().toString() })
@@ -15,7 +15,6 @@ const nextUUID = () => UUID.v3({ namespace: '6ba7b811-9dad-11d1-80b4-00c04fd430c
 // Manages Xbox Live tokens for xboxlive.com
 class XboxTokenManager {
   constructor (ecKey, cache) {
-    this.relyingParty = Endpoints.XboxXSTSRelyingParty
     this.key = ecKey
     exportJWK(ecKey.publicKey).then(jwk => {
       this.jwk = { ...jwk, alg: 'ES256', use: 'sig' }
@@ -35,8 +34,9 @@ class XboxTokenManager {
     return { valid, token: token.Token, data: token }
   }
 
-  async getCachedXstsToken () {
-    const { xstsToken: token } = await this.cache.getCached()
+  async getCachedXstsToken (relyingParty) {
+    const key = createHash(relyingParty)
+    const { [key]: token } = await this.cache.getCached()
     if (!token) return
     const until = new Date(token.expiresOn)
     const dn = Date.now()
@@ -49,8 +49,9 @@ class XboxTokenManager {
     await this.cache.setCachedPartial({ userToken: data })
   }
 
-  async setCachedXstsToken (data) {
-    await this.cache.setCachedPartial({ xstsToken: data })
+  async setCachedXstsToken (data, relyingParty) {
+    const key = createHash(relyingParty)
+    await this.cache.setCachedPartial({ [key]: data })
   }
 
   checkTokenError (errorCode, response) {
@@ -66,9 +67,9 @@ class XboxTokenManager {
     }
   }
 
-  async verifyTokens () {
+  async verifyTokens (relyingParty) {
     const ut = await this.getCachedUserToken()
-    const xt = await this.getCachedXstsToken()
+    const xt = await this.getCachedXstsToken(relyingParty)
     if (!ut || !xt || this.forceRefresh) {
       return false
     }
@@ -77,7 +78,7 @@ class XboxTokenManager {
       return true
     } else if (ut.valid && !xt.valid) {
       try {
-        await this.getXSTSToken(ut.data)
+        await this.getXSTSToken(ut.data, null, null, { relyingParty })
         return true
       } catch (e) {
         return false
@@ -126,14 +127,14 @@ class XboxTokenManager {
     return header.toBuffer()
   }
 
-  async doReplayAuth (email, password) {
+  async doReplayAuth (email, password, options = {}) {
     try {
       const preAuthResponse = await XboxLiveAuth.preAuth()
       const logUserResponse = await XboxLiveAuth.logUser(preAuthResponse, { email, password })
       const xblUserToken = await XboxLiveAuth.exchangeRpsTicketForUserToken(logUserResponse.access_token)
       await this.setCachedUserToken(xblUserToken)
       debug('[xbl] user token:', xblUserToken)
-      const xsts = await this.getXSTSToken(xblUserToken)
+      const xsts = await this.getXSTSToken(xblUserToken, null, null, options)
       return xsts
     } catch (error) {
       debug('Authentication using a password has failed.')
@@ -142,7 +143,7 @@ class XboxTokenManager {
     }
   }
 
-  async doSisuAuth (accessToken, deviceToken, options) {
+  async doSisuAuth (accessToken, deviceToken, options = {}) {
     const payload = {
       AccessToken: 't=' + accessToken,
       AppId: options.authTitle,
@@ -150,7 +151,7 @@ class XboxTokenManager {
       Sandbox: 'RETAIL',
       UseModernGamertag: true,
       SiteName: 'user.auth.xboxlive.com',
-      RelyingParty: options.relyingParty || 'http://xboxlive.com',
+      RelyingParty: options.relyingParty,
       ProofKey: this.jwk
     }
 
@@ -172,7 +173,7 @@ class XboxTokenManager {
       expiresOn: ret.AuthorizationToken.NotAfter
     }
 
-    await this.setCachedXstsToken(xsts)
+    await this.setCachedXstsToken(xsts, options.relyingParty)
     debug('[xbl] xsts', xsts)
     return xsts
   }
@@ -180,29 +181,29 @@ class XboxTokenManager {
   // If we don't need Xbox Title Authentication, we can have xboxreplay lib
   // handle the auth, otherwise we need to build the request ourselves with
   // the extra token data.
-  async getXSTSToken (xblUserToken, deviceToken, titleToken) {
-    if (deviceToken && titleToken) return this.getXSTSTokenWithTitle(xblUserToken, deviceToken, titleToken)
+  async getXSTSToken (xblUserToken, deviceToken, titleToken, options = {}) {
+    if (deviceToken && titleToken) return this.getXSTSTokenWithTitle(xblUserToken, deviceToken, titleToken, options)
 
     debug('[xbl] obtaining xsts token with xbox user token (with XboxReplay)', xblUserToken.Token)
-    debug(this.relyingParty)
-    const xsts = await XboxLiveAuth.exchangeUserTokenForXSTSIdentity(xblUserToken.Token, { XSTSRelyingParty: this.relyingParty, raw: false })
-    await this.setCachedXstsToken(xsts)
+    debug(options.relyingParty)
+    const xsts = await XboxLiveAuth.exchangeUserTokenForXSTSIdentity(xblUserToken.Token, { XSTSRelyingParty: options.relyingParty, raw: false })
+    await this.setCachedXstsToken(xsts, options.relyingParty)
     debug('[xbl] xsts', xsts)
     return xsts
   }
 
-  async getXSTSTokenWithTitle (xblUserToken, deviceToken, titleToken, optionalDisplayClaims) {
+  async getXSTSTokenWithTitle (xblUserToken, deviceToken, titleToken, options = {}) {
     const userToken = xblUserToken.Token
     debug('[xbl] obtaining xsts token with xbox user token', userToken)
 
     const payload = {
-      RelyingParty: this.relyingParty,
+      RelyingParty: options.relyingParty,
       TokenType: 'JWT',
       Properties: {
         UserTokens: [userToken],
         DeviceToken: deviceToken,
         TitleToken: titleToken,
-        OptionalDisplayClaims: optionalDisplayClaims,
+        OptionalDisplayClaims: options.optionalDisplayClaims,
         ProofKey: this.jwk,
         SandboxId: 'RETAIL'
       }
@@ -224,7 +225,7 @@ class XboxTokenManager {
       expiresOn: ret.NotAfter
     }
 
-    await this.setCachedXstsToken(xsts)
+    await this.setCachedXstsToken(xsts, options.relyingParty)
     debug('[xbl] xsts', xsts)
     return xsts
   }

@@ -15,18 +15,17 @@ This is the main exposed class you interact with. Every instance holds its own t
   * `authTitle` (optional). See `require('prismarine-auth').Titles` for a list of possible titles, and FAQ section below for more info. Set to `false` if doing password auth. Required if doing sisu auth
   * `deviceType` (optional) if specifying an authTitle, the device type to auth as. For example, `Win32`, `iOS`, `Android`, `Nintendo`
   * `doSisuAuth` (optional) If you specify this option, we use sisu based auth.
-  * `relyingParty` (optional) "relying party", apart of xbox auth api
 * `codeCallback` (optional) The callback to call when doing device code auth. Otherwise, the code will be logged to the console.
 
 #### getMsaToken () : Promise<string>
 
 [Returns a Microsoft account access token.](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens)
 
-#### getXboxToken () : Promise<{ userXUID: string, userHash: string, XSTSToken: string, expiresOn: number }>
+#### getXboxToken (relyingParty?: string) : Promise<{ userXUID: string, userHash: string, XSTSToken: string, expiresOn: number }>
 
 [Returns XSTS token data](https://docs.microsoft.com/en-us/gaming/xbox-live/api-ref/xbox-live-rest/additional/edsauthorization).
 
-* Define `doSisuAuth` as true if you're trying to generate an xsts token using an authTitle such as XboxAppIOS, XboxGamepassIOS or MinecraftJava
+* `relyingParty` (optional, default='http://xboxlive.com') "relying party", apart of xbox auth api
 
 Example usage :
 ```js

@@ -38,7 +38,7 @@ describe('Dig time', () => {
           false,
           [{ name: registry.enchantmentsByName.efficiency.name, lvl: 5 }],
           {
-            [registry.effectsByName.haste.id]: {
+            [registry.effectsByName.Haste.id]: {
               amplifier: 1,
               duration: 60
             }
@@ -76,13 +76,13 @@ describe('Dig time', () => {
             it('using iron_shovel with haste 2', () => {
               const tool = registry.itemsByName.iron_shovel
               const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-              const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+              const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
               expect(time).toBe(100)
             })
             it('using iron_shovel with eff 2 + haste 2 (instant break)', () => {
               const tool = registry.itemsByName.iron_shovel
               const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-              const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+              const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
               expect(time).toBe(0)
             })
           })
@@ -114,13 +114,13 @@ describe('Dig time', () => {
           it('using iron_shovel with haste 2', () => {
             const tool = registry.itemsByName[toolName]
             const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-            const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+            const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
             expect(time).toBe(300)
           })
           it('using iron_shovel with eff 2 + haste 2 (instant break)', () => {
             const tool = registry.itemsByName[toolName]
             const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-            const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+            const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
             expect(time).toBe(150)
           })
         })
@@ -149,13 +149,13 @@ describe('Dig time', () => {
           it('using iron_shovel with haste 2', () => {
             const tool = registry.itemsByName[toolName]
             const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-            const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+            const time = block.digTime(tool.id, false, false, false, [], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
             expect(time).toBe(550)
           })
           it('using iron_shovel with eff 2 + haste 2 (instant break)', () => {
             const tool = registry.itemsByName[toolName]
             const block = Block.fromStateId(registry.blocksByName[blockName].defaultState)
-            const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.haste.id]: { amplifier: 1, lvl: 1 } })
+            const time = block.digTime(tool.id, false, false, false, [{ name: 'efficiency', lvl: 2 }], { [registry.effectsByName.Haste.id]: { amplifier: 1, lvl: 1 } })
             expect(time).toBe(300)
           })
         })

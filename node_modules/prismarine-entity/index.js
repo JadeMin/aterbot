@@ -3,6 +3,8 @@ const EventEmitter = require('events').EventEmitter
 
 module.exports = (version) => {
   const ChatMessage = require('prismarine-chat')(version)
+  const Item = require('prismarine-item')(version)
+  const mcData = require('minecraft-data')(version)
   class Entity extends EventEmitter {
     constructor (id) {
       super()
@@ -33,6 +35,13 @@ module.exports = (version) => {
         return null
       }
       return ChatMessage.fromNotch(name)
+    }
+
+    getDroppedItem () {
+      if (this.name !== 'item' && this.name !== 'Item' && this.name !== 'item_stack') {
+        return null // not a dropped item
+      }
+      return Item.fromNotch(this.metadata[mcData.supportFeature('metadataIxOfItem')])
     }
   }
 

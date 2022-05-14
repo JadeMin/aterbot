@@ -25,3 +25,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
+    - name: Upload index.d.ts
+      if: always()
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        path: index.d.ts

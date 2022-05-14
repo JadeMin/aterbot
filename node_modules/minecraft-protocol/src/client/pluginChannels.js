@@ -5,7 +5,7 @@ const debug = require('debug')('minecraft-protocol')
 module.exports = function (client, options) {
   const mcdata = require('minecraft-data')(options.version || require('../version').defaultVersion)
   const channels = []
-  const proto = new ProtoDef()
+  const proto = new ProtoDef(options.validateChannelProtocol ?? true)
   proto.addTypes(mcdata.protocol.types)
   proto.addTypes(minecraft)
   proto.addType('registerarr', [readDumbArr, writeDumbArr, sizeOfDumbArr])
@@ -17,13 +17,15 @@ module.exports = function (client, options) {
   client.registerChannel('REGISTER', ['registerarr', []])
   client.registerChannel('UNREGISTER', ['registerarr', []])
 
-  if (options.protocolVersion >= 385) { // 1.13-pre3 (385) added Added Login Plugin Message (https://wiki.vg/Protocol_History#1.13-pre3)
+  const above385 = options.protocolVersion >= 385
+  if (above385) { // 1.13-pre3 (385) added Added Login Plugin Message (https://wiki.vg/Protocol_History#1.13-pre3)
     client.on('login_plugin_request', onLoginPluginRequest)
   }
+  const channelNames = above385 ? ['minecraft:register', 'minecraft:unregister'] : ['REGISTER', 'UNREGISTER']
 
   function registerChannel (name, parser, custom) {
     if (custom) {
-      client.writeChannel('REGISTER', name)
+      client.writeChannel(channelNames[0], [name])
     }
     if (parser) proto.addType(name, parser)
     channels.push(name)
@@ -32,7 +34,7 @@ module.exports = function (client, options) {
 
   function unregisterChannel (channel, custom) {
     if (custom) {
-      client.writeChannel('UNREGISTER', channel)
+      client.writeChannel(channelNames[1], [channel])
     }
     const index = channels.find(function (name) {
       return channel === name
@@ -87,7 +89,7 @@ module.exports = function (client, options) {
   function writeDumbArr (value, buf, offset) {
     // TODO: Remove trailing \0
     value.forEach(function (v) {
-      offset += this.write(v, buf, offset, 'cstring', {})
+      offset += proto.write(v, buf, offset, 'cstring')
     })
     return offset
   }

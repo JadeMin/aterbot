@@ -1,5 +1,9 @@
 ## History
 
+### 1.5.0
+
+* bump mcdata
+
 ### 1.4.0
 
 * add movementSpeed attribute support

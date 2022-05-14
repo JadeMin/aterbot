@@ -54,9 +54,9 @@ setting and getting block light, type, biome, entity and block entity data.
 
 ## Chunk
 
-#### Chunk()
+#### Chunk(initData: { minY?: number, worldHeight?: number })
 
-Build a new chunk
+Build a new chunk. initData is only for 1.18+, and if not given or null the world will default to an old-style 0-256 world.
 
 #### Chunk.initialize(iniFunc)
 

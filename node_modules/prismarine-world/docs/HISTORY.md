@@ -1,5 +1,9 @@
 ## History
 
+### 3.6.1
+
+* Update mcdata
+
 ### 3.6.0
 
 * Added match while check intersect (@sefirosweb)

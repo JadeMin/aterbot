@@ -19,20 +19,23 @@ jobs:
       with:
         node-version: 10.0.0
     - run: npm install
-    - name: Publish if version has been updated
-      if: github.event_name != 'workflow_dispatch'
-      uses: pascalgn/npm-publish-action@4f4bf159e299f65d21cd1cbd96fc5d53228036df
-      with: # All of theses inputs are optional
-        tag_name: "%s"
-        tag_message: "%s"
-        commit_pattern: "^Release (\\S+)"
-      env: # More info about the environment variables in the README
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
-    - name: Check if version has been updated
-      if: github.event_name != 'workflow_dispatch'
-      id: check
-      uses: EndBug/version-check@v1
+    - id: publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_AUTH_TOKEN }}
+    - name: Create Release
+      if: steps.publish.outputs.type != 'none'
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.publish.outputs.version }}
+        release_name: Release ${{ steps.publish.outputs.version }}
+        body: ${{ steps.publish.outputs.version }}
+        draft: false
+        prerelease: false
+
     - name: "Trigger new GH Page creation in mcData repo"
       uses: peter-evans/repository-dispatch@v1
       if: steps.check.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'

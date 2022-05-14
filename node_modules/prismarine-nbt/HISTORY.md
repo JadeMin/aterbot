@@ -1,5 +1,9 @@
 # History
 
+## 2.2.1
+
+* Use u16 countType for shortString
+
 ## 2.2.0
 
 * Add some builder functions

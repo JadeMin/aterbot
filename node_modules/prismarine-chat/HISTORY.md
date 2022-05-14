@@ -1,5 +1,9 @@
 ## History
 
+### 1.6.1
+
+* Update mcdata
+
 ### 1.6.0
 
 * Added number type to getText()'s idx argument

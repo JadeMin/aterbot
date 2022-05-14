@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: 10.0.0
     - name: Publish if version has been updated
-      uses: pascalgn/npm-publish-action@4f4bf159e299f65d21cd1cbd96fc5d53228036df
+      uses: Rexogamer/npm-publish-action@99edcbddc04403efe904d1ad125c867d4dcabdcd
       with: # All of theses inputs are optional
         tag_name: "%s"
         tag_message: "%s"

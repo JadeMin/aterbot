@@ -1,5 +1,9 @@
 ## History
 
+## 1.31.0
+
+* update mcdata
+
 ## 1.30.0
 
 * Bedrock 1.16 - 1.18.0 chunks (@extremeheat)

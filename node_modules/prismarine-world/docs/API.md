@@ -179,3 +179,20 @@ It steps exactly 1 block at a time, returning the block coordinates and the face
 #### next()
 
 return null or the next position (Vec3)
+
+### SpiralIterator2d (pos, maxDistance)
+
+`pos` is Vec3
+
+`maxDistance` is number
+
+Iterates outwards along x and z axis in a cubic spiral. First position returned is the starting position. Every step is 1 step away form the previous and next point. 
+
+#### next()
+
+return null or the next position (Vec3)
+
+#### NUMBER_OF_POINTS
+
+Number of points the iterator will return.
+

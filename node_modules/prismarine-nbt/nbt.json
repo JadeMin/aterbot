@@ -5,13 +5,14 @@
   "switch": "native",
   "compound": "native",
   "i16": "native",
+  "u16": "native",
   "i32": "native",
   "i64": "native",
   "f32": "native",
   "f64": "native",
   "pstring": "native",
   "shortString": ["pstring",{
-    "countType":"i16"
+    "countType":"u16"
   }],
   "byteArray": [
     "array",

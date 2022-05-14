@@ -49,7 +49,7 @@ class BedrockTokenManager {
     debug('[mc] authing to minecraft', clientPublicKey, xsts)
     const headers = {
       'Content-Type': 'application/json',
-      'User-Agent': 'node-minecraft-protocol',
+      'User-Agent': 'MCPE/UWP',
       Authorization: `XBL3.0 x=${xsts.userHash};${xsts.XSTSToken}`
     }
     const MineServicesResponse = await fetch(Endpoints.BedrockAuth, {

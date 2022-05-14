@@ -67,10 +67,13 @@ function inject (bot, options) {
 
     bot.emit('login')
     bot.emit('game')
-    bot._client.write('held_item_slot', { slotId: 0 })
 
     // varint length-prefixed string as data
     bot._client.writeChannel(brandChannel, options.brand)
+
+    if (packet.dimensionCodec) {
+      bot.registry.loadDimensionCodec(packet.dimensionCodec)
+    }
   })
 
   bot._client.on('respawn', (packet) => {

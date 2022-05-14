@@ -46,6 +46,12 @@ ygg.validate(token).then(
   (error)=>{}
 );
 
+//Invalidate all accessTokens using a current valid accessToken and clientToken.
+ygg.invalidate(accessToken, clientToken).then(
+  (response)=>{},
+  (error)=>{}
+);
+
 //Invalidate all accessTokens
 ygg.signout(username, password).then(
   (response)=>{},

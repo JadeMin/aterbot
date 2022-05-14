@@ -1,5 +1,9 @@
 ## History
 
+### 1.2.0
+
+* Bump mcdata
+
 ### 1.1.0
 
 * Convert network biome schema to mcData schema

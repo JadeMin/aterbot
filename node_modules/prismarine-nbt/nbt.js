@@ -3,7 +3,7 @@ const zlib = require('zlib')
 const { ProtoDefCompiler } = require('protodef').Compiler
 
 const beNbtJson = JSON.stringify(require('./nbt.json'))
-const leNbtJson = beNbtJson.replace(/([if][0-7]+)/g, 'l$1')
+const leNbtJson = beNbtJson.replace(/([iuf][0-7]+)/g, 'l$1')
 const varintJson = JSON.stringify(require('./nbt-varint.json')).replace(/([if][0-7]+)/g, 'l$1')
 
 function createProto (type) {
