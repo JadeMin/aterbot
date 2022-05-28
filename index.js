@@ -6,6 +6,11 @@ let connected = false;
 const actions = ['forward', 'back', 'left', 'right', 'jump'];
 const sleep = ms=> new Promise(resovle=> setTimeout(resovle, ms));
 const getRandom = array=> array[Math.floor(Math.random() * (array.length - 0)) + 0];
+const cLog = (msg, ...args) => {
+	if(CONFIG.logger) {
+		console.log(msg, ...args);
+	}
+};
 
 
 
@@ -36,7 +41,7 @@ function createAFKBot() {
 				if(Math.random() < 0.5) { // 50% chance
 					bot.setControlState('sprint', true);
 				}
-				console.log(`${lastAction}${bot.getControlState('sprint')? " with sprint":''}`);
+				cLog(`${lastAction}${bot.getControlState('sprint')? " with sprint":''}`);
 
 				await sleep(getRandom(CONFIG.actionDelays));
 				bot.setControlState(lastAction, false); // starts the selected random action

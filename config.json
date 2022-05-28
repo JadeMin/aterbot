@@ -2,7 +2,11 @@
 	"host": "Enter your server ip or url.",
 	"port": "Enter your server port. If your server is not an Aternos server, maybe the default is 25565",
 	"username": "Enter the AFKBot's username you want. (Whatever doesn't matter)",
-	"logger": [true, "comment will be added here"],
+	"logger": [ true
+		, "true : displays not necessary logs (ex: key input logs).",
+		"false : displays only necessary logs."
+	],
+
 
 	"DO_NOT_EDIT_CONFIGS_DOWN_BELOW": "IF YOU DON'T KNOW WHAT YOU'RE DOING",
 	"actionDelays": [500, 1000, 1500, 2000, 2500, 3000],
