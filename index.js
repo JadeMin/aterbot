@@ -7,7 +7,7 @@ const actions = ['forward', 'back', 'left', 'right', 'jump'];
 const sleep = ms=> new Promise(resovle=> setTimeout(resovle, ms));
 const getRandom = array=> array[Math.floor(Math.random() * (array.length - 0)) + 0];
 const cLog = (msg, ...args) => {
-	if(CONFIG.logger) {
+	if(CONFIG.logger[0]) {
 		console.log(msg, ...args);
 	}
 };
