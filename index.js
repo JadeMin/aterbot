@@ -10,7 +10,7 @@ const getRandom = array=> array[Math.floor(Math.random() * (array.length - 0)) +
 
 
 async function reconnect() {
-	console.log(`Trying to reconnect in ${CONFIG.retryTimes.text}...`);
+	console.log(`Trying to reconnect in ${CONFIG.retryTimes.text}...\n`);
 	connected = false;
 
 
