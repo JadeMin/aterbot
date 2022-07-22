@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
 	"host": "Enter your server ip or url",
 	"port": "Enter your server port",
 	"username": "Enter the AFKBot's username you want (Whatever doesn't matter)",
+=======
+	"host": "Enter your server ip or url.",
+	"port": "Enter your server port.",
+	"username": "Enter the AFKBot's username you want. (Whatever doesn't matter)",
+>>>>>>> 8ceb89765ab84f483cfb7a900052e220f1f13beb
 	"logger": [ true
 		, "true : displays not necessary logs (ex: key input logs).",
 		"false : displays only necessary logs."
