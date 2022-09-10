@@ -9,7 +9,7 @@ if (!username) {
 
 async function doAuth () {
   const flow = new Authflow(username, cacheDir, { authTitle: Titles.MinecraftNintendoSwitch, deviceType: 'Nintendo' })
-  const response = await flow.getMinecraftJavaToken({ fetchEntitlements: true, fetchProfile: true })
+  const response = await flow.getMinecraftJavaToken({ fetchEntitlements: true, fetchProfile: true, fetchCertificates: true })
   console.log(response)
 }
 

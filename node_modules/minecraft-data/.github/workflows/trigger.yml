@@ -1,9 +1,9 @@
-name: 'trigger'
+name: trigger
 on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag of the release'
+        description: Tag of the release
         required: true
         default: '2.75.0'
 jobs:

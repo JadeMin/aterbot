@@ -37,8 +37,6 @@ module.exports = function (mcData) {
 
     foodsById: indexer.buildIndexFromArray(mcData.foods, 'id'),
     foodsByName: indexer.buildIndexFromArray(mcData.foods, 'name'),
-    foodsByFoodPoints: indexer.buildIndexFromArray(mcData.foods, 'foodPoints'),
-    foodsBySaturation: indexer.buildIndexFromArray(mcData.foods, 'saturation'),
 
     windowsById: indexer.buildIndexFromArray(mcData.windows, 'id'),
     windowsByName: indexer.buildIndexFromArray(mcData.windows, 'name'),

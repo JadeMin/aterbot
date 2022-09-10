@@ -1,0 +1,8 @@
+.*
+!/.gitignore
+!/.editorconfig
+!/.travis.yml
+!/.github
+/node_modules
+/dist
+*.log

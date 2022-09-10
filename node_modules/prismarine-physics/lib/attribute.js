@@ -39,8 +39,6 @@ exports.checkAttributeModifier = function (attributes, uuid) {
 }
 
 exports.deleteAttributeModifier = function (attributes, uuid) {
-  for (const modifier of attributes.modifiers) {
-    if (modifier.uuid === uuid) delete attributes.modifiers[modifier]
-  }
+  attributes.modifiers = attributes.modifiers.filter(modifier => modifier.uuid !== uuid)
   return attributes
 }

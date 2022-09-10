@@ -1,6 +1,7 @@
 {
   "types": {
     "varint": "native",
+    "varlong": "native",
     "pstring": "native",
     "u16": "native",
     "u8": "native",
@@ -2315,8 +2316,8 @@
                 {
                   "compareTo": "action",
                   "fields": {
-                    "1": "varint",
-                    "3": "varint"
+                    "1": "varlong",
+                    "3": "varlong"
                   },
                   "default": "void"
                 }
@@ -2707,7 +2708,7 @@
             },
             {
               "name": "action",
-              "type": "i8"
+              "type": "varint"
             },
             {
               "name": "scoreName",
@@ -3611,7 +3612,7 @@
           [
             {
               "name": "status",
-              "type": "i8"
+              "type": "varint"
             },
             {
               "name": "location",

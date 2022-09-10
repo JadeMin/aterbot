@@ -5,9 +5,9 @@ async function checkStatus (res) {
   if (res.ok) { // res.status >= 200 && res.status < 300
     return res.json()
   } else {
-    const resp = await res.json()
+    const resp = await res.text()
     debug('Request fail', resp)
-    throw Error(`${res.statusText}: ${JSON.stringify(resp)}`)
+    throw Error(`${res.status} ${res.statusText} ${resp}`)
   }
 }
 

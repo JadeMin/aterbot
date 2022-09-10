@@ -1,5 +1,9 @@
 ## History
 
+## 1.32.0
+
+* 1.19 support
+
 ## 1.31.0
 
 * update mcdata

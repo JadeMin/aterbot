@@ -9,7 +9,7 @@ declare class CommonChunk {
   static fromJson(j: any): typeof this
   toJson(): string
 
-  initialize(iniFunc: any): void
+  initialize(iniFunc: (x: number, y: number, z: number) => Block): void
 
   /** @deprecated This function only works on MCPE v0.14 */
   setBiomeColor(pos: Vec3, r: number, g: number, b: number): void
@@ -65,13 +65,8 @@ interface IVec4 {
 // This manages the chunk cache
 interface IBlobStore {
   get(key: string | number | BigInt): object
-  set(key: string | number | BigInt, value: object)
+  set(key: string | number | BigInt, value: object): void
   has(key: string | number | BigInt): boolean
-}
-
-declare const enum BlobType {
-  ChunkBiomes = 0,
-  Biomes = 1
 }
 
 declare const enum StorageType {
@@ -100,6 +95,10 @@ type ExtendedBlock = Block & {
   light?: number
   skyLight?: number
   entity?: NBT
+}
+
+// A stub
+declare class Stream {
 }
 
 declare class BedrockChunk extends CommonChunk {
@@ -217,8 +216,8 @@ export class BlobEntry {
 }
 
 export const enum BlobType {
-  ChunkSection,
-  Biomes
+  ChunkSection = 0,
+  Biomes = 1,
 }
 
 export default function loader(mcVersionOrRegistry: string | ReturnType<typeof Registry>): typeof PCChunk | typeof BedrockChunk

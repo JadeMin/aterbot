@@ -62,6 +62,8 @@ module.exports = (data, staticData) => {
           type: nbt.string('minecraft:worldgen/biome'),
           value: nbt.list(nbt.comp(mcDataSchemaToNetworkBiomes(hasDynamicDimensionData ? data.biomesArray : null, staticData)))
         })
+        // 1.19
+        codec['minecraft:chat_type'] = staticData.loginPacket.dimensionCodec?.value?.['minecraft:chat_type']
       }
 
       return nbt.comp(codec)

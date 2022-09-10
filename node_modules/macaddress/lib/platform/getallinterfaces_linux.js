@@ -7,7 +7,7 @@ module.exports = function (callback) {
             callback(err, null);
             return;
         }
-        var ifaces = out.split(/[ \t]+/);
+        var ifaces = out.split(/[ \t\n]+/);
         var result = [];
         for (var i = 0; i < ifaces.length; i += 1) {
             var iface = ifaces[i].trim();

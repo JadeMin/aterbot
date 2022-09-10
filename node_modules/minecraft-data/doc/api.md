@@ -1,364 +1,657 @@
 # API
 
+Import the module:
+
+```js
+const minecraftData = require('minecraft-data')
+
+const mcData = minecraftData('1.19')
+```
+
+or using es6 import syntax:
+
+```js
+import minecraftData from 'minecraft-data'
+
+const mcData = minecraftData('1.19')
+```
+
+All examples reference `minecraftData` as the module, and `mcData` as the version data.
+
 ## Blocks
 
-### minecraft-data.blocks
+### mcData.blocks
 
-blocks indexed by id
+Blocks indexed by id
 
-### minecraft-data.blocksByName
+Example:
 
-blocks indexed by name
+```js
+console.log(mcData.blocks[1]) // Object containing information for "Stone"
+```
 
-### minecraft-data.blocksArray
+### mcData.blocksByName
 
-unindexed blocks
+Blocks indexed by name
 
-### minecraft-data.blocksByStateId
+Example:
 
-blocks indexed by state id
+```js
+console.log(mcData.blocksByName['stone']) // Object containing information for "Stone"
+```
 
-### minecraft-data.blockCollisionShapes
+### mcData.blocksArray
 
-block collision shapes
+Array of blocks
+
+### mcData.blocksByStateId
+
+Blocks indexed by state id
+
+Example:
+
+```js
+console.log(mcData.blocksByStateId[100]) // Object containing information for "Lava" (as Lava has a state range from 91 to 106)
+```
+
+### mcData.blockStates
+
+**_Bedrock edition only_**
+
+Array of block states
+
+Example:
+
+```js
+console.log(mcData.blockStates[50]) // Object containing block state information for "Warped Door"
+```
+
+### mcData.blockCollisionShapes
+
+Block collision shapes. Contains `blocks`, with each block (indexed by name) containing an array of collision shape ids. Also contains `shapes`, providing all collision shapes information (indexed by id).
+
+Example:
+
+```js
+console.log(mcData.blockCollisionShapes.blocks['oak_stairs']) // Array of collision shape ids for "Oak Stairs"
+// Returns: [ 42, 32, 43, 33, 37, 27, 38, 28 ]
+
+console.log(mcData.blockCollisionShapes.shapes[42]) // Collision information for collision shape id 42
+// Returns: [ [ 0, 0, 0, 1, 0.5, 1 ], [ 0.5, 0.5, 0.5, 1, 1, 1 ] ]
+```
 
 ## Items
 
-### minecraft-data.items
+### mcData.items
 
-items indexed by id
+Items indexed by id
 
-### minecraft-data.itemsByName
+Example:
 
-items indexed by name
+```js
+console.log(mcData.items[772]) // Object containing information for "Wheat"
+```
 
-### minecraft-data.itemsArray
+### mcData.itemsByName
 
-unindexed items
+Items indexed by name
+
+Example:
+
+```js
+console.log(mcData.itemsByName['wheat']) // Object containing information for "Wheat"
+```
+
+### mcData.itemsArray
+
+Array of items
 
 ## Foods
 
-### minecraft-data.foods
+### mcData.foods
 
-foods indexed by id
+Foods indexed by id
 
-### minecraft-data.foodsByName
+Example:
 
-foods indexed by name
+```js
+console.log(mcData.foods[1003]) // Object containing information for "Pumpkin Pie"
+```
 
-### minecraft-data.foodsByFoodPoints
+### mcData.foodsByName
 
-foods indexed by food points
+Foods indexed by name
 
-### minecraft-data.foodsBySaturation
+Example:
 
-foods indexed by saturation
+```js
+console.log(mcData.foodsByName['pumpkin_pie']) // Object containing information for "Pumpkin Pie"
+```
 
-### minecraft-data.foodsArray
+### mcData.foodsArray
 
-unindexed foods
+Array of foods
 
 ## Biomes
 
-### minecraft-data.biomes
+### mcData.biomes
 
-biomes indexed by id
+Biomes indexed by id
 
-### minecraft-data.biomesArray
+Example:
 
-unindexed biomes
+```js
+console.log(mcData.biomes[20]) // Object containing information for "Windswept Gravelly Hills"
+```
 
-### minecraft-data.biomesByName
+### mcData.biomesByName
 
-biomes object indexed by name
+Biomes indexed by name
+
+Example:
+
+```js
+console.log(mcData.biomesByName['windswept_gravelly_hills']) // Object containing information for "Windswept Gravelly Hills"
+```
+
+### mcData.biomesArray
+
+Array of biomes
 
 ## Recipes
 
-### minecraft-data.recipes
+### mcData.recipes
 
-recipes indexed by id
+Recipes indexed by the resulting item id
+
+Example:
+
+```js
+console.log(mcData.recipes[31]) // Recipe information for crafting "Dripstone Block"
+
+// Returns:
+// {
+//   inShape: [ [ 1100, 1100 ], [ 1100, 1100 ] ],
+//   result: { count: 1, id: 13 }
+// }
+
+// Note: 1100 is the block ID of "Pointed Dripstone"
+```
 
 ## Instruments
 
-### minecraft-data.instruments
+### mcData.instruments
 
-instruments indexed by id
+Instruments indexed by id
 
-### minecraft-data.instrumentsArray
+Example:
 
-unindexed instruments
+```js
+console.log(mcData.instruments[5])
+// Returns: { id: 5, name: 'flute' }
+```
+
+### mcData.instrumentsArray
+
+Array of instruments
 
 ## Materials
 
-### minecraft-data.materials
+### mcData.materials
 
-materials indexed by name
+Material types indexed by name
+
+Example:
+
+```js
+console.log(mcData.materials['mineable/axe'])
+// Returns: { '702': 2, '707': 4, '712': 12, '717': 6, '722': 8, '727': 9 }
+```
 
 ## Entities
 
-### minecraft-data.mobs
+### mcData.mobs
 
-mobs indexed by id
+Mobs (passive, neutral, and hostile) indexed by id
 
-### minecraft-data.objects
+Example:
 
-objects indexed by id
+```js
+console.log(mcData.mobs[30]) // Object containing information for "Ghast"
+```
 
-### minecraft-data.entitiesByName
+### mcData.objects
 
-entities indexed by name
+Objects (non-mob entities such as vehicles and projectiles) indexed by id
 
-### minecraft-data.entitiesArray
+Example:
 
-unindexed entities
+```js
+const mcData = MinecraftData('1.8.9')
+
+console.log(mcData.objects[10]) // Object containing information for "Minecart"
+```
+
+### mcData.entities
+
+Entities indexed by id
+
+Example:
+
+```js
+console.log(mcData.entities[25]) // Object containing information for "Evoker"
+```
+
+### mcData.entitiesByName
+
+Entities indexed by name
+
+Example:
+
+```js
+console.log(mcData.entitiesByName['evoker']) // Object containing information for "Evoker"
+```
+
+### mcData.entitiesArray
+
+Array of entities
 
 ## Enchantments
 
-### minecraft-data.enchantments
+### mcData.enchantments
 
-enchantments indexed by id
+Enchantments indexed by id
 
-### minecraft-data.enchantmentsByName
+Example:
 
-enchantments indexed by name
+```js
+console.log(mcData.enchantments[37]) // Object containing information for "Mending"
+```
 
-### minecraft-data.enchantmentsArray
+### mcData.enchantmentsByName
 
-unindexed enchantments
+Enchantments indexed by name
 
-### minecraft-data.defaultSkin
+Example:
 
-(bedrock edition) Skin geometry and texture data for default player skin
+```js
+console.log(mcData.enchantmentsByName['mending']) // Object containing information for "Mending"
+```
+
+### mcData.enchantmentsArray
+
+Array of enchantments
+
+### mcData.defaultSkin
+
+**_Bedrock edition only_**
+
+Skin geometry and texture data for default player skin
 
 ## Protocol
 
-### minecraft-data.protocol
+### mcData.protocol
 
-the minecraft protocol
+The Minecraft protocol
 
+### mcData.protocolComments
 
-### minecraft-data.protocolComments
+The Minecraft protocol comments
 
-the minecraft protocol comments
+### mcData.protocolYaml
 
-## Windows
+**_Bedrock edition only_**
 
-### minecraft-data.windows
+The url to the files of the protocol yaml
 
-windows indexed by id
+## Windows (GUIs)
 
-### minecraft-data.windowsByName
+### mcData.windows
 
-windows indexed by name
+Windows indexed by id
 
-### minecraft-data.windowsArray
+Example:
 
-unindexed windows
+```js
+console.log(mcData.windows['minecraft:villager']) // Object containing window information for the villager GUI
+```
 
+### mcData.windowsByName
+
+Windows indexed by name
+
+Example:
+
+```js
+console.log(mcData.windowsByName['NPC Trade']) // Object containing window information for the villager GUI
+```
+
+### mcData.windowsArray
+
+Array of windows
 
 ## Version
 
-### minecraft-data.version.version
+For version comparison, the other version must be of the same type, and the prefix is always implied
 
-the version number (example : 47)
+### mcData.version.version
 
-### minecraft-data.version.minecraftVersion
+The version number
 
-the minecraft number (example : 1.8.3)
+Example:
 
-### minecraft-data.version.type
-
-the version type, currently 'pc' or 'bedrock'
-
-### minecraft-data.version.majorVersion
-
-the major version (example : 1.8), also the name of the minecraft-data version
-
-### minecraft-data.version.dataVersion
-
-"Data version" for this Minecraft version, used for example when writing chunks to disk
-
-### minecraft-data.version.< (other)
-Returns true if the current version is less than than the `other` version's dataVersion
-
-### minecraft-data.version.> (other)
-Returns true if the current version is greater than the `other` version's dataVersion
-
-### minecraft-data.version.== (other)
-Returns true if the current version is equal to the `other` version's dataVersion
-
-### minecraft-data.version.>=, minecraft-data.version.<=
-
-Same as above but also allows equal dataVersion. The other version must be of the same type, the prefix is always implied.
-
-Example Usage: 
 ```js
-const mcd = require('minecraft-data')('1.16.4')
-console.log('1.16.4 >= 1.17 ?', mcd.version['>=']('1.17')) // False
+console.log(mcData.version.version) // 759
+```
 
-const mcd = require('minecraft-data')('bedrock_1.17.0')
-console.log('1.17.0 > 1.16.220 ?', mcd.version['>']('1.16.220')) // True
+### mcData.version.minecraftVersion
+
+The full Minecraft version
+
+Example:
+
+```js
+console.log(mcData.version.minecraftVersion) // 1.19
+```
+
+### mcData.version.type
+
+The version type, either `pc` or `bedrock`
+
+Example:
+
+```js
+console.log(mcData.version.type) // pc
+```
+
+### mcData.version.majorVersion
+
+The major Minecraft version
+
+Example:
+
+```js
+const mcData = MinecraftData('1.16.5')
+
+console.log(mcData.version.majorVersion) // 1.16
+```
+
+### mcData.version.dataVersion
+
+The "data version" for this Minecraft version, used for example when writing chunks to disk
+
+Example:
+
+```js
+console.log(mcData.version.dataVersion) // 3105
+```
+
+### mcData.version.[<](<version>), mcData.isOlderThan(<version>)
+
+Returns `true` if the current version is less than than the other version's `dataVersion`, or else `false`
+
+### mcData.version.[<=](<version>)
+
+Same as above but also checks for an equivalent `dataVersion`
+
+### mcData.version.[==](<version>)
+
+Returns `true` if the current version is equal to the other version's `dataVersion`, or else `false`
+
+### mcData.version.[>](<version>)
+
+Returns `true` if the current version is greater than the other version's `dataVersion`, or else `false`
+
+### mcData.version.[>=](<version>), mcData.isNewerOrEqualTo(<version>)
+
+Same as above but also checks for an equivalent `dataVersion`
+
+Example Usage:
+
+```js
+const mcData = MinecraftData('1.16.4')
+console.log(mcData.version['>=']('1.17')) // Returns false, as 1.16.4 is older than 1.17
+
+const mcData = MinecraftData('bedrock_1.17.0')
+console.log(mcData.version['>']('1.16.220')) // Returns true, as 1.17.0 is newer than 1.16.220
 ```
 
 ## Effects
 
-### minecraft-data.effects
+### mcData.effects
 
-effects indexed by id
+Effects indexed by id
 
-### minecraft-data.effectsByName
+Example:
 
-effects indexed by name
+```js
+console.log(mcData.effects[5]) // Object containing information for "Strength"
+```
 
-### minecraft-data.effectsArray
+### mcData.effectsByName
 
-unindexed effects
+Effects indexed by name
+
+Example:
+
+```js
+console.log(mcData.effectsByName['strength']) // Object containing information for "Strength"
+```
+
+### mcData.effectsArray
+
+Array of effects
 
 ## Attributes
 
-### minecraft-data.attributes
+### mcData.attributes
 
-attributes indexed by resource name (generic.movementSpeed || minecraft:generic.movement_speed)
+Attributes indexed by resource name
 
-### minecraft-data.attributesByName
+Example:
 
-attributes indexed by minecraft-data name (movementSpeed)
+```js
+console.log(mcData.attributes['minecraft:generic.movement_speed']) // Object containing information for "minecraft:generic.movement_speed"
+```
 
-### minecraft-data.attributesArray
+### mcData.attributesByName
 
-unindexed attributes
+Attributes indexed by name
+
+Example:
+
+```js
+console.log(mcData.attributesByName['movementSpeed']) // Object containing information for "minecraft:generic.movement_speed"
+```
+
+### mcData.attributesArray
+
+Array of attributes
 
 ## Particles
 
-### minecraft-data.particles
+### mcData.particles
 
-particles indexed by id
+Particles indexed by id
 
-### minecraft-data.particlesByName
+Example:
 
-particles indexed by name
+```js
+console.log(mcData.particles[12]) // Object containing information for "dripping_water"
+```
 
-### minecraft-data.particlesArray
+### mcData.particlesByName
 
-unindexed particles
+Particles indexed by name
+
+Example:
+
+```js
+console.log(mcData.particlesByName['dripping_water']) // Object containing information for "dripping_water"
+```
+
+### mcData.particlesArray
+
+Array of particles
 
 ## Commands
 
-### minecraft-data.commands 
+### mcData.commands
 
-Command tree
+Commands and parsers
+
+Example:
+
+```js
+const mcData = MinecraftData('1.13')
+
+console.log(mcData.commands)
+// Returns:
+// {
+//   root: {
+//     type: 'root',
+//     name: 'root',
+//     executable: false,
+//     redirects: [],
+//     children: [ ... ]
+//   },
+//   parsers: [ ... ]
+// }
+```
 
 ## Loot
 
-### minecraft-data.entityLoot
+### mcData.entityLoot
 
-entity loot indexed by name
+Entity loot indexed by entity name
 
-### minecraft-data.entityLootArray
+Example:
 
-unindexed entity loot
+```js
+console.log(mcData.entityLoot['zombie']) // Object containing loot information for "Zombie"
+```
 
-### minecraft-data.blockLoot
+### mcData.entityLootArray
 
-block loot indexed by name
+Array of entity loot
 
-### minecraft-data.blockLootArray
+### mcData.blockLoot
 
-unindexed block loot
+Block loot indexed by block name
+
+Example:
+
+```js
+console.log(mcData.blockLoot['diamond_ore']) // Object containing loot information for "Diamond Ore"
+```
+
+### mcData.blockLootArray
+
+Array of block loot
 
 ## Map icons
 
-### minecraft-data.mapIcons
+### mcData.mapIcons
 
-mapIcons indexed by id
+Map icons indexed by id
 
-### minecraft-data.mapIconsByName
+Example:
 
-mapIcons indexed by name
+```js
+console.log(mcData.mapIcons[20]) // Object containing map icon information for "banner_purple"
+```
 
-### minecraft-data.mapIconsArray
+### mcData.mapIconsByName
 
-unindexed mapIcons
+Map icons indexed by name
 
-## type
+Example:
 
-pe or pc
+```js
+console.log(mcData.mapIconsByName['banner_purple']) // Object containing map icon information for "banner_purple"
+```
 
-## minecraft-data.language
+### mcData.mapIconsArray
 
-object from language key to string
+Array of map icons
 
-## minecraft-data.loginPacket
+### mcData.type
 
-example of login packet
+The type of the current version, either `pc` or `bedrock`
+
+### minecraftData.language
+
+Object containing `en_US` language conversions
+
+Example:
+
+```js
+console.log(mcData.language['argument.player.unknown'])
+// Returns: 'That player does not exist'
+```
+
+### minecraftData.loginPacket
+
+Login packet example
+
+### mcData.supportFeature(<feature>)
+
+This can be used to check if a specific feature is available in the current Minecraft version. This is usually only used for handling version-specific functionality.
+
+Example:
+
+```js
+const mcData = minecraftData('1.18.2')
+
+console.log(mcData.supportFeature('blockStateId')) // Returns: true
+```
+
+## Tints
+
+### mcData.tints
+
+Tints indexed by the tint type (`grass`, `foliage`, `water`, `redstone`, `constant`)
 
 ## Protocol versions
 
-Those are common data and directly available in the `require('minecraft-data')` object.
-No need to specify a version before accessing them. They are indexed by pc and pe.
+These are common data and directly available in the `minecraftData` object.
+No need to specify a version before accessing them.
 
-### minecraft-data.versions
+### minecraftData.versions
 
-unindexed minecraft versions
+Array of all Minecraft versions (separated into `pc` (java) and `bedrock`)
 
-### minecraft-data.versionsByMinecraftVersion
+### minecraftData.versionsByMinecraftVersion
 
-minecraft versions indexed by minecraft version (example : 1.8.8)
+All versions indexed by Minecraft version (separated into `pc` (java) and `bedrock`)
 
-### minecraft-data.preNettyVersionsByProtocolVersion
+### minecraftData.preNettyVersionsByProtocolVersion
 
-pre netty minecraft versions indexed by protocol version (example : 47)
+Pre-netty Minecraft versions indexed by protocol version (separated into `pc` (java) and `bedrock`)
 
-### minecraft-data.postNettyVersionsByProtocolVersion
+### minecraftData.postNettyVersionsByProtocolVersion
 
-post netty minecraft versions indexed by protocol version (example : 47)
+Post netty minecraft versions indexed by protocol version (separated into `pc` (java) and `bedrock`)
 
-### minecraft-data.supportedVersions.pc
+### minecraftData.supportedVersions
 
-Array of pc supported versions
+Array of supported versions (separated into `pc` (java) and `bedrock`)
 
-### minecraft-data.supportedVersions.pe
-
-Array of pe supported versions
-
-### minecraft-data.legacy.pc.blocks
+### minecraftData.legacy.pc.blocks
 
 Mapping from 1.12 block:metadata to 1.13 block names
 
-examples 0:0 -> minecraft:air
+Example:
 
-### minecraft-data.supportFeature(featureName) : Boolean
-
-This can be used to check is a specific feature is available in the current Minecraft version. This is usually only required for handling version-specific functionality.
+```js
+console.log(mcData.legacy.pc.blocks['171:15']) // Returns: 'minecraft:black_carpet'
+```
 
 ## Schemas
 
-### minecraft-data.schemas.biomes
+These are common data and directly available in the `minecraftData` object.
+No need to specify a version before accessing them.
 
-### minecraft-data.schemas.blocks
+Available schemas:
 
-### minecraft-data.schemas.blockLoot
-
-### minecraft-data.schemas.effects
-
-### minecraft-data.schemas.entities
-
-### minecraft-data.schemas.entityLoot
-
-### minecraft-data.schemas.instruments
-
-### minecraft-data.schemas.items
-
-### minecraft-data.schemas.materials
-
-### minecraft-data.schemas.particles
-
-### minecraft-data.schemas.protocol
-
-### minecraft-data.schemas.protocolVersions
-
-### minecraft-data.schemas.recipes
-
-### minecraft-data.schemas.version
-
-### minecraft-data.schemas.windows
+`biomes`, `blocks`, `blockLoot`, `effects`, `entities`, `entityLoot`, `instruments`, `items`, `materials`, `particles`, `protocol`, `protocolVersions`, `recipes`, `version`, `windows`
