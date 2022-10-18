@@ -3,8 +3,8 @@ const RecipeItem = require('./recipe_item')
 
 module.exports = loader
 
-function loader (mcVersion) {
-  recipes = require('minecraft-data')(mcVersion).recipes
+function loader (registry) {
+  recipes = registry.recipes
   return Recipe
 }
 

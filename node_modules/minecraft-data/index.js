@@ -68,7 +68,7 @@ module.exports = function (mcVersion, preNetty) {
   nmcData.isOlderThan = version => nmcData.version['<'](version)
   nmcData.version = Object.assign(majorVersion, nmcData.version)
   cache[cachedName] = nmcData
-  nmcData.supportFeature = feature => supportFeature(feature, nmcData.version)
+  nmcData.supportFeature = supportFeature(nmcData.version, protocolVersions[nmcData.type])
   return nmcData
 }
 

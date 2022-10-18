@@ -10,6 +10,6 @@
 	"description": "Aternos AFKBot",
 	"private": true,
 	"dependencies": {
-		"mineflayer": "^4.4.0"
+		"mineflayer": "^4.5.0"
 	}
 }

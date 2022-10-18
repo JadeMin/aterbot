@@ -1,6 +1,6 @@
 const nbt = require('prismarine-nbt')
-function loader (version) {
-  const mcData = require('minecraft-data')(version)
+function loader (registryOrVersion) {
+  const registry = typeof registryOrVersion === 'string' ? require('prismarine-registry')(registryOrVersion) : registryOrVersion
   class Item {
     constructor (type, count, metadata, nbt) {
       if (type == null) return
@@ -15,7 +15,7 @@ function loader (version) {
       this.metadata = metadata == null ? 0 : metadata
       this.nbt = nbt || null
 
-      const itemEnum = mcData.items[type]
+      const itemEnum = registry.items[type]
       if (itemEnum) {
         this.name = itemEnum.name
         this.displayName = itemEnum.displayName
@@ -48,7 +48,7 @@ function loader (version) {
     }
 
     static toNotch (item) {
-      if (mcData.supportFeature('itemSerializationAllowsPresent')) {
+      if (registry.supportFeature('itemSerializationAllowsPresent')) {
         if (item == null) return { present: false }
         const notchItem = {
           present: true,
@@ -57,7 +57,7 @@ function loader (version) {
         }
         if (item.nbt && item.nbt.length !== 0) { notchItem.nbtData = item.nbt }
         return notchItem
-      } else if (mcData.supportFeature('itemSerializationUsesBlockId')) {
+      } else if (registry.supportFeature('itemSerializationUsesBlockId')) {
         if (item == null) return { blockId: -1 }
         const notchItem = {
           blockId: item.type,
@@ -71,13 +71,13 @@ function loader (version) {
     }
 
     static fromNotch (item) {
-      if (mcData.supportFeature('itemSerializationWillOnlyUsePresent')) {
+      if (registry.supportFeature('itemSerializationWillOnlyUsePresent')) {
         if (item.present === false) return null
         return new Item(item.itemId, item.itemCount, item.nbtData)
-      } else if (mcData.supportFeature('itemSerializationAllowsPresent')) {
+      } else if (registry.supportFeature('itemSerializationAllowsPresent')) {
         if (item.itemId === -1 || item.present === false) return null
         return new Item(item.itemId, item.itemCount, item.nbtData)
-      } else if (mcData.supportFeature('itemSerializationUsesBlockId')) {
+      } else if (registry.supportFeature('itemSerializationUsesBlockId')) {
         if (item.blockId === -1) return null
         return new Item(item.blockId, item.itemCount, item.itemDamage, item.nbtData)
       }
@@ -119,8 +119,8 @@ function loader (version) {
 
     get enchants () {
       if (Object.keys(this).length === 0) return []
-      const enchantNbtKey = mcData.supportFeature('nbtNameForEnchant')
-      const typeOfEnchantLevelValue = mcData.supportFeature('typeOfValueForEnchantLevel')
+      const enchantNbtKey = registry.supportFeature('nbtNameForEnchant')
+      const typeOfEnchantLevelValue = registry.supportFeature('typeOfValueForEnchantLevel')
       if (typeOfEnchantLevelValue === 'short' && enchantNbtKey === 'ench') {
         let itemEnch
         if (this.name === 'enchanted_book' && this?.nbt?.value?.StoredEnchantments) {
@@ -130,7 +130,7 @@ function loader (version) {
         } else {
           itemEnch = []
         }
-        return itemEnch.map(ench => ({ lvl: ench.lvl, name: mcData.enchantments[ench.id]?.name || null }))
+        return itemEnch.map(ench => ({ lvl: ench.lvl, name: registry.enchantments[ench.id]?.name || null }))
       } else if (typeOfEnchantLevelValue === 'string' && enchantNbtKey === 'Enchantments') {
         let itemEnch = []
         if (this?.nbt?.value?.Enchantments) {
@@ -147,13 +147,13 @@ function loader (version) {
 
     set enchants (normalizedEnchArray) {
       const isBook = this.name === 'enchanted_book'
-      const enchListName = mcData.supportFeature('nbtNameForEnchant')
-      const type = mcData.supportFeature('typeOfValueForEnchantLevel')
+      const enchListName = registry.supportFeature('nbtNameForEnchant')
+      const type = registry.supportFeature('typeOfValueForEnchantLevel')
       if (type === null) throw new Error("Don't know the serialized type for enchant level")
       if (!this.nbt) this.nbt = { name: '', type: 'compound', value: {} }
 
       const enchs = normalizedEnchArray.map(({ name, lvl }) => {
-        const value = type === 'short' ? mcData.enchantmentsByName[name].id : `minecraft:${mcData.enchantmentsByName[name].name}`
+        const value = type === 'short' ? registry.enchantmentsByName[name].id : `minecraft:${registry.enchantmentsByName[name].name}`
         return { id: { type, value }, lvl: { type: 'short', value: lvl } }
       })
 
@@ -161,15 +161,15 @@ function loader (version) {
         this.nbt.value[isBook ? 'StoredEnchantments' : enchListName] = { type: 'list', value: { type: 'compound', value: enchs } }
       }
 
-      // The 'mcData.itemsByName[this.name].maxDurability' checks to see if this item can lose durability
-      if (mcData.supportFeature('whereDurabilityIsSerialized') === 'Damage' && mcData.itemsByName[this.name].maxDurability) {
+      // The 'registry.itemsByName[this.name].maxDurability' checks to see if this item can lose durability
+      if (registry.supportFeature('whereDurabilityIsSerialized') === 'Damage' && registry.itemsByName[this.name].maxDurability) {
         this.nbt.value.Damage = { type: 'int', value: 0 }
       }
     }
 
     get durabilityUsed () {
       if (Object.keys(this).length === 0) return null
-      const where = mcData.supportFeature('whereDurabilityIsSerialized')
+      const where = registry.supportFeature('whereDurabilityIsSerialized')
       if (where === 'Damage') {
         return this?.nbt?.value?.Damage?.value ?? 0
       } else if (where === 'metadata') {
@@ -179,7 +179,7 @@ function loader (version) {
     }
 
     set durabilityUsed (value) {
-      const where = mcData.supportFeature('whereDurabilityIsSerialized')
+      const where = registry.supportFeature('whereDurabilityIsSerialized')
       if (where === 'Damage') {
         if (!this?.nbt) this.nbt = { name: '', type: 'compound', value: {} }
         this.nbt.value.Damage = { type: 'int', value }
@@ -191,22 +191,22 @@ function loader (version) {
     }
 
     get spawnEggMobName () {
-      if (mcData.supportFeature('spawnEggsUseInternalIdInNbt')) {
-        return mcData.entitiesArray.find(o => o.internalId === this.metadata).name
+      if (registry.supportFeature('spawnEggsUseInternalIdInNbt')) {
+        return registry.entitiesArray.find(o => o.internalId === this.metadata).name
       }
-      if (mcData.supportFeature('spawnEggsUseEntityTagInNbt')) {
+      if (registry.supportFeature('spawnEggsUseEntityTagInNbt')) {
         const data = nbt.simplify(this.nbt)
         const entityName = data.EntityTag.id
         return entityName.replace('minecraft:', '')
       }
-      if (mcData.supportFeature('spawnEggsHaveSpawnedEntityInName')) {
+      if (registry.supportFeature('spawnEggsHaveSpawnedEntityInName')) {
         return this.name.replace('_spawn_egg', '')
       }
       throw new Error("Don't know how to get spawn egg mob name for this mc version")
     }
   }
 
-  Item.anvil = require('./lib/anvil.js')(mcData, Item)
+  Item.anvil = require('./lib/anvil.js')(registry, Item)
   return Item
 }
 

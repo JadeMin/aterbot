@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const SUPPORTED_VERSIONS = ['1.15.2', '1.16', '1.16.5', '1.17.1', '1.18']
+const SUPPORTED_VERSIONS = ['1.15.2', '1.16', '1.17.1', '1.18', '1.19']
 const test = require('./mcpc')
 
 describe('mcpc', function () {

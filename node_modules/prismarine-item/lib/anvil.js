@@ -1,4 +1,4 @@
-function loader (mcData, Item) {
+function loader (registry, Item) {
   function combine (itemOne, itemTwo, creative, renamedName) {
     const rename = typeof renamedName === 'string'
     const data = {
@@ -62,11 +62,11 @@ function loader (mcData, Item) {
     let xpLevelCost = 0
     for (const ench of itemTwoEnch) {
       const enchOnItemOne = finalEnchs.find(x => x.name === ench.name)
-      let { exclude, maxLevel, category, weight } = mcData.enchantmentsByName[ench.name]
+      let { exclude, maxLevel, category, weight } = registry.enchantmentsByName[ench.name]
       const multiplier = getMultipliers(weight, rightIsBook)
-      if (!(itemOne.name === 'enchanted_book' && rightIsBook) && !mcData.itemsByName[itemOne.name].enchantCategories.includes(category) && !creative) continue
+      if (!(itemOne.name === 'enchanted_book' && rightIsBook) && !registry.itemsByName[itemOne.name].enchantCategories.includes(category) && !creative) continue
       else if (enchOnItemOne === undefined) { // first item doesn't have this ench
-        exclude = exclude.map(name => mcData.enchantmentsByName[name].name)
+        exclude = exclude.map(name => registry.enchantmentsByName[name].name)
         if (exclude.some(excludedEnch => finalEnchsByName.includes(excludedEnch))) { // has an excluded enchant
           xpLevelCost++
         } else {
@@ -117,9 +117,9 @@ function loader (mcData, Item) {
     if (itemTwo === null) return { xpLevelCost: 0, fixedDurability: 0, usedMats: 0 } // air
     else if (itemTwo.name === 'enchanted_book') return { xpLevelCost: 0, fixedDurability: 0, usedMats: 0 }
 
-    const maxDurability = mcData.itemsByName[itemOne.name].maxDurability
+    const maxDurability = registry.itemsByName[itemOne.name].maxDurability
     const durabilityLost = itemOne.durabilityUsed
-    const fixMaterials = mcData.itemsByName[itemOne.name].repairWith.concat([itemOne.name])
+    const fixMaterials = registry.itemsByName[itemOne.name].repairWith.concat([itemOne.name])
     if (!fixMaterials.includes(itemTwo.name) && itemOne.name !== itemTwo.name) {
       return 0 // Enchanted book can't fix
     }
@@ -162,7 +162,7 @@ function loader (mcData, Item) {
 
   function combinePossible (itemOne, itemTwo) {
     if (!itemOne?.name || !itemTwo?.name || (!itemOne?.name && !itemTwo?.name)) return false
-    let fixMaterials = (mcData.itemsByName[itemOne.name].repairWith ?? []).concat([itemOne.name])
+    let fixMaterials = (registry.itemsByName[itemOne.name].repairWith ?? []).concat([itemOne.name])
     if (itemOne.name !== 'enchanted_book') fixMaterials = fixMaterials.concat(['enchanted_book'])
     return fixMaterials.includes(itemTwo.name)
   }

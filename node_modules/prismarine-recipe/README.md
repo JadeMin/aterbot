@@ -81,6 +81,11 @@ This is what it looks like for the chest recipe:
 
 ## History
 
+### 1.3.0
+
+* mcData to registry refactoring (@Epirito)
+* Fixed RecipeItemConstructor Type and default export (@psu-de)
+
 ### 1.2.0
 
 * Bump mcdata

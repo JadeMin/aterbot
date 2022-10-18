@@ -1,10 +1,10 @@
 const Vec3 = require('vec3').Vec3
 const EventEmitter = require('events').EventEmitter
 
-module.exports = (version) => {
-  const ChatMessage = require('prismarine-chat')(version)
-  const Item = require('prismarine-item')(version)
-  const mcData = require('minecraft-data')(version)
+module.exports = (registryOrVersion) => {
+  const registry = typeof registryOrVersion === 'string' ? require('prismarine-registry')(registryOrVersion) : registryOrVersion
+  const ChatMessage = require('prismarine-chat')(registry)
+  const Item = require('prismarine-item')(registry)
   class Entity extends EventEmitter {
     constructor (id) {
       super()
@@ -41,7 +41,7 @@ module.exports = (version) => {
       if (this.name !== 'item' && this.name !== 'Item' && this.name !== 'item_stack') {
         return null // not a dropped item
       }
-      return Item.fromNotch(this.metadata[mcData.supportFeature('metadataIxOfItem')])
+      return Item.fromNotch(this.metadata[registry.supportFeature('metadataIxOfItem')])
     }
   }
 

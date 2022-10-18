@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-const expect = require('expect')
+const expect = require('expect').default
 
 describe('MessageBuilder', () => {
   describe('1.16.5', () => {

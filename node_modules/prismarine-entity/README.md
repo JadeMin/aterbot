@@ -128,6 +128,10 @@ returns a `prismarine-item` Item object for the dropped item, if this is a dropp
 
 ## History
 
+### 2.2.0
+
+* mcData to registry refactoring (step towards #2450)
+
 ### 2.1.1
 
 * Update mcdata

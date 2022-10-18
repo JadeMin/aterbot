@@ -12,7 +12,8 @@ A parser for a minecraft chat message
 ## Usage
 
 ```js
-const ChatMessage = require('prismarine-chat')('1.16')
+const registry = require('prismarine-registry')('1.16')
+const ChatMessage = require('prismarine-chat')(registry)
 
 const msg = new ChatMessage({"text":"Example chat mesasge"})
 console.log(msg.toString()) // Example chat message
@@ -60,7 +61,8 @@ Appends another ChatMessage or a string
 Returns a clone of the ChatMessage
 
 ```js
-const { MessageBuilder } = require('prismarine-chat')('1.16')
+const registry = require('prismarine-registry')('1.16')
+const { MessageBuilder } = require('prismarine-chat')(registry)
 
 const msg = new MessageBuilder().setText('Example chat mesasge')
 console.log(JSON.stringify(msg)) // The string as a message component
@@ -70,6 +72,10 @@ console.log(JSON.stringify(msg)) // The string as a message component
 #### static ChatMessage.fromNotch(msg)
 
 Returns a prismarine-chat representation of the message recieved from the 'chat' packet, example shown [here](examples/minecraftprotocol_fromnotch/fromnotch.js)
+
+#### static ChatMessage.fromNetwork(messageType, messageParameters)
+
+(1.19+) Loads a chat message sent by server that needs to be formatted on client side.
 
 ### MessageBuilder()
 

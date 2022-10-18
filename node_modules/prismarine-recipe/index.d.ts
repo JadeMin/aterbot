@@ -21,9 +21,11 @@ declare class RecipeItem {
     static clone(recipeItem: RecipeItem): RecipeItem;
 }
 type RecipeConstructor = typeof Recipe;
-type RecipeItemConstructor = typeof Recipe;
+type RecipeItemConstructor = typeof RecipeItem;
 declare interface RecipeClasses {
     Recipe: RecipeConstructor;
     RecipeItem: RecipeItemConstructor;
 }
-export declare function loader(mcVersion: string): RecipeClasses;
+declare function loader(mcVersion: string): RecipeClasses;
+export default loader;
+

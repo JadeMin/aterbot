@@ -2,9 +2,10 @@
 /// <reference types="prismarine-item" />
 
 import {EventEmitter} from 'events';
+import TypedEmitter from 'typed-emitter'
 import {Item} from 'prismarine-item';
 
-export class Window extends EventEmitter {
+export class Window<T = unknown> extends (EventEmitter as new <T>() => TypedEmitter<T>)<T> {
     constructor (id: number, type: number | string, title: string, slotCount: number, inventorySlotsRange: { start: number, end: number }, craftingResultSlot: number, requiresConfirmation: boolean);
 
     /**

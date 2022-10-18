@@ -81,4 +81,17 @@ describe('supportFeature', () => {
       assert.equal(newVal, v, `Failed on mc version ${k} | Expected: ${v}, Got: ${newVal}`)
     }
   })
+
+  it('handles "_major" correctly on itemSerializationUsesBlockId', function () {
+    const mcData1Dot9 = require('minecraft-data')('1.9')
+    const mcData1Dot17 = require('minecraft-data')('1.12.2')
+    assert.equal(mcData1Dot9.supportFeature('itemSerializationUsesBlockId'), true)
+    assert.equal(mcData1Dot17.supportFeature('itemSerializationUsesBlockId'), true)
+  })
+
+  it('works on bedrock', function () {
+    const mcData = require('minecraft-data')('bedrock_1.18.0')
+    assert.equal(mcData.supportFeature('newRecipeSchema'), true)
+    assert.equal(mcData.supportFeature('fakeRecipeSchema'), false)
+  })
 })

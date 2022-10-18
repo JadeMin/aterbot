@@ -26,7 +26,7 @@ const supportedColors = {
   r: 'reset'
 }
 
-function loader (version) {
+function loader (registry) {
   class MessageBuilder {
     constructor () {
       this.with = []

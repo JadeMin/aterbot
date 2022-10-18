@@ -23,6 +23,7 @@ module.exports = function (mcData) {
     enchantmentsByName: indexer.buildIndexFromArray(mcData.enchantments, 'name'),
 
     entitiesByName: indexer.buildIndexFromArray(mcData.entities, 'name'),
+    entitiesById: indexer.buildIndexFromArray(mcData.entities, 'id'),
     mobsById: mcData.entities === undefined
       ? undefined
       : indexer.buildIndexFromArray(mcData.entities.filter(e => e.type === 'mob'), 'id'),
