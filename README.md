@@ -21,15 +21,15 @@ What You'll need
 
 # Setup ⚙
 1. Fork this repository, and edit the ``config.json`` file.
-2. Go to https://dashboard.heroku.com/ and create a new application.
-3. Once you've created a new application, Right click on the ``Open App`` button at the top and click a button like ``Copy Link``.
-4. Go to the ``Deploy`` section and select the repository that you forked.
-5. Select ``main`` and click on ``Deploy Branch``.
-6. Click on the ``More`` button at the top and click ``Restart all Dynos``.
-8. Go to https://uptimerobot.com/dashboard.
+2. Go to [https://dashboard.heroku.com/](Heroku) and create a new application and wait for it to done.
+3. Right click on ``Open App`` at the top and click ``Copy Link``.
+4. Go to the ``Deploy`` section and select the repository you forked.
+5. Select ``main`` and click ``Deploy Branch``.
+6. Click ``More`` at the top and ``Restart all Dynos``.
+8. Go to [https://uptimerobot.com/dashboard](UptimeRobot).
 9. Click ``Add New Monitor`` and select ``Monitor Type`` to ``HTTP(s)``.
 10. Paste the link you copied in ``Step 3`` into ``URL (or IP)``.
-11. Click the ``Create Monitor`` button at the bottom and click one more time.
+11. Just ``Create Monitor``
 12. Finally... DONE! Enjoy your free 24/7 Aternos server.
 
 

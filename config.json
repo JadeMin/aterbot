@@ -3,7 +3,7 @@
 	"port": "Enter your server port",
 	"username": "Enter the AFKBot's username you want (Whatever doesn't matter)",
 	"logger": [ true
-		, "true : displays not necessary logs. (ex: key input logs)",
+		,"true : displays not necessary logs. (ex: key input logs)",
 		"false : displays only necessary logs."
 	],
 

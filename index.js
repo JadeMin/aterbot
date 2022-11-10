@@ -4,12 +4,10 @@ const CONFIG = require("./config.json");
 
 let connected = false;
 const actions = ['forward', 'back', 'left', 'right', 'jump'];
-const sleep = ms=> new Promise(resovle=> setTimeout(resovle, ms));
-const getRandom = array=> array[Math.floor(Math.random() * (array.length - 0)) + 0];
+const sleep = ms => new Promise(resovle => setTimeout(resovle, ms));
+const getRandom = array => array[Math.floor(Math.random() * (array.length - 0)) + 0];
 const cLog = (msg, ...args) => {
-	if(CONFIG.logger[0]) {
-		console.log(msg, ...args);
-	}
+	if(CONFIG.logger[0]) console.log(msg, ...args);
 };
 
 
@@ -74,7 +72,7 @@ function createAFKBot() {
 		
 		reconnect();
 	});
-	bot.on('kicked', async (rawResponse) => {
+	bot.on('kicked', async rawResponse => {
 		const response = JSON.parse(rawResponse);
 		if(!(response instanceof Error)) {
 			console.error(`\n\nAFKbot is disconnected by reason: ${response?.with?.map(v=> v.text).join('\n')}`);
