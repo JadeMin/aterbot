@@ -6,7 +6,7 @@
 
 # Let's Get Started!
 # Requirements 🎒
-What You'll need
+What you'll need
 
 1. A Heroku account. (It's free and simple)  
 	Sign up at: https://signup.heroku.com/login
