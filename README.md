@@ -22,7 +22,7 @@ What you'll need
 # Setup ⚙
 1. Fork this repository, and edit the ``config.json`` file.
 2. Go to [https://dashboard.heroku.com/](Heroku).
-3. Create a new application and wait for it to done.
+3. Create a new application.
 4. Right click on ``Open App`` at the top and click ``Copy Link``.
 5. Go to the ``Deploy`` section and select the repository you forked.
 6. Select ``main`` and click ``Deploy Branch``.
