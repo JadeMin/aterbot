@@ -15,7 +15,7 @@ What You'll need
 	Sign up at: https://uptimerobot.com/signUp
 
 2. An Aternos server or Any Minecraft server you owned.  
-	And make sure your server settings ``online-mode`` set to ``false``.
+	And make sure your server settings ``online-mode`` set to ``false``!
 3. A Github account.
 
 
