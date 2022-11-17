@@ -1,7 +1,7 @@
 {
 	"host": "Enter your server ip or url",
 	"port": "Enter your server port",
-	"username": "Enter the AFKBot's username you want",
+	"username": "Enter the AFK bot's username you want",
 	"logger": [ true
 		,"true : display not necessary logs. (ex: key input logs)",
 		"false : display only necessary logs."
