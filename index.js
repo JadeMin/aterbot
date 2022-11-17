@@ -3,7 +3,6 @@ const mineflayer = require('mineflayer');
 const CONFIG = require("./config.json");
 
 let connected = false;
-const actions = ['forward', 'back', 'left', 'right', 'jump'];
 const sleep = ms => new Promise(resovle => setTimeout(resovle, ms));
 const getRandom = array => array[Math.floor(Math.random() * (array.length - 0)) + 0];
 const cLog = (msg, ...args) => {
@@ -13,11 +12,11 @@ const cLog = (msg, ...args) => {
 
 
 async function reconnect() {
-	console.log(`Trying to reconnect in ${CONFIG.retryTimes.text}...\n`);
+	console.log(`Trying to reconnect in ${CONFIG.retryTimes / 1000}s...\n`);
 	connected = false;
 
 
-	await sleep(CONFIG.retryTimes.ms);
+	await sleep(CONFIG.retryTimes);
 	createAFKBot();
 }
 function createAFKBot() {
@@ -33,7 +32,7 @@ function createAFKBot() {
 		
 		async function doMoving() {
 			if(connected) {
-				const lastAction = getRandom(actions);
+				const lastAction = getRandom(CONFIG.actions);
 
 				bot.setControlState(lastAction, true); // starts the selected random action
 				if(Math.random() < 0.5) { // 50% chance

@@ -9,9 +9,7 @@
 
 
 	"DO NOT EDIT ANY OPTIONS BELOW IF YOU DON'T KNOW YOU DOING": "",
+	"actions": ["forward", "back", "left", "right", "jump"],
 	"actionDelays": [500, 1000, 1500, 2000, 2500, 3000],
-	"retryTimes": {
-		"ms": "30000",
-		"text": "30s"
-	}
+	"retryTimes": 30000
 }
