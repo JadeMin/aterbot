@@ -4,7 +4,7 @@
 	"username": "Enter the AFK bot's username you want",
 	"logger": [ true
 		,"true : display not necessary logs. (ex: key inputs on the bot)",
-		"false : display only necessary logs. (ex: errors on the bot and server)"
+		"false : display only necessary logs. (ex: errors on the bot & server)"
 	],
 
 
