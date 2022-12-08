@@ -1,7 +1,7 @@
 {
-	"host": "Enter your server ip or url",
-	"port": "Enter your server port",
-	"username": "Enter the AFK bot's username you want",
+	"host": "HAIYANA_SMP.aternos.me",
+	"port": "52757",
+	"username": "GENIUS BOT",
 	"logger": [ true
 		,"true : display not necessary logs. (ex: key inputs on bot)",
 		"false : display only necessary logs. (ex: errors on bot & server)"
