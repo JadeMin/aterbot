@@ -74,7 +74,7 @@ function createAFKBot() {
 	bot.on('kicked', async rawResponse => {
 		const response = JSON.parse(rawResponse);
 		if(!(response instanceof Error)) {
-			console.error(`\n\nAFKbot is disconnected by reason: ${response?.with?.map(v=> v.text).join('\n')}`);
+			console.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
 		}
 
 		reconnect();
