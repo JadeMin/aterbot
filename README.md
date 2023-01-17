@@ -15,22 +15,23 @@ What you'll need
 	Sign up at: https://uptimerobot.com/signUp
 
 2. A Minecraft server you owned.  
-	And make sure your server settings ``online-mode`` set to ``false``!
+	Make sure your server settings ``online-mode`` set to ``false``!
 
 
 # Setup ⚙
 1. Go to [https://replit.com/](Repl).
-2. Click the `+` button in the top right
-3. Click `Import from GitHub` at the close Button.
-3. Put `https://github.com/JadeMin/aternos-afkbot.git` into the ``GitHub URL`` section and click `Create Repl`!
-4. Click `Secrets` in the left `Tools` menu.
-5. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
-5. Click ``Run`` at the top and wait for it done.
-7. Go to [https://uptimerobot.com/dashboard](UptimeRobot).
-8. Click ``Add New Monitor`` and select ``Monitor Type`` to ``HTTP(s)``.
-9. Paste the link you copied in ``Step 3`` into ``URL (or IP)``.
-10. Click ``Create Monitor`` 2 times.
-11. Finally... DONE! Enjoy your free 24/7 Aternos server.
+2. Click the `+` button in the top right.
+3. Click `Import from GitHub` at the close button.
+4. Put `https://github.com/JadeMin/aternos-afkbot.git` into the ``GitHub URL`` section and click `Create Repl`!
+5. Click `Secrets` in the left `Tools` menu.
+6. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
+7. Click ``Run`` at the top and wait for it done.
+8. If everything ok, you will see `Webview` tab on the Repl and copy the url.
+9. Go to [https://uptimerobot.com/dashboard](UptimeRobot).
+10. Click ``Add New Monitor`` and select ``Monitor Type`` to ``HTTP(s)``.
+11. Paste the link copied in ``Step 8`` into ``URL (or IP)``.
+12. Click ``Create Monitor`` 2 times.
+13. Finally... DONE! Enjoy your free 24/7 Aternos server.
 
 
 # CAUTION ⚠

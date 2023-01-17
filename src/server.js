@@ -28,9 +28,6 @@ const Bot = new AFKBot();
 		Server.get('/dashboard/*', (request, response) => {
 			response.sendFile(`${__dirname}/public/index.html`);
 		});
-		Server.get('/ping', (request, response) => {
-			response.send("Pong!");
-		});
 		Server.post('/api/verify', async (request, response) => {
 			// verify the password using request body content
 			if(SHA256(process.env['PASSWORD']) !== request.body.password) {

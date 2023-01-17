@@ -20,7 +20,6 @@
 		"esbuild": "^0.17.1",
 		"express": "^4.18.2",
 		"mineflayer": "^4.6.0",
-		"websocket": "^1.0.34",
 		"ws": "^8.12.0"
 	}
 }
