@@ -2,6 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
 ### This AFK Bot will keep your Aternos server alive 24/7.
 #### If you having any problems or errors, please let me know by creating an Issue.  
+## Updated `01/18/2023`
 <br/>
 
 # Let's Get Started!
