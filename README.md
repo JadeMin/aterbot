@@ -23,6 +23,7 @@ What you'll need
 2. Click the `+` button in the top right.
 3. Click `Import from GitHub` at the close button.
 4. Put `https://github.com/JadeMin/aternos-afkbot.git` into the ``GitHub URL`` section and click `Create Repl`!
+5. Edit the `config.json` file so bot can join your server.
 5. Click `Secrets` in the left `Tools` menu.
 6. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
 7. Click ``Run`` at the top and wait for it done.
