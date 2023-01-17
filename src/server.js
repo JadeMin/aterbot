@@ -22,7 +22,7 @@ console.debug("Build Success!");
 
 (function DashboardServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-	const verify = req=> SHA256("SIVAL") === req.headers['authorization'];
+	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 	Server.get('/dashboard/*', (request, response) => {
