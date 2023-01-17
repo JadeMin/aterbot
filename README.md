@@ -21,7 +21,7 @@ What you'll need
 
 
 # Setup ⚙
-1. Go to [https://replit.com/](Repl).
+1. Go to [Repl It](https://replit.com/).
 2. Click the `+` button in the top right and click `Import from GitHub` at the close button.
 4. Put `https://github.com/JadeMin/aternos-afkbot.git` into the `GitHub URL` section and click `Create Repl`!
 5. Edit the `config.json` file so bot can join your server.
@@ -32,7 +32,7 @@ What you'll need
 10. Go to the url copied in `Step 8` and press `login` at the top menu
 11. Enter the password you've put in `Step 7` and go to dashboard home then click `Join Bot`.
 12. Now the bot will be connected your server (`config.json`).
-10. Go to [https://uptimerobot.com/dashboard](UptimeRobot).
+10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
 12. Paste the url copied in `Step 8` into `URL (or IP)`.
 13. Click `Create Monitor` 2 times.
