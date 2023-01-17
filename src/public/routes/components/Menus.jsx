@@ -7,7 +7,7 @@ export default () => (
 		items={[
 			{
 				label: (
-					<a href="dashboard">
+					<a href="/dashboard">
 						Dashboard
 					</a>
 				)
