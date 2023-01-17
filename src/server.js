@@ -22,7 +22,7 @@ const Bot = new AFKBot();
 
 	(function DashboardServer() {
 		const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-		const verify = req=> SHA256('sival') === req.headers['authorization'];
+		const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
 		Server.use(Express.static(`public`));
 		Server.use(Express.json());
 		Server.get('/dashboard/*', (request, response) => {
@@ -31,9 +31,9 @@ const Bot = new AFKBot();
 		Server.post('/api/verify', async (request, response) => {
 			// verify the password using request body content
 			if(verify(request)) {
-				return response.send({status: 'wrong'});
-			} else {
 				return response.send({status: 'correct'});
+			} else {
+				return response.send({status: 'wrong'});
 			}
 		});
 		Server.post('/api/connect', async (request, response) => {

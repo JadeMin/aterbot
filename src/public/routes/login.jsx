@@ -25,10 +25,9 @@ export default () => {
 		const verify = async (password) => {
 			const response = await fetch('/api/verify', {
 				method: 'POST',
-				headers: {"Content-Type": "application/json"},
-				body: JSON.stringify({
-					password: password
-				})
+				headers: {
+					"Authorization": password
+				}
 			});
 			const data = await response.json();
 			return data.status === 'correct'
