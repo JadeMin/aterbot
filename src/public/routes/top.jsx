@@ -2,6 +2,9 @@ import React, {
 	useState, useEffect
 } from 'react';
 import {
+	useNavigate
+} from 'react-router-dom';
+import {
 	PlusOutlined,
 	PoweroffOutlined,
 } from '@ant-design/icons';
@@ -17,10 +20,22 @@ export default () => {
 	const [notiApi, contextHolder] = notification.useNotification();
 	const [joining, setJoining] = useState(false);
 	const [exiting, setExiting] = useState(false);
+	const navigate = useNavigate();
+	useEffect(() => {
+		if(localStorage.getItem('pw') === null) {
+			alert("You're not logged in.\nPlease log in.");
+			navigate("/login");
+		}
+	});
 
 	const loginBot = async () => {
 		setJoining(true);
-		const response = await fetch('/api/connect', {method: 'POST'});
+		const response = await fetch('/api/connect', {
+			method: 'POST',
+			headers: {
+				'Authorization': localStorage.getItem('pw')
+			}
+		});
 		const data = await response.json();
 		notiApi[data.status]({
 			message: data.message,
@@ -61,7 +76,7 @@ export default () => {
 						loading={exiting}
 						onClick={logoutBot}
 					>
-						Exit Bot
+						Quit Bot
 					</Button>
 				</Space>
 			</Row>

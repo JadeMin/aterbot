@@ -16,37 +16,51 @@ import {
 export default () => {
 	const [notiApi, contextHolder] = notification.useNotification();
 	const navigate = useNavigate();
-	const SHA256 = async (data) => {
-		const buffers = new TextEncoder().encode(data);
-		const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
-		return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
-	};
-	const verify = async (password) => {
-		const response = await fetch('/api/verify', {
-			method: 'POST',
-			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify({
-				password: await SHA256(password)
-			})
-		});
-		const data = await response.json();
-		if(data.status === 'success') {
-			alert("Seccessfully Logged in.");
-			navigate(-1, {replace: true});
-		} else {
-			sessionStorage.removeItem('pw');
-			alert(data.message);
-
-			location.reload();
-		}
-	};
 	useEffect(async () => {
-		if(sessionStorage.getItem('pw') !== null) {
-			await verify(sessionStorage.getItem('pw'));
+		const SHA256 = async (data) => {
+			const buffers = new TextEncoder().encode(data);
+			const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
+			return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
+		};
+		const verify = async (password) => {
+			const response = await fetch('/api/verify', {
+				method: 'POST',
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify({
+					password: password
+				})
+			});
+			const data = await response.json();
+			return data.status === 'correct'
+		};
+
+		if(localStorage.getItem('pw') !== null) {
+			if(await verify(localStorage.getItem('pw'))){
+				if(confirm("You've been already logged in.\nDo you mean log out?")) {
+					localStorage.removeItem('pw');
+					navigate(-1);
+				} else {
+					navigate(-1);
+				}
+			} else {
+				alert("The saved password is incorrect.\nPlease input your password again.");
+				localStorage.removeItem('pw');
+				alert("You've been logged out now.");
+				location.reload();
+			}
 		} else {
-			const input = prompt("Input your password:");
-			if(input.length === 0) return navigate(-1);
-			await verify(input);
+			const _pw = prompt("Input your password:");
+			if(_pw !== null) {
+				const hashedPw = await SHA256(_pw);
+				if(await verify(hashedPw)) {
+					localStorage.setItem('pw', hashedPw);
+				} else {
+					alert("The password is incorrect.\nPlease try again.");
+					location.reload();
+				}
+			} else {
+				return navigate(-1);
+			}
 		}
 	}, []);
 

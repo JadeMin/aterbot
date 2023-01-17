@@ -1,8 +1,8 @@
 {
 	"settings": {
-		"host": "Enter your server ip or url",
-		"port": "Enter your server port",
-		"username": "Enter the AFK bot's username you want"
+		"host": "Please enter your server ip or url",
+		"port": "Please enter your server port",
+		"username": "Please enter the bot's username you want"
 	},
 
 	"server": {

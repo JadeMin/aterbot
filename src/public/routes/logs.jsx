@@ -2,6 +2,9 @@ import React, {
 	useState, useEffect
 } from 'react';
 import {
+	useNavigate
+} from 'react-router-dom';
+import {
 	Layout, Space, Grid, Row,
 	Menu,
 	Button, Input,
@@ -11,13 +14,21 @@ import {
 
 export default () => {
 	const [logs, setLogs] = useState([]);
+	const navigate = useNavigate();
+	useEffect(() => {
+		if(localStorage.getItem('pw') === null) {
+			message.error("You're not logged in.\nPlease log in.");
+			navigate("/login");
+		}
+	}, []);
 	useEffect(() => {
 		WebSocket.prototype.defaultSend = WebSocket.prototype.send;
 		WebSocket.prototype.send = function(data) {
 			this.defaultSend(JSON.stringify(data));
 		};
-
-		const ws = new WebSocket(`wss://${location.hostname}:3001`);
+		
+		const isSecure = location.protocol === 'https:';
+		const ws = new WebSocket(`${isSecure? 'wss':'ws'}://${location.hostname}:3001`);
 		ws.onopen = () => {
 			console.debug('WebSocket connected');
 			ws.send({
@@ -37,11 +48,11 @@ export default () => {
 	return (
 		<Row justify="center">
 			<Space wrap direction="vertical">
-				<Button
+				{/*<Button
 					type="primary"
 				>
 					Clear logs
-				</Button>
+				</Button>*/}
 				<Input.TextArea
 					autoSize
 					disabled

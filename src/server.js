@@ -23,6 +23,7 @@ const Bot = new AFKBot();
 
 	(function DashboardServer() {
 		const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
+		const verify = req=> SHA256('sival') === req.headers['authorization'];
 		Server.use(Express.static(`public`));
 		Server.use(Express.json());
 		Server.get('/dashboard/*', (request, response) => {
@@ -30,16 +31,10 @@ const Bot = new AFKBot();
 		});
 		Server.post('/api/verify', async (request, response) => {
 			// verify the password using request body content
-			if(SHA256(process.env['PASSWORD']) !== request.body.password) {
-				return response.send({
-					status: 'error',
-					message: "The password you input is incorrect."
-				});
+			if(verify(request)) {
+				return response.send({status: 'wrong'});
 			} else {
-				return response.send({
-					status: 'success',
-					message: "The password is correct."
-				});
+				return response.send({status: 'correct'});
 			}
 		});
 		Server.post('/api/connect', async (request, response) => {
@@ -47,6 +42,11 @@ const Bot = new AFKBot();
 				status: 'error',
 				message: "The bot has been already connected"
 			});
+			if(!verify(request)) return response.send({
+				status: 'error',
+				message: "You've logged in with the wrong password.\nPlease login again."
+			});
+
 
 			try {
 				await Bot.connect();
@@ -67,6 +67,11 @@ const Bot = new AFKBot();
 				status: 'error',
 				message: "The bot is currently not connected"
 			});
+			if(!verify(request)) return response.send({
+				status: 'error',
+				message: "You're logged in with the wrong password.\nPlease login again."
+			});
+
 
 			try {
 				await Bot.disconnect();

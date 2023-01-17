@@ -61,7 +61,7 @@ export default class AFKBot {
 				Logger.error(`AFKBot got an error: ${error}`);
 				if(!this.first) this.reconnect();
 				
-				return reject(JSON.parse(error));
+				return reject(error);
 			});
 			Bot.once('kicked', async rawResponse => {
 				Logger.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
