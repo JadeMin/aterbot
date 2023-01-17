@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'url';
-import FS from 'fs';
 import Crypto from 'node:crypto';
 import Express from 'express';
 import { WebSocketServer } from 'ws';
