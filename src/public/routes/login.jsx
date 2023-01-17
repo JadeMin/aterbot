@@ -14,7 +14,6 @@ import {
 } from 'antd';
 
 export default () => {
-	const [notiApi, contextHolder] = notification.useNotification();
 	const navigate = useNavigate();
 	useEffect(async () => {
 		const SHA256 = async (data) => {
@@ -66,7 +65,6 @@ export default () => {
 
 	return (
 		<>
-			{contextHolder}
 			<Result
 				status="404"
 				title="404 - Not Found"
