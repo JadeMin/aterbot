@@ -1,6 +1,6 @@
 # Aternos AFKBot ✨  
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
-## `01/17/2023` Updated, Now Using Repl because Heroku isn't free anymore.
+## `01/17/2023`, Now Using Repl because Heroku isn't free anymore.
 ### This AFK Bot will keep your Aternos server alive 24/7.
 #### If you having any problems or errors, please let me know by creating an Issue.
 <br/>
