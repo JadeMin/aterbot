@@ -43,7 +43,6 @@ export default () => {
 			} else {
 				localStorage.removeItem('pw');
 				alert("The saved password is incorrect.\nPlease input your password again.");
-				alert("You've been logged out now.");
 				location.reload();
 			}
 		} else {
