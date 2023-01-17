@@ -41,8 +41,8 @@ export default () => {
 					navigate(-1);
 				}
 			} else {
-				alert("The saved password is incorrect.\nPlease input your password again.");
 				localStorage.removeItem('pw');
+				alert("The saved password is incorrect.\nPlease input your password again.");
 				alert("You've been logged out now.");
 				location.reload();
 			}
@@ -52,6 +52,8 @@ export default () => {
 				const hashedPw = await SHA256(_pw);
 				if(await verify(hashedPw)) {
 					localStorage.setItem('pw', hashedPw);
+					alert("You've been logged in.");
+					navigate(-1);
 				} else {
 					alert("The password is incorrect.\nPlease try again.");
 					location.reload();
