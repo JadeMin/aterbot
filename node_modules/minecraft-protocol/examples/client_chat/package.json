@@ -1,9 +1,0 @@
-{
-  "name": "node-minecraft-protocol-example",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "prismarine-chat": "^1.0.2"
-  },
-  "description": "A node-minecraft-protocol example"
-}

@@ -1,15 +1,17 @@
 {
-	"host": "Enter your server ip or url",
-	"port": "Enter your server port",
-	"username": "Enter the AFK bot's username you want",
-	"logger": [ true
-		,"true : display not necessary logs. (ex: key inputs on bot)",
-		"false : display only necessary logs. (ex: errors on bot & server)"
-	],
+	"settings": {
+		"host": "KlartNET1.aternos.me",
+		"port": "63602",
+		"username": "TEST_AFKBOT"
+	},
 
-
-	"DO NOT EDIT ANY OPTIONS BELOW IF YOU DON'T KNOW YOU DOING": "",
-	"actions": ["forward", "back", "left", "right", "jump"],
-	"actionDelays": [500, 1000, 1500, 2000, 2500, 3000],
-	"retryTimes": 30000
+	"server": {
+		"! DO NOT EDIT BELOW !": "ONLY IF YOU KNOW WHAT YOU'RE DOING",
+		"logLevel": ["error", "log", "debug"],
+		"action": {
+			"commands": ["forward", "back", "left", "right", "jump"],
+			"holdDelays": [1000, 2000, 3000, 4000, 5000, 6000],
+			"retryDelay": 5000
+		}
+	}
 }
