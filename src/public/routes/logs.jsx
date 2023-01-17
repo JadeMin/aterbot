@@ -28,7 +28,7 @@ export default () => {
 		ws.onmessage = (message) => {
 			const msg = JSON.parse(message.data);
 			if(msg.type === 'subscription' && msg.target === 'logs') {
-				setLogs(msg.data.join('\n'));
+				setLogs(msg.data);
 			}
 		};
 	}, []);
@@ -37,9 +37,11 @@ export default () => {
 	return (
 		<Row justify="center">
 			<Space wrap direction="vertical">
-				{/*<Button type="primary">
+				<Button
+					type="primary"
+				>
 					Clear logs
-				</Button>*/}
+				</Button>
 				<Input.TextArea
 					autoSize
 					disabled
