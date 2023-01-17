@@ -45,7 +45,12 @@ export default () => {
 	};
 	const logoutBot = async () => {
 		setExiting(true);
-		const response = await fetch('/api/disconnect', {method: 'POST'});
+		const response = await fetch('/api/disconnect', {
+			method: 'POST',
+			headers: {
+				'Authorization': localStorage.getItem('pw')
+			}
+		});
 		const data = await response.json();
 		notiApi[data.status]({
 			message: data.message,
