@@ -29,12 +29,12 @@ What you'll need
 7. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
 8. Click `Run` at the top and wait for it done.
 9. If everything ok, you will see `Webview` tab on the Repl then copy the url.
-10. Go to the url copied in `Step 8` and press `login` at the top menu
+10. Go to the url copied in `Step 9` and press `login` at the top menu
 11. Enter the password you've put in `Step 7` and go to dashboard home then click `Join Bot`.
 12. Now the bot will be connected your server (`config.json`).
 10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
-12. Paste the url copied in `Step 8` into `URL (or IP)`.
+12. Paste the url copied in `Step 9` into `URL (or IP)`.
 13. Click `Create Monitor` 2 times.
 16. Finally... DONE! Enjoy your free 24/7 Aternos server.
 
