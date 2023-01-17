@@ -17,7 +17,7 @@ export default () => {
 			this.defaultSend(JSON.stringify(data));
 		};
 
-		const ws = new WebSocket(`ws://${location.hostname}:3001`);
+		const ws = new WebSocket(`wss://${location.hostname}:3001`);
 		ws.onopen = () => {
 			console.debug('WebSocket connected');
 			ws.send({
