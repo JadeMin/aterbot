@@ -8,10 +8,10 @@
 # Requirements 🎒
 What you'll need
 
-1. A Repl account.
+1. A Repl account.  
 	Sign up at: https://replit.com/signup
 
-2. An UptimeRobot account.
+2. An UptimeRobot account.  
 	Sign up at: https://uptimerobot.com/signUp
 
 2. A Minecraft server you owned.  
