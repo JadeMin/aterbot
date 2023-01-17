@@ -31,17 +31,24 @@ export default () => {
 			const data = await response.json();
 			return data.status === 'correct'
 		};
+		const PW = {
+			get: ()=> localStorage.getItem('pw'),
+			set: data=> localStorage.setItem('pw', data),
+			remove: ()=> localStorage.removeItem('pw')
+		};
 
-		if(localStorage.getItem('pw') !== null) {
-			if(await verify(localStorage.getItem('pw'))){
+
+
+		if(PW.get() !== null) {
+			if(await verify(PW.get())) {
 				if(confirm("You've been already logged in.\nDo you mean log out?")) {
-					localStorage.removeItem('pw');
+					PW.remove();
 					navigate(-1);
 				} else {
 					navigate(-1);
 				}
 			} else {
-				localStorage.removeItem('pw');
+				PW.remove();
 				alert("The saved password is incorrect.\nPlease input your password again.");
 				location.reload();
 			}
@@ -49,8 +56,9 @@ export default () => {
 			const _pw = prompt("Input your password:");
 			if(_pw !== null) {
 				const hashedPw = await SHA256(_pw);
+
 				if(await verify(hashedPw)) {
-					localStorage.setItem('pw', hashedPw);
+					PW.set(hashedPw);
 					alert("You've been logged in.");
 					navigate(-1);
 				} else {
