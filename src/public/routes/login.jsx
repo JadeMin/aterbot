@@ -29,6 +29,7 @@ export default () => {
 				password: await SHA256(password)
 			})
 		});
+		
 		const data = await response.json();
 		if(data.status === 'success') {
 			alert("Seccessfully Logged in.");
