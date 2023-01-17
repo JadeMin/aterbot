@@ -4,6 +4,7 @@
 ### This AFK bot will keep your Aternos server alive 24/7.
 #### If you having any problems or errors, please let me know by creating an Issue.
 #### plz star this project <3
+<br/>
 
 # Let's Get Started!
 # Requirements 🎒
