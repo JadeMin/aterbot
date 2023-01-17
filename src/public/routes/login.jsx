@@ -21,34 +21,33 @@ export default () => {
 			const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
 			return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
 		};
-		const verify = async (password) => {
-			const response = await fetch('/api/verify', {
-				method: 'POST',
-				headers: {
-					"Authorization": password
-				}
-			});
-			const data = await response.json();
-			return data.status === 'correct'
-		};
-		const PW = {
+		const PWM = {
 			get: ()=> localStorage.getItem('pw'),
 			set: data=> localStorage.setItem('pw', data),
-			remove: ()=> localStorage.removeItem('pw')
+			remove: ()=> localStorage.removeItem('pw'),
+			
+			verify: async (password) => {
+				const response = await fetch('/api/verify', {
+					method: 'POST',
+					headers: {
+						'Authorization': password
+					}
+				});
+				const data = await response.json();
+				return data.correct;
+			}
 		};
 
-
-
-		if(PW.get() !== null) {
-			if(await verify(PW.get())) {
+		if(PWM.get() !== null) {
+			if(await PWM.verify(PWM.get())) {
 				if(confirm("You've been already logged in.\nDo you mean log out?")) {
-					PW.remove();
+					PWM.remove();
 					navigate(-1);
 				} else {
 					navigate(-1);
 				}
 			} else {
-				PW.remove();
+				PWM.remove();
 				alert("The saved password is incorrect.\nPlease input your password again.");
 				location.reload();
 			}
@@ -57,8 +56,8 @@ export default () => {
 			if(_pw !== null) {
 				const hashedPw = await SHA256(_pw);
 
-				if(await verify(hashedPw)) {
-					PW.set(hashedPw);
+				if(await PWM.verify(hashedPw)) {
+					PWM.set(hashedPw);
 					alert("You've been logged in.");
 					navigate(-1);
 				} else {

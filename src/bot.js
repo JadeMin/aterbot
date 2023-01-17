@@ -18,7 +18,7 @@ export default class AFKBot {
 		}*/
 		this.Bot = null;
 		this.connected = false;
-		this.first = false;
+		this.firstError = true;
 	};
 
 
@@ -59,13 +59,13 @@ export default class AFKBot {
 			});
 			Bot.once('error', error => {
 				Logger.error(`AFKBot got an error: ${error}`);
-				if(!this.first) this.reconnect();
+				if(this.firstError) this.reconnect();
 				
 				return reject(error);
 			});
 			Bot.once('kicked', async rawResponse => {
 				Logger.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
-				if(!this.first) this.reconnect();
+				if(this.firstError) this.reconnect();
 
 				return reject(JSON.parse(rawResponse));
 			});
@@ -73,7 +73,7 @@ export default class AFKBot {
 			Bot.once('login', () => {
 				Logger.log(`AFKBot logged in ${settings.username}\n\n`);
 				this.connected = true;
-				this.first = true;
+				this.firstError = false;
 			});
 		});
 	};

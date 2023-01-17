@@ -2,7 +2,7 @@ import ESBuild from 'esbuild';
 //import Plugin_HTML from '@chialab/esbuild-plugin-html';
 
 export default async () => {
-	return await ESBuild.context({
+	return await ESBuild.build({
 		platform: 'browser',
 		format: 'esm',
 		target: 'esnext',

@@ -22,19 +22,14 @@ console.debug("Build Success!");
 
 (function DashboardServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
+	const verify = req=> SHA256("SIVAL") === req.headers['authorization'];
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 	Server.get('/dashboard/*', (request, response) => {
 		response.sendFile(`${__dirname}/public/index.html`);
 	});
 	Server.post('/api/verify', async (request, response) => {
-		// verify the password using request body content
-		if(verify(request)) {
-			return response.send({status: 'correct'});
-		} else {
-			return response.send({status: 'wrong'});
-		}
+		return response.send({correct: verify(request)});
 	});
 	Server.post('/api/connect', async (request, response) => {
 		if(Bot.connected) return response.send({
