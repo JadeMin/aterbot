@@ -12,7 +12,7 @@ const port = {
 	socket: (process.env.PORT || 3000) + 1
 };
 const Server = Express();
-const WSS = new WebSocketServer({ port: port.socket });
+const WSS = new WebSocketServer({port: port.socket});
 const Bot = new AFKBot();
 
 
