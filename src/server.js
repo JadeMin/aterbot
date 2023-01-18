@@ -23,10 +23,9 @@ console.debug("Build Success!");
 (function WebServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
 	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
-
-
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
+
 	Server.get('/dashboard/*', (request, response) => {
 		response.sendFile(`${__dirname}/public/index.html`);
 	});
@@ -42,6 +41,7 @@ console.debug("Build Success!");
 			status: 'error',
 			message: "You've logged in with the wrong password.\nPlease login again."
 		});
+
 
 		try {
 			await Bot.connect();
@@ -67,6 +67,7 @@ console.debug("Build Success!");
 			message: "You're logged in with the wrong password.\nPlease login again."
 		});
 
+
 		try {
 			await Bot.disconnect();
 			return response.send({
@@ -85,9 +86,7 @@ console.debug("Build Success!");
 		return response.status(404).redirect('/dashboard/');
 	});
 
-	Server.listen(port.web, () => {
-		console.log('Web Dashboard is now running!');
-	});
+	Server.listen(port.web, ()=> console.log('Web Dashboard is now running!'));
 }());
 
 (function SocketServer() {
