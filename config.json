@@ -11,7 +11,7 @@
 		"action": {
 			"commands": ["forward", "back", "left", "right", "jump"],
 			"holdDelays": [1000, 2000, 3000, 4000, 5000, 6000],
-			"retryDelay": 5000
+			"retryDelay": 10000
 		}
 	}
 }

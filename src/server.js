@@ -11,6 +11,7 @@ const port = {
 	web: process.env.PORT || 3000,
 	socket: (process.env.PORT || 3000) + 1
 };
+
 const Server = Express();
 const WSS = new WebSocketServer({port: port.socket});
 const Bot = new AFKBot();
@@ -19,8 +20,7 @@ const Bot = new AFKBot();
 
 (await Build())//.watch();
 console.debug("Build Success!");
-
-(function DashboardServer() {
+(function WebServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
 	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
 	Server.use(Express.static(`public`));
@@ -97,20 +97,15 @@ console.debug("Build Success!");
 
 		ws.on('message', (message) => {
 			const msg = JSON.parse(message);
+
 			if(msg.type === 'subscribe') {
 				if(msg.target === 'logs') {
-					const logs = Bot.subscribeLogs(logs=> {
+					Bot.subscribeLogs(logs=> {
 						send({
 							type: 'subscription',
 							target: 'logs',
 							data: logs
 						});
-					});
-
-					send({
-						type: 'subscription',
-						target: 'logs',
-						data: logs
 					});
 				}
 			} else {

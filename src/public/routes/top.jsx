@@ -15,46 +15,36 @@ import {
 
 	message, notification
 } from 'antd';
+import { API, PWM } from "./.modules/api";
 
 export default () => {
 	const [notiApi, contextHolder] = notification.useNotification();
 	const [joining, setJoining] = useState(false);
 	const [exiting, setExiting] = useState(false);
-	const navigate = useNavigate();
-	useEffect(() => {
-		if(localStorage.getItem('pw') === null) {
-			alert("You're not logged in.\nPlease log in.");
-			navigate("/login");
-		}
-	});
 
 	const loginBot = async () => {
-		setJoining(true);
-		const response = await fetch('/api/connect', {
-			method: 'POST',
-			headers: {
-				'Authorization': localStorage.getItem('pw')
-			}
+		if(!PWM.saved()) return notiApi.warning({
+			message: "Please log in first."
 		});
-		const data = await response.json();
-		notiApi[data.status]({
-			message: data.message,
-			description: data.description
+
+		setJoining(true);
+		const response = await API.connect(localStorage.getItem('pw'));
+		notiApi[response.status]({
+			message: response.message,
+			description: response.description
 		});
 		setJoining(false);
 	};
 	const logoutBot = async () => {
-		setExiting(true);
-		const response = await fetch('/api/disconnect', {
-			method: 'POST',
-			headers: {
-				'Authorization': localStorage.getItem('pw')
-			}
+		if(!PWM.saved()) return notiApi.warning({
+			message: "Please log in first."
 		});
-		const data = await response.json();
-		notiApi[data.status]({
-			message: data.message,
-			description: data.description
+
+		setExiting(true);
+		const response = await API.disconnect(localStorage.getItem('pw'));
+		notiApi[response.status]({
+			message: response.message,
+			description: response.description
 		});
 		setExiting(false);
 	};

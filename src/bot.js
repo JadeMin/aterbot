@@ -83,7 +83,7 @@ export default class AFKBot {
 		this.connected = false;
 		
 		if(!now) {
-			Logger.log(`Trying to reconnect in ${action.retryDelay / 1000}s...\n`);
+			Logger.log(`Trying to reconnect in ${action.retryDelay / 1000} seconds...\n`);
 			await sleep(action.retryDelay);
 		}
 		return this.connect();
