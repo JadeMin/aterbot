@@ -86,7 +86,7 @@ console.debug("Build Success!");
 		return response.status(404).redirect('/dashboard/');
 	});
 
-	Server.listen(port.web, ()=> console.log('Web Dashboard is now running!'));
+	Server.listen(port.web, ()=> console.log("Web Dashboard is now running!"));
 }());
 
 (function SocketServer() {
@@ -95,7 +95,6 @@ console.debug("Build Success!");
 
 		ws.on('message', (message) => {
 			const msg = JSON.parse(message);
-
 			if(msg.type === 'subscribe') {
 				if(msg.target === 'logs') {
 					Bot.subscribeLogs(logs=> {
@@ -106,8 +105,6 @@ console.debug("Build Success!");
 						});
 					});
 				}
-			} else {
-				console.error('Unknown message type:', msg.type ?? msg);
 			}
 		});
 	});
