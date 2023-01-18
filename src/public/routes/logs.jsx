@@ -21,7 +21,7 @@ export default () => {
 		};
 		
 		const isSecure = location.protocol === 'https:';
-		const ws = new WebSocket(`${isSecure? 'wss':'ws'}://${location.hostname}:3001`);
+		const ws = new WebSocket(`${isSecure? 'wss':'ws'}://${location.hostname}:5501`);
 		ws.onopen = () => {
 			console.debug('WebSocket connected');
 			ws.send({
