@@ -8,8 +8,8 @@ import AFKBot from "./bot.js";
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const port = {
-	web: process.env.PORT || 3000,
-	socket: (process.env.PORT || 3000) + 1
+	web: process.env.PORT || 5500,
+	socket: (process.env.PORT || 5500) + 1
 };
 
 const Server = Express();
