@@ -8,6 +8,7 @@ import {
 import Main from "./routes/top";
 import Logs from "./routes/logs";
 import Login from "./routes/login";
+import Logout from "./routes/logout";
 import NotFound from "./routes/404";
 
 import Menus from "./routes/components/Menus";
@@ -32,6 +33,11 @@ createRoot(root).render(
 			<Route
 				path='/login'
 				element={<Login/>}
+			/>
+
+			<Route
+				path='/logout'
+				element={<Logout/>}
 			/>
 
 			<Route

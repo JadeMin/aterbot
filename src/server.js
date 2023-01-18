@@ -8,8 +8,8 @@ import AFKBot from "./bot.js";
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const port = {
-	web: process.env.PORT || 3000,
-	socket: (process.env.PORT || 3000) + 1
+	web: process.env.PORT || 5500,
+	socket: (process.env.PORT || 5500) + 1
 };
 
 const Server = Express();
@@ -22,7 +22,8 @@ const Bot = new AFKBot();
 console.debug("Build Success!");
 (function WebServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
+	const verify = req=> SHA256(process.env['PASSWORD'] || 'sival') === req.headers['authorization'];
+
 
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
@@ -41,7 +42,6 @@ console.debug("Build Success!");
 			status: 'error',
 			message: "You've logged in with the wrong password.\nPlease login again."
 		});
-
 
 		try {
 			await Bot.connect();
@@ -66,7 +66,6 @@ console.debug("Build Success!");
 			status: 'error',
 			message: "You're logged in with the wrong password.\nPlease login again."
 		});
-
 
 		try {
 			await Bot.disconnect();
