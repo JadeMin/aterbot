@@ -16,14 +16,15 @@ import { API, PWM } from "./.modules/api";
 
 export default () => {
 	const navigate = useNavigate();
-	const SHA256 = async (data) => {
-		if(!data) return null;
-
-		const buffers = new TextEncoder().encode(data);
-		const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
-		return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
-	};
 	useEffect(() => {
+		const SHA256 = async (data) => {
+			if(!data) return null;
+	
+			const buffers = new TextEncoder().encode(data);
+			const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
+			return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
+		};
+		
 		(async () => {
 			if(PWM.saved()) {
 				if(await API.verify(PWM.get())) {

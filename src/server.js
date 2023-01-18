@@ -23,6 +23,7 @@ console.debug("Build Success!");
 (function WebServer() {
 	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
 	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
+
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 	Server.get('/dashboard/*', (request, response) => {
@@ -89,7 +90,6 @@ console.debug("Build Success!");
 		console.log('Web Dashboard is now running!');
 	});
 }());
-
 
 (function SocketServer() {
 	WSS.on('connection', (ws) => {

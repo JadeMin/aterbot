@@ -2,26 +2,19 @@ import React, {
 	useState, useEffect
 } from 'react';
 import {
-	useNavigate
-} from 'react-router-dom';
-import {
 	Layout, Space, Grid, Row,
 	Menu,
 	Button, Input,
 
 	message, notification
 } from 'antd';
+import { API, PWM } from "./.modules/api";
 
 export default () => {
 	const [logs, setLogs] = useState([]);
-	const navigate = useNavigate();
+	const [msgApi, msgHolder] = message.useMessage();
 	useEffect(() => {
-		if(localStorage.getItem('pw') === null) {
-			message.error("You're not logged in.\nPlease log in.");
-			navigate("/login");
-		}
-	}, []);
-	useEffect(() => {
+		if(!PWM.saved()) return msgApi.warning("Please log in first.");
 		WebSocket.prototype.defaultSend = WebSocket.prototype.send;
 		WebSocket.prototype.send = function(data) {
 			this.defaultSend(JSON.stringify(data));
@@ -46,19 +39,22 @@ export default () => {
 
 
 	return (
-		<Row justify="center">
-			<Space wrap direction="vertical">
-				{/*<Button
-					type="primary"
-				>
-					Clear logs
-				</Button>*/}
-				<Input.TextArea
-					autoSize
-					disabled
-					value={logs}
-				/>
-			</Space>
-		</Row>
+		<>
+			{msgHolder}
+			<Row justify="center">
+				<Space wrap direction="vertical">
+					{/*<Button
+						type="primary"
+					>
+						Clear logs
+					</Button>*/}
+					<Input.TextArea
+						autoSize
+						disabled
+						value={logs}
+					/>
+				</Space>
+			</Row>
+		</>
 	)
 };
