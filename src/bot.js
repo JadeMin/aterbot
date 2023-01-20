@@ -98,6 +98,5 @@ export default class AFKBot {
 	};
 	subscribeLogs(callback) {
 		Logger.subscribe(callback);
-		return Logger.logs;
 	};
 };

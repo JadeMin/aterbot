@@ -34,6 +34,5 @@ export default class BotLogger {
 	};
 	subscribe(callback) {
 		this.callback = callback;
-		return this.logs;
 	};
 };
