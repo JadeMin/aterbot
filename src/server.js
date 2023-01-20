@@ -21,8 +21,8 @@ const Bot = new AFKBot();
 (await Build())//.watch();
 console.debug("Build Success!");
 (function WebServer() {
-	const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-	const verify = req=> SHA256(process.env['PASSWORD']) === req.headers['authorization'];
+	//const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
+	const verify = req=> (process.env['PASSWORD']) === req.headers['authorization'];
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 

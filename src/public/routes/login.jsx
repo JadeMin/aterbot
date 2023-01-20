@@ -17,15 +17,15 @@ import { API, PWM } from "./.modules/api";
 export default () => {
 	const navigate = useNavigate();
 	useEffect(() => {
-		const SHA256 = async (data) => {
+		/*const SHA256 = async (data) => {
 			if(data === null || data.length === 0) return null; 
 
 			const buffers = new TextEncoder().encode(data);
 			const hashBuffer = await crypto.subtle.digest('SHA-256', buffers);
 			return Array.from(new Uint8Array(hashBuffer)).map(b=> b.toString(16).padStart(2, '0')).join('');
-		};
+		};*/
 		(async () => {
-			const _pw = await SHA256(prompt("Input your password:"));
+			const _pw = prompt("Input your password:");
 
 			if(_pw !== null) {
 				if(await API.verify(_pw)) {

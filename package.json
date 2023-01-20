@@ -14,12 +14,12 @@
 		"antd": "^5.1.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.6.2"
+		"react-router-dom": "^6.7.0"
 	},
 	"devDependencies": {
-		"esbuild": "^0.17.1",
+		"esbuild": "^0.17.3",
 		"express": "^4.18.2",
-		"mineflayer": "^4.6.0",
+		"mineflayer": "^4.7.0",
 		"ws": "^8.12.0"
 	}
 }
