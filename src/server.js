@@ -95,16 +95,14 @@ console.debug("Build Success!");
 
 		ws.on('message', (message) => {
 			const msg = JSON.parse(message);
-			if(msg.type === 'subscribe') {
-				if(msg.target === 'logs') {
-					Bot.subscribeLogs(logs=> {
-						send({
-							type: 'subscription',
-							target: 'logs',
-							data: logs
-						});
+			if(msg.type === 'subscribe' && msg.target === 'logs') {
+				Bot.subscribeLogs(logs=> {
+					send({
+						type: 'subscription',
+						target: 'logs',
+						data: logs
 					});
-				}
+				});
 			}
 		});
 	});
