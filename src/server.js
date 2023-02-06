@@ -1,8 +1,8 @@
 import { fileURLToPath } from 'url';
-import Crypto from 'node:crypto';
 import Express from 'express';
-import { WebSocketServer } from 'ws';
+//import { WebSocketServer } from 'ws';
 
+import CONFIG from "../config.json" assert {type: 'json'};
 import Build from "../scripts/build.js";
 import AFKBot from "./bot.js";
 
@@ -13,16 +13,29 @@ const port = {
 };
 
 const Server = Express();
-const WSS = new WebSocketServer({port: port.socket});
-const Bot = new AFKBot();
+/*const WSS = new WebSocketServer({
+	port: port.socket
+});*/
+const Bot = new AFKBot({
+	host: process.env['host'],
+	port: process.env['port'],
+	username: process.env['username'],
+	_options: CONFIG
+});
 
 
 
 (await Build())//.watch();
 console.debug("Build Success!");
+
 (function WebServer() {
-	//const SHA256 = data=> Crypto.createHash('sha256').update(data).digest('hex');
-	const verify = req=> (process.env['PASSWORD']) === req.headers['authorization'];
+	const password = process.env['PASSWORD'] || process.env['password'] || null;
+	const verify = request => {
+		const reqAuth = request.headers['authorization'];
+		console.debug(`PASSWORD in your REPL Secrets: ${password}`);
+		console.debug(`PASSWORD in someone's request: ${reqAuth}`);
+		return reqAuth === password;
+	}
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 
@@ -33,15 +46,20 @@ console.debug("Build Success!");
 		return response.send({correct: verify(request)});
 	});
 	Server.post('/api/connect', async (request, response) => {
-		if(Bot.connected) return response.send({
+		if(!password) return response.send({
 			status: 'error',
-			message: "The bot has been already connected"
+			message: "You didn't set the password in the Repl Secrets.\nPlease set it and try again."
 		});
 		if(!verify(request)) return response.send({
 			status: 'error',
 			message: "You've logged in with the wrong password.\nPlease login again."
 		});
 
+
+		if(Bot.connected) return response.send({
+			status: 'error',
+			message: "The bot has been already connected"
+		});
 
 		try {
 			await Bot.connect();
@@ -58,15 +76,20 @@ console.debug("Build Success!");
 		}
 	});
 	Server.post('/api/disconnect', async (request, response) => {
-		if(!Bot.connected) return response.send({
+		if(!password) return response.send({
 			status: 'error',
-			message: "The bot is currently not connected"
+			message: "You didn't set the password in the Repl Secrets.\nPlease set it and try again."
 		});
 		if(!verify(request)) return response.send({
 			status: 'error',
 			message: "You're logged in with the wrong password.\nPlease login again."
 		});
 
+
+		if(!Bot.connected) return response.send({
+			status: 'error',
+			message: "The bot is currently not connected"
+		});
 
 		try {
 			await Bot.disconnect();
@@ -85,11 +108,10 @@ console.debug("Build Success!");
 	Server.all('*', async (request, response) => {
 		return response.status(404).redirect('/dashboard/');
 	});
-
 	Server.listen(port.web, ()=> console.log("Web Dashboard is now running!"));
 }());
 
-(function SocketServer() {
+/*(function SocketServer() {
 	WSS.on('connection', (ws) => {
 		const send = data=> ws.send(JSON.stringify(data));
 
@@ -106,4 +128,4 @@ console.debug("Build Success!");
 			}
 		});
 	});
-}());
+}());*/

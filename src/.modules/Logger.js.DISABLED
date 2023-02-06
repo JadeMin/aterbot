@@ -1,17 +1,18 @@
 import FS from 'fs';
+import { fileURLToPath } from 'url';
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default class BotLogger {
-	constructor(/*types*/logsPath) {
+	constructor(types) {
 		//this.types = types;
-		this.logsPath = logsPath;
-		this.logs = FS.readFileSync(this.logsPath, 'utf-8').split('\n');
+		this.logPath = `${__dirname}/../afkbot.log`;
+		this.logs = FS.readFileSync(this.logPath, 'utf-8').split('\n');
 		this.callback = ()=> {};
 	};
 	#log(message, type) {
 		//if(!this.types.includes(type)) return;
 		const msg = message.replace(/\n{2,}/g, '\n').replace(/\s{2,}/g, ' ');
-		FS.appendFileSync(this.logsPath, `${msg}\n`, 'utf-8');
-		
+		FS.appendFileSync(this.path, `${msg}\n`, 'utf-8');
 		this.logs.push(msg);
 		this.callback(this.logs);
 	}

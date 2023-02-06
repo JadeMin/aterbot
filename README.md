@@ -22,21 +22,20 @@ What you'll need
 
 # Setup ⚙
 1. Go to [Repl It](https://replit.com/).
-2. Click the `+` button in the top right and click `Import from GitHub` at the close button.
-3. Put `https://github.com/JadeMin/aternos-afkbot.git` into the `GitHub URL` section and click `Create Repl`!
-4. Edit the `config.json` file so bot can join your server.
-5. Click `Secrets` in the left `Tools` menu.
-6. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
-7. Click `Run` at the top and wait for it done.
-8. If everything ok, you will see `Webview` tab on the Repl then copy the url.
-9. Go to the url copied in `Step 8` and click `login` at the top menu
-10. Enter the password you've put in `Step 6` and go to dashboard home then click `Join Bot`.
-11. Now the bot will be connected your server (`config.json`).
-12. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
-13. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
-14. Paste the url copied in `Step 8` into `URL (or IP)`.
-15. Click `Create Monitor` 2 times.
-16. Finally... DONE! Enjoy your free 24/7 Aternos server.
+2. Click `+` in the top right and click `Import from GitHub` at the close button.
+3. Put `https://github.com/JadeMin/aternos-afkbot.git` into `GitHub URL` and click `Create Repl`!
+4. Click `Secrets` in the left `Tools` section.
+5. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
+6. Click `Run` at the top and wait for it done.
+7. If everything ok, you will see `Webview` tab on the Repl then copy the url.
+8. Go to the url copied in `Step 8` and click `login` at the top menu
+9. Enter the password you've put in `Step 6` and go to dashboard home then click `Join Bot`.
+10. Now the bot will be connected your server (`config.json`).
+11. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
+12. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
+13. Paste the url copied in `Step 8` into `URL (or IP)`.
+14. Click `Create Monitor` 2 times.
+15. Finally... DONE! Enjoy your free 24/7 Aternos server.
 
 
 # CAUTION ⚠

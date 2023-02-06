@@ -5,17 +5,16 @@ import {
 	Routes, Route
 } from 'react-router-dom';
 
-import Main from "./routes/top";
-import Logs from "./routes/logs";
-import Login from "./routes/login";
-import Logout from "./routes/logout";
-import NotFound from "./routes/404";
-
 import Menus from "./routes/components/Menus";
 
+import Main from "./routes/top";
+import Login from "./routes/login";
+import Logout from "./routes/logout";
+import ConfigGenerator from "./routes/config_gen";
+import NotFound from "./routes/404";
+
+
 const root = document.querySelector("#app");
-
-
 createRoot(root).render(
 	<BrowserRouter basename='/dashboard/'>
 		<Menus/>
@@ -26,8 +25,8 @@ createRoot(root).render(
 			/>
 
 			<Route
-				path='/logs'
-				element={<Logs/>}
+				path='/cfgen'
+				element={<ConfigGenerator/>}
 			/>
 
 			<Route

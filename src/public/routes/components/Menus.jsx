@@ -18,13 +18,6 @@ export default () => {
 				},
 				{
 					label: (
-						<a href="logs">
-							Logs
-						</a>
-					)
-				},
-				{
-					label: (
 						<a href={LoginOrOut}>
 							{LoginOrOut}
 						</a>

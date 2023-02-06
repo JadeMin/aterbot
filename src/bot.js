@@ -1,21 +1,15 @@
-import { fileURLToPath } from 'url';
 import Mineflayer from 'mineflayer';
-import BotLogger from './.modules/Logger.js';
-import CONFIG from "../config.json" assert {type: 'json'};
-
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const sleep = ms => new Promise(resovle => setTimeout(resovle, ms));
-const random = array => array[Math.floor(Math.random()*(array.length-0)) + 0];
-const Logger = new BotLogger(`${__dirname}/../afkbot.log`/*CONFIG.server.logLevel*/);
-
+const sleep = ms=> new Promise(resovle => setTimeout(resovle, ms));
+const random = array=> array[Math.floor(Math.random()*(array.length-0)) + 0];
 
 export default class AFKBot {
-	constructor(config) {
+	constructor(CONFIG) {
 		/*{
 			host: CONFIG.host,
 			port: CONFIG.port,
 			username: CONFIG.username
 		}*/
+		this.CONFIG = CONFIG;
 		this.Bot = null;
 		this.connected = false;
 		this.firstError = true;
@@ -24,7 +18,7 @@ export default class AFKBot {
 
 	#createBot() {
 		return new Promise(async (resolve, reject) => {
-			const { settings, server: { action } } = CONFIG;
+			const { settings, _options: { action } } = this.CONFIG;
 			const Bot = Mineflayer.createBot(settings);
 
 			Bot.once('spawn', () => {
@@ -33,7 +27,7 @@ export default class AFKBot {
 						const lastAction = random(action.commands);
 						const sprinting = Math.random() < 0.5? true:false; //50% chance to sprint
 
-						Logger.debug(`${lastAction}${sprinting? " with sprinting" : ''}`);
+						console.debug(`${lastAction}${sprinting? " with sprinting" : ''}`);
 						Bot.setControlState('sprint', sprinting);
 						Bot.setControlState(lastAction, true); //starts the selected random action
 
@@ -58,20 +52,20 @@ export default class AFKBot {
 				return resolve(Bot);
 			});
 			Bot.once('error', error => {
-				Logger.error(`AFKBot got an error: ${error}`);
-				if(this.firstError) this.reconnect();
+				console.error(`AFKBot got an error: ${error}`);
+				if(!this.firstError) this.reconnect();
 				
 				return reject(error);
 			});
 			Bot.once('kicked', async rawResponse => {
-				Logger.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
-				if(this.firstError) this.reconnect();
+				console.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
+				if(!this.firstError) this.reconnect();
 
 				return reject(JSON.parse(rawResponse));
 			});
-			Bot.once('end', ()=> this.connected = false);
+			Bot.once('end', ()=> this.connected=false);
 			Bot.once('login', () => {
-				Logger.log(`AFKBot logged in ${settings.username}\n\n`);
+				console.log(`AFKBot logged in ${settings.username}\n\n`);
 				this.connected = true;
 				this.firstError = false;
 			});
@@ -79,11 +73,11 @@ export default class AFKBot {
 	};
 
 	async reconnect(now=false) {
-		const { server: { action } } = CONFIG;
+		const { _options: { action } } = this.CONFIG;
 		this.connected = false;
 		
 		if(!now) {
-			Logger.log(`Trying to reconnect in ${action.retryDelay / 1000} seconds...\n`);
+			console.log(`Trying to reconnect in ${action.retryDelay / 1000} seconds...\n`);
 			await sleep(action.retryDelay);
 		}
 		return this.connect();
@@ -97,6 +91,6 @@ export default class AFKBot {
 		return this.Bot = await this.#createBot();
 	};
 	subscribeLogs(callback) {
-		Logger.subscribe(callback);
+		console.subscribe(callback);
 	};
 };
