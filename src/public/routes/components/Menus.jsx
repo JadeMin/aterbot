@@ -19,7 +19,7 @@ export default () => {
 				{
 					label: (
 						<a href={LoginOrOut}>
-							{LoginOrOut}
+							{LoginOrOut.toLowerCase()}
 						</a>
 					)
 				}
