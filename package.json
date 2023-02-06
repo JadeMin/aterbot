@@ -6,7 +6,7 @@
 	"version": "0.0.0",
 	"license": "GPL-3.0",
 	"scripts": {
-		"server": "node --no-warnings --experimental-vm-modules ./src/server.js",
+		"server": "node --no-warnings --experimental-vm-modules ./src/index.js",
 		"start": "npm run server"
 	},
 	"dependencies": {

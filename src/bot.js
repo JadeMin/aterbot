@@ -1,4 +1,5 @@
 import Mineflayer from 'mineflayer';
+import CONFIG from "../config.json" assert {type: 'json'};
 const sleep = ms=> new Promise(resovle => setTimeout(resovle, ms));
 const random = array=> array[Math.floor(Math.random()*(array.length-0)) + 0];
 
@@ -9,7 +10,6 @@ export default class AFKBot {
 			port: CONFIG.port,
 			username: CONFIG.username
 		}*/
-		this.CONFIG = CONFIG;
 		this.Bot = null;
 		this.connected = false;
 		this.firstError = true;
@@ -18,7 +18,7 @@ export default class AFKBot {
 
 	#createBot() {
 		return new Promise(async (resolve, reject) => {
-			const { client: $client, action: $action } = this.CONFIG;
+			const { client: $client, action: $action } = CONFIG;
 			const Bot = Mineflayer.createBot($client);
 
 			Bot.once('spawn', () => {
@@ -73,7 +73,7 @@ export default class AFKBot {
 	};
 
 	async reconnect(now=false) {
-		const { action: $action } = this.CONFIG;
+		const { action: $action } = CONFIG;
 		this.connected = false;
 		
 		if(!now) {
