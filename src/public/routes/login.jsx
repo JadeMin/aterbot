@@ -20,7 +20,7 @@ export default () => {
 		(async () => {
 			const _pw = prompt("Input your password:");
 
-			if(_pw !== null) {
+			if(_pw) {
 				if(await API.verify(_pw)) {
 					PWM.set(_pw);
 					alert("You've been logged in.");
