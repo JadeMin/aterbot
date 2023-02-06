@@ -33,7 +33,7 @@ console.debug("Build Success!");
 		console.debug(`PASSWORD in your REPL Secrets: ${password}`);
 		console.debug(`PASSWORD in someone's request: ${reqAuth}`);
 		return reqAuth === password;
-	}
+	};
 	Server.use(Express.static(`public`));
 	Server.use(Express.json());
 
