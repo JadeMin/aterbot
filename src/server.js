@@ -17,9 +17,7 @@ const Server = Express();
 	port: port.socket
 });*/
 const Bot = new AFKBot({
-	host: process.env['host'],
-	port: process.env['port'],
-	username: process.env['username'],
+	...CONFIG.settings,
 	_options: CONFIG
 });
 
