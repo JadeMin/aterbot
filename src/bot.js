@@ -18,22 +18,22 @@ export default class AFKBot {
 
 	#createBot() {
 		return new Promise(async (resolve, reject) => {
-			const { server, action } = this.CONFIG;
-			const Bot = Mineflayer.createBot(server);
+			const { client: $client, action: $action } = this.CONFIG;
+			const Bot = Mineflayer.createBot($client);
 
 			Bot.once('spawn', () => {
 				const changePos = async () => {
 					if(this.connected) {
-						const lastAction = random(action.commands);
+						const lastAction = random($action.commands);
 						const sprinting = Math.random() < 0.5? true:false; //50% chance to sprint
 
 						console.debug(`${lastAction}${sprinting? " with sprinting" : ''}`);
 						Bot.setControlState('sprint', sprinting);
 						Bot.setControlState(lastAction, true); //starts the selected random action
 
-						await sleep(random(action.holdDelays));
+						await sleep(random($action.holdDelays));
 						Bot.setControlState(lastAction, false); //stops the selected random action
-						await sleep(random(action.holdDelays));
+						await sleep(random($action.holdDelays));
 						changePos();
 					}
 				}; changePos();
@@ -44,7 +44,7 @@ export default class AFKBot {
 						
 						Bot.look(yaw, pitch, false);
 
-						await sleep(random(action.holdDelays));
+						await sleep(random($action.holdDelays));
 						changeView();
 					}
 				}; changeView();
@@ -65,7 +65,7 @@ export default class AFKBot {
 			});
 			Bot.once('end', ()=> this.connected=false);
 			Bot.once('login', () => {
-				console.log(`AFKBot logged in ${settings.username}\n\n`);
+				console.log(`AFKBot logged in ${$client.username}\n\n`);
 				this.connected = true;
 				this.firstError = false;
 			});
@@ -73,12 +73,12 @@ export default class AFKBot {
 	};
 
 	async reconnect(now=false) {
-		const { _options: { action } } = this.CONFIG;
+		const { action: $action } = this.CONFIG;
 		this.connected = false;
 		
 		if(!now) {
-			console.log(`Trying to reconnect in ${action.retryDelay / 1000} seconds...\n`);
-			await sleep(action.retryDelay);
+			console.log(`Trying to reconnect in ${$action.retryDelay / 1000} seconds...\n`);
+			await sleep($action.retryDelay);
 		}
 		return this.connect();
 	};
