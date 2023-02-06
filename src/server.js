@@ -27,7 +27,7 @@ const Bot = new AFKBot({
 console.debug("Build Success!");
 
 (function WebServer() {
-	const password = process.env['PASSWORD'] || process.env['password'] || null;
+	const password = process.env['PASSWORD'] || process.env['password'];
 	const verify = request => {
 		const reqAuth = request.headers['authorization'];
 		console.debug(`PASSWORD in your REPL Secrets: ${password}`);
