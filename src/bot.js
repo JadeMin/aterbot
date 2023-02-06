@@ -18,8 +18,8 @@ export default class AFKBot {
 
 	#createBot() {
 		return new Promise(async (resolve, reject) => {
-			const { target, action } = this.CONFIG;
-			const Bot = Mineflayer.createBot(target);
+			const { server, action } = this.CONFIG;
+			const Bot = Mineflayer.createBot(server);
 
 			Bot.once('spawn', () => {
 				const changePos = async () => {
