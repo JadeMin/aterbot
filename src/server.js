@@ -16,10 +16,7 @@ const Server = Express();
 /*const WSS = new WebSocketServer({
 	port: port.socket
 });*/
-const Bot = new AFKBot({
-	settings: CONFIG.settings,
-	_options: CONFIG
-});
+const Bot = new AFKBot(CONFIG);
 
 
 
