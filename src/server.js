@@ -17,7 +17,7 @@ const Server = Express();
 	port: port.socket
 });*/
 const Bot = new AFKBot({
-	...CONFIG.settings,
+	settings: CONFIG.settings,
 	_options: CONFIG
 });
 
