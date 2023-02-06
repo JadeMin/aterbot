@@ -41,29 +41,27 @@ console.debug("Build Success!");
 		response.sendFile(`${__dirname}/public/index.html`);
 	});
 	Server.post('/api/verify', async (request, response) => {
+		if(!password) return response.send({
+			status: 'error',
+			message: "You didn't set the password in the Repl Secrets.\nPlease set it correctly and try again."
+		});
 		return response.send({correct: verify(request)});
 	});
 	Server.post('/api/connect', async (request, response) => {
-		if(!password) return response.send({
-			status: 'error',
-			message: "You didn't set the password in the Repl Secrets.\nPlease set it and try again."
-		});
 		if(!verify(request)) return response.send({
 			status: 'error',
 			message: "You've logged in with the wrong password.\nPlease login again."
 		});
-
-
 		if(Bot.connected) return response.send({
 			status: 'error',
-			message: "The bot has been already connected"
+			message: "The bot has been already connected!"
 		});
 
 		try {
 			await Bot.connect();
 			return response.send({
 				status: 'success',
-				message: "The bot has been connected"
+				message: "The bot has been connected!"
 			});
 		} catch(error) {
 			return response.send({
@@ -74,26 +72,20 @@ console.debug("Build Success!");
 		}
 	});
 	Server.post('/api/disconnect', async (request, response) => {
-		if(!password) return response.send({
-			status: 'error',
-			message: "You didn't set the password in the Repl Secrets.\nPlease set it and try again."
-		});
 		if(!verify(request)) return response.send({
 			status: 'error',
 			message: "You're logged in with the wrong password.\nPlease login again."
 		});
-
-
 		if(!Bot.connected) return response.send({
 			status: 'error',
-			message: "The bot is currently not connected"
+			message: "The bot is currently not connected!"
 		});
 
 		try {
 			await Bot.disconnect();
 			return response.send({
 				status: 'success',
-				message: "The bot has been disconnected"
+				message: "The bot has been disconnected!"
 			});
 		} catch(error) {
 			return response.send({
