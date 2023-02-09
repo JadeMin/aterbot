@@ -28,7 +28,7 @@ What you'll need
 5. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
 6. Click `Run` at the top and wait for it done.
 7. If everything ok, you will see `Webview` tab on the Repl then copy the url.
-8. Go to the url copied in `Step 7` and click `login` at the top menu
+8. Go to the url copied in `Step 7` and click `Login` at the top menu
 9. Enter the password you've put in `Step 5` and go to dashboard home then click `Join Bot`.
 10. Now the bot will be connected your server (`config.json`).
 11. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
