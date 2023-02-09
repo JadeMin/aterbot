@@ -4,7 +4,7 @@ const sleep = ms=> new Promise(resovle => setTimeout(resovle, ms));
 const random = array=> array[Math.floor(Math.random()*(array.length-0)) + 0];
 
 export default class AFKBot {
-	constructor(CONFIG) {
+	constructor() {
 		/*{
 			host: CONFIG.host,
 			port: CONFIG.port,
