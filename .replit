@@ -6,10 +6,6 @@ run = "npm run start"
 	channel = "stable-22_11"
 
 
-[gitHubImport]
-	requiredFiles = ["replit.nix", ".config"]
-
-
 [packager]
 	language = "nodejs"
 
