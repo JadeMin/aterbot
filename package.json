@@ -6,8 +6,9 @@
 	"version": "0.0.0",
 	"license": "GPL-3.0",
 	"scripts": {
+		"build": "node --no-warnings --experimental-vm-modules ./scripts/build.js",
 		"server": "node --no-warnings --experimental-vm-modules ./src/index.js",
-		"start": "npm run server"
+		"start": "npm run build && npm run server"
 	},
 	"dependencies": {
 		"@ant-design/icons": "^5.0.1",
