@@ -1,4 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import {
+	createElement, Fragment,
+	Suspense, lazy
+} from 'react';
 import { createRoot } from 'react-dom/client';
 import {
 	BrowserRouter,
@@ -8,7 +11,6 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 
 import Menus from "./routes/components/Menus";
-
 const Main = lazy(()=> import("./routes/top"));
 const Login = lazy(()=> import("./routes/login"));
 const Logout = lazy(()=> import("./routes/logout"));

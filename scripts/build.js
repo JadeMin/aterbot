@@ -12,6 +12,10 @@ await ESBuild.build({
 	minify: true,
 	sourcemap: true,
 
+	jsxFactory: 'createElement',
+	jsxFragment: 'Fragment',
+	
+
 	entryPoints: [
 		"src/public/index.jsx",
 		"src/public/index.css"

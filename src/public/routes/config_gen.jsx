@@ -1,7 +1,8 @@
-import React, {
+import {
+	createElement, Fragment,
 	useState, useEffect
 } from 'react';
-import {
+/*import {
 	PlusOutlined,
 	PoweroffOutlined,
 } from '@ant-design/icons';
@@ -12,33 +13,7 @@ import {
 
 	message, notification
 } from 'antd';
-import { API, PWM } from "./.modules/api";
+import { API, PWM } from "./.modules/api";*/
+import notFound from "./404";
 
-export default () => {
-	return (
-		<>
-			<Row justify="center">
-				<Space wrap>
-					<Button
-						type="primary"
-						loading={joining}
-						icon={<PlusOutlined/>}
-
-						onClick={loginBot}
-					>
-						Join Bot
-					</Button>
-					<Button
-						type="primary"
-						danger
-						icon={<PoweroffOutlined/>}
-						loading={exiting}
-						onClick={logoutBot}
-					>
-						Quit Bot
-					</Button>
-				</Space>
-			</Row>
-		</>
-	)
-};
+export default notFound;
