@@ -1,6 +1,6 @@
 hidden = [".config", "package-lock.json"]
-entrypoint = "./scripts/build.js"
-run = "npm run start"
+entrypoint = "./src/index.js"
+#run = "npm run start"
 
 
 
