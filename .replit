@@ -1,13 +1,16 @@
-hidden = [".config"]
+hidden = [".config", "package-lock.json"]
 run = "npm run start"
+
 
 
 [nix]
 	channel = "stable-22_11"
 
 
+
 [gitHubImport]
-	#requiredFiles = ["replit.nix", ".config"]
+	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
+
 
 
 [packager]
@@ -19,8 +22,10 @@ run = "npm run start"
 		enabledForHosting = false
 
 
+
 [unitTest]
 	language = "nodejs"
+
 
 
 [languages]
@@ -29,6 +34,7 @@ run = "npm run start"
 
 	[languages.javascript.languageServer]
 		start = "typescript-language-server --stdio"
+
 
 
 [debugger]
