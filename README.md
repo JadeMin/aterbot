@@ -1,5 +1,5 @@
 # Aternos AFKBot ✨  
-<img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="Discord"/>
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)
 <a href="https://discord.gg/44WtDkgxyk">
 	<img src="https://img.shields.io/badge/discord-%2324292e.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
 </a>
