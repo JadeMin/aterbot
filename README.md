@@ -1,5 +1,9 @@
 # Aternos AFKBot ✨  
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
+<img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="Discord"/>
+<a href="https://discord.gg/44WtDkgxyk">
+	<img src="https://img.shields.io/badge/discord-%2324292e.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
+</a>
+
 ## `01/17/2023`, Now using Repl because Heroku isn't free anymore.
 ### This AFK bot will keep your Aternos server alive 24/7.
 #### If you having any problems or errors, please let me know by creating an Issue.
