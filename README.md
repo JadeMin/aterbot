@@ -20,7 +20,7 @@ What you'll need
 2. An UptimeRobot account.  
 	Sign up at: https://uptimerobot.com/signUp
 
-2. A Minecraft server you owned.  
+3. A Minecraft server you owned.  
 	Make sure your server settings ``online-mode`` set to ``false``!
 
 
