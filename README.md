@@ -29,7 +29,7 @@ What you'll need
 2. Click `+` in the top right and click `Import from GitHub` at the close button.
 3. Put `https://github.com/JadeMin/aternos-afkbot.git` into `GitHub URL` and click `Create Repl`!
 4. Click `Secrets` in the left `Tools` section.
-5. Put `PASSWORD` into `key` and put any password you want into `value` and click `Add new secret`.
+5. Put `PASSWORD` into the first input, and put any password you want into the second input and click `Save`.
 6. Click `Run` at the top and wait for it done.
 7. If everything ok, you will see `Webview` tab on the Repl then copy the url.
 8. Go to the url copied in `Step 7` and click `Login` at the top menu
