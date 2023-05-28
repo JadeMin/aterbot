@@ -20,7 +20,6 @@
 	"devDependencies": {
 		"esbuild": "^0.17.19",
 		"express": "^4.18.2",
-		"minecraft-protocol-forge": "^1.0.0",
 		"mineflayer": "^4.8.1",
 		"ws": "^8.13.0"
 	}
