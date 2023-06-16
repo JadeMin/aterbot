@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"strict": true,
+
+		"module": "NodeNext",
+		"target": "ESNext",
+
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"allowImportingTsExtensions": true
+	}
+}
