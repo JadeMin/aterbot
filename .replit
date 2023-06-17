@@ -1,6 +1,6 @@
 hidden = [".config", "package-lock.json"]
-entrypoint = "./src/backend/index.ts"
-run = "npm run bot:start"
+entrypoint = "./src/index.ts"
+run = "npm run start"
 
 
 

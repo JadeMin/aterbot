@@ -6,12 +6,8 @@
 	"author": "JadeMin",
 	"license": "GPL-3.0",
 	"scripts": {
-		"bot:start": "tsx ./src/backend/index.ts",
-		"bot:dev": "node --inspect --loader tsx ./src/backend/index.ts",
-
-		"page:build": "tsx ./scripts/build.ts",
-		"page:dev": "tsx ./scripts/build.ts --dev",
-		"page:publish": "tsx ./scripts/publish.ts"
+		"start": "tsx ./src/index.ts",
+		"dev": "node --inspect --loader tsx ./src/index.ts"
 	},
 	"devDependencies": {
 		"mineflayer": "^4.9.0",
