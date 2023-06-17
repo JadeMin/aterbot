@@ -35,8 +35,8 @@
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
 5. Put `https://github.com/JadeMin/aternos-afkbot.git` into `GitHub URL` and click `Create Repl`!
 6. Click `Run` at the top and wait for it done.
-7. Now your bot will join your server. **then teleport it in the bedrock room as soon as possible and change the gamemode to `Creative` to not die.**
-8. You will see the `Webview` tab on your Repl then copy the url.
+7. Now your bot will join your server. **Then teleport it in the bedrock room as soon as possible and change the gamemode to `Creative` to not die.**
+8. You will see the `Webview` tab on your Repl, then copy the url.
 10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
 12. Paste the url copied in `Step 8` into `URL (or IP)`.
