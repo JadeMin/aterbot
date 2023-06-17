@@ -8,6 +8,7 @@
 		"target": "ESNext",
 
 		"noEmit": true,
+		"resolveJsonModule": true,
 		"allowImportingTsExtensions": true,
 
 		"jsx": "react"
