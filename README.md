@@ -70,8 +70,8 @@ I'm trying to periodically check for updates so please be patient.
 It seems your bot escaped from your bedrock room so it's in invalid pos or moving to it.  
 First you have to wipe the bot's playerdata in your server. 
 1. Go to your Aternos server management page.
-2. click `Files` in the left section.
-3. Delete the `world/playerdata/<UUID>.dat` file and `<the same>.dat_old` file that points the bot username.
+2. Click `Files` in the left section.
+3. Delete the `world/playerdata/<UUID>.dat` and `<the same>.dat_old` file that points the bot username.
 
 **After it, lock the bot immediately as soon as possible!**  
 **And change the bot's gamemode to `Creative` to not die.**
