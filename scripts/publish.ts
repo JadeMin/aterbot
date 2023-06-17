@@ -9,4 +9,4 @@ const options = ["./dist", {
 
 const result = await publish(...options);
 if(result) throw result;
-console.log("성공적으로 GitHub Pages에 배포되었습니다!");
+console.log("Successfully published on the GitHub Pages!");
