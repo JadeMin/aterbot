@@ -24,13 +24,13 @@
 
 3. A Minecraft server you owned.  
 	Make sure your server settings ``online-mode`` set to ``false``!  
-	And you should have the OP permission first!
+	And you should have the OP permission!
 
 
 
 # Setup ⚙
 1. Join your server first.
-2. Build a bedrock room with X5 Y3 Z3 somewhere and stay in there.
+2. Build a bedrock room with X5 Y3 Z5 somewhere and stay in there.
 3. Go to [Repl It](https://replit.com/).
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
 5. Put `https://github.com/JadeMin/aternos-afkbot.git` into `GitHub URL` and click `Create Repl`!
@@ -46,7 +46,7 @@
 
 
 # FAQ ❓
-> #### Q1: My bot leaves Immediately when I close the Repl page.
+> #### Q1: My bot leaves immediately when I close the Repl page.
 <details><summary>A1:</summary>
 
 Repl projects are automatically turned off by closing it or inactive in every 5 minutes.  
