@@ -16,11 +16,8 @@ const reconnect = async (): Promise<void> => {
 	disconnect();
 	await sleep(CONFIG.action.retryDelay);
 	createBot();
-
 	return;
 };
-
-
 
 const createBot = (): void => {
 	bot = Mineflayer.createBot({
@@ -46,7 +43,7 @@ const createBot = (): void => {
 			console.debug(`${lastAction}${halfChance? " with sprinting" : ''}`);
 
 			bot.setControlState('sprint', halfChance);
-			bot.setControlState(lastAction, halfChance); // starts the selected random action
+			bot.setControlState(lastAction, true); // starts the selected random action
 
 			await sleep(CONFIG.action.holdDuration);
 
@@ -57,7 +54,8 @@ const createBot = (): void => {
 			const yaw = (Math.random() * Math.PI) - (0.5 * Math.PI),
 				pitch = (Math.random() * Math.PI) - (0.5 * Math.PI);
 			
-			return await bot.look(yaw, pitch, false);
+			await bot.look(yaw, pitch, false);
+			return;
 		};
 		
 		loop = setInterval(() => {
@@ -68,7 +66,11 @@ const createBot = (): void => {
 	bot.once('login', () => {
 		console.log(`AFKBot logged in ${bot.username}\n\n`);
 	});
-
 	return;
 };
-createBot();
+
+
+
+export default (): void => {
+	createBot();
+};

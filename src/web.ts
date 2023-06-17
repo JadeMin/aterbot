@@ -7,9 +7,11 @@ const server = HTTP.createServer((request, response) => {
 		"Access-Control-Allow-Methods": "GET, OPTIONS",
 		"Content-Type": "text/html"
 	});
-	response.end("<bold>Copy me, the url above!</bold>");
+	response.end("<h3>Copy me, the url above!</h3>");
 });
 
 
 
-server.listen(PORT, ()=> console.log("Server for UptimeRobot is ready!"));
+export default (): void => {
+	server.listen(PORT, ()=> console.log("Server for UptimeRobot is ready!"));
+};
