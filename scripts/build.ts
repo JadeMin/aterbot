@@ -8,7 +8,7 @@ const isDev =  process.argv.slice(2)[0] === "--dev";
 
 const buildOption: BuildOptions = {
 	entryPoints: ["./src/js/index.tsx"],
-	outdir: "./dist/",
+	outdir: "./docs/",
 
 	format: 'esm',
 
@@ -36,7 +36,7 @@ if(!isDev) {
 	const serveResult = await contextResult.serve({
 		host: "localhost",
 		port: 5500,
-		servedir: "./dist/",
+		servedir: "./docs/",
 	});
 	console.log(`Serving at http://${serveResult.host}:${serveResult.port}`);
 }

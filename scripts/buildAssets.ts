@@ -3,7 +3,7 @@ import { watchFile } from 'node:fs';
 
 const assets = [{
 	src: "./src/index.html",
-	dest: "./dist/index.html"
+	dest: "./docs/index.html"
 }] as const;
 
 
