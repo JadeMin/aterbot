@@ -11,7 +11,7 @@ const assets = [{
 export const buildAssets = async (): Promise<void> => {
 	await Promise.all(
 		assets.map(async asset => {
-			await copyFile(asset.src, asset.dest);
+			return await copyFile(asset.src, asset.dest);
 		})
 	);
 	return;
