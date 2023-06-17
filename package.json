@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsx ./scripts/build.ts",
-		"publish": "npm run build && tsx ./scripts/publish.ts",
+		"//publish": "npm run build && tsx ./scripts/publish.ts",
 		"dev": "tsx ./scripts/build.ts --dev"
 	},
 	"dependencies": {
