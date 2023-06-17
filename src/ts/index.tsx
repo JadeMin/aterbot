@@ -6,18 +6,14 @@ import Home from "./routes/home/index.tsx";
 
 const root = document.getElementById("app");
 
-const App = () => {
-	return (
+
+
+if(root !== null) {
+	createRoot(root).render(
 		<ChakraProvider>
 			<Home/>
 		</ChakraProvider>
 	);
-};
-
-
-
-if(root !== null) {
-	createRoot(root).render(App());
 } else {
 	alert("A fatal error has occurred while rendering the client page.");
 	alert("Please contact the developer.");

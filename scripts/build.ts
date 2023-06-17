@@ -7,7 +7,7 @@ import { buildAssets, watchAssets } from "./buildAssets.ts";
 const isDev =  process.argv.slice(2)[0] === "--dev";
 
 const buildOption: BuildOptions = {
-	entryPoints: ["./src/js/index.tsx"],
+	entryPoints: ["./src/ts/index.tsx"],
 	outdir: "./docs/",
 
 	format: 'esm',
