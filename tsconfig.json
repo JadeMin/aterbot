@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+
+		"strict": true,
+
+		"module": "NodeNext",
+		"target": "ESNext",
+
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+
+		"jsx": "react"
+	}
+}

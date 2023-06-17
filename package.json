@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "tsx ./scripts/build.ts",
+		"publish": "tsx ./scripts/publish.ts"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.7.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.3.1",
+		"@types/react": "^18.2.12",
+		"@types/react-dom": "^18.2.5",
+		"esbuild": "^0.18.4",
+		"gh-pages": "^5.0.0",
+		"tsx": "^3.12.7"
+	}
+}
