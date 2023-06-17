@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import Home from "./routes/home.tsx";
+import Home from "./routes/home/index.tsx";
 
 const root = document.getElementById("app");
 
