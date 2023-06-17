@@ -46,7 +46,6 @@ const createBot = (): void => {
 			bot.setControlState(lastAction, true); // starts the selected random action
 
 			await sleep(CONFIG.action.holdDuration);
-
 			bot.clearControlStates();
 			return;
 		};
