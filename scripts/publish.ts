@@ -2,7 +2,7 @@ import { publish } from 'gh-pages';
 
 const options = ["./dist", {
 	branch: 'gh-pages',
-	message: "deploy: auto published"
+	message: "publish: auto published"
 }] as const;
 
 

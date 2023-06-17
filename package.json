@@ -2,8 +2,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "tsx ./scripts/build.ts",
-		"publish": "tsx ./scripts/publish.ts"
+		"build": "tsx ./scripts/build.ts",
+		"publish": "npm run build && tsx ./scripts/publish.ts",
+		"dev": "tsx ./scripts/build.ts --dev"
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^2.7.0",
