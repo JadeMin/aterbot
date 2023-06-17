@@ -58,7 +58,7 @@ And UptimeRobot trying to wake it up in every 5 minutes so you can just leave it
 > #### Q2: How to fix `unsupported/unknown protocol version: ###, update minecraft-data`?
 <details><summary>A2:</summary>
 
-This project is using the mineflayer module and it may not supported on your Minecraft server version **yet**.  
+This project is using the mineflayer module and it may not supported on your server version **yet**.  
 I'm trying to periodically check for updates so please be patient.
 </details>
 
