@@ -6,7 +6,8 @@
 	"author": "JadeMin",
 	"license": "GPL-3.0",
 	"scripts": {
-		"start": "tsx ./src/index.ts"
+		"start": "tsx ./src/index.ts",
+		"dev": "node --inspect --loader tsx ./src/index.ts"
 	},
 	"devDependencies": {
 		"mineflayer": "^4.9.0",

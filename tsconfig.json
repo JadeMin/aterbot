@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"alwaysStrict": true,
+		
 		"strict": true,
 
 		"module": "NodeNext",
