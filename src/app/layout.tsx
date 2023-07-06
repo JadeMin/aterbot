@@ -12,11 +12,13 @@ export const metadata = {
 export default function RootLayout(props: {children: React.ReactNode}) {
 	return (
 		<html lang="en">
-			<CacheProvider>
-				<ChakraProvider>
-					{props.children}
-				</ChakraProvider>
-			</CacheProvider>
+			<body>
+				<CacheProvider>
+					<ChakraProvider>
+						{props.children}
+					</ChakraProvider>
+				</CacheProvider>
+			</body>
 		</html>
 	);
 };
