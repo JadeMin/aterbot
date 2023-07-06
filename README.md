@@ -1,3 +1,3 @@
 # Config Generator
 ### A simple config generator for Aternos AFKBot.
-This project is in development and **it's not intended for production use yet.**
+It's still in development and **not ready for production use yet.**

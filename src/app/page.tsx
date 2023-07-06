@@ -1,6 +1,5 @@
-import React, {
-	useState,
-} from 'react';
+'use client';
+import React, { useState } from 'react';
 import {
 	useToast,
 
@@ -11,7 +10,7 @@ import {
 
 
 
-export default (): React.ReactNode => {
+export default function Home(): React.ReactNode {
 	const toast = useToast();
 	const [isError, setError] = useState(false);
 	const [host, setHost] = useState('');
