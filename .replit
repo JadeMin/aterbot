@@ -1,4 +1,4 @@
-hidden = [".config", ".gitignore", "package-lock.json", "tsconfig.json"]
+hidden = [".config", "package-lock.json", "tsconfig.json", ".gitignore"]
 compile = ""
 run = "npm run start"
 
