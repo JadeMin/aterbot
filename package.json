@@ -9,10 +9,10 @@
 		"start": "tsx ./src/index.ts",
 		"dev": "node --inspect --loader tsx ./src/index.ts"
 	},
-	"devDependencies": {
-		"tsx": "^3.12.7"
-	},
 	"dependencies": {
 		"mineflayer": "^4.10.0"
+	},
+	"devDependencies": {
+		"tsx": "^3.12.7"
 	}
 }

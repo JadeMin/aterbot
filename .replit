@@ -1,6 +1,6 @@
-hidden = [".config", "package-lock.json"]
-entrypoint = "./src/index.ts"
-# run = "npm run start"
+hidden = [".config", "package-lock.json", "tsconfig.json"]
+compile = ""
+run = "npm run start"
 
 [gitHubImport]
 	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
