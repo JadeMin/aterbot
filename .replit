@@ -1,42 +1,20 @@
 hidden = [".config", "package-lock.json"]
 entrypoint = "./src/index.ts"
-run = "npm run start"
-
-
-
-[nix]
-	channel = "stable-22_11"
-
-
+# run = "npm run start"
 
 [gitHubImport]
 	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
 
 
 
+[nix]
+	channel = "stable-23_05"
+
+
 [packager]
-	language = "nodejs"
+	language = "nodejs-npm"
 
 	[packager.features]
 		packageSearch = true
 		guessImports = true
 		enabledForHosting = false
-
-
-
-[unitTest]
-	language = "nodejs"
-
-
-
-[languages]
-	[languages.javascript]
-		pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
-
-	[languages.javascript.languageServer]
-		start = "typescript-language-server --stdio"
-
-
-
-[debugger]
-	support = false
