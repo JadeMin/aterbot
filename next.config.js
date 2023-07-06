@@ -1,10 +1,10 @@
-const isDev = process.env.NODE_ENV !== "production";
+const isProd = process.env.NODE_ENV === "production"? true : undefined;
 
 
 
 /** @type {import('next').NextConfig} */
 export default {
 	output: "export",
-	distDir: isDev? "./docs" : '',
-	basePath:  isDev? "/aternos-afkbot" : ''
+	distDir: "./docs",
+	basePath: isProd && "/aternos-afkbot",
 };
