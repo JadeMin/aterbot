@@ -1,7 +1,7 @@
 #!/bin/sh
 DIR="$(dirname "$0")"
 
-. ./coloring.sh
+. $DIR/coloring.sh
 
 
 
