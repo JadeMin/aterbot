@@ -6,6 +6,6 @@ DIR="$(dirname "$0")"
 
 
 clear
-echo "${YELLOW}WARNING: Please set ${BG_BLACK} Language ${RESET}${YELLOW} to ${BG_BLACK} Blank Repl ${RESET}${YELLOW} before importing.${RESET}"
-echo "Skipping compile process..."
+echo "${YELLOW}WARNING: Please set ${BG_BLACK} Language ${RESET}${YELLOW} to ${BG_BLACK} Blank Repl ${RESET}${YELLOW} before importing."
+echo "WARNING: Skipping compile process...${RESET}"
 echo
