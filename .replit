@@ -1,9 +1,10 @@
-hidden = [".config", "package-lock.json", "tsconfig.json", ".gitignore"]
+hidden = [".config", "pnpm-lock.yaml", "tsconfig.json", ".gitignore"]
 compile = ""
-run = "npm run start"
+#compile = "./out/build.sh"
+run = "pnpm run start"
 
 [gitHubImport]
-	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
+	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "pnpm-lock.yaml"]
 
 
 
@@ -12,7 +13,7 @@ run = "npm run start"
 
 
 [packager]
-	language = "nodejs-npm"
+	language = "nodejs-pnpm"
 
 	[packager.features]
 		packageSearch = true
