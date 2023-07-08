@@ -4,8 +4,8 @@
 ### Still in development.
 
 
-## Issues
-1. Deno seems can't resolve domains that including underscores. Why the fuck?
-2. VSCode doesn't immediately update the Deno's cached packages state.
+## Deno Issues
+1. Can't resolve domains that including underscores. Why the fuck?
+2. `Deno` extension doesn't update the cached packages state until restart VSCode.
 ![image.png](./misc/readme/missing_dep_cache.png)
 3. asdfasdf placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
