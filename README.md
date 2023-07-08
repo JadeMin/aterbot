@@ -14,7 +14,6 @@
 
 
 
-# Let's Get Started!
 # Requirements 🎒
 1. A Repl account.  
 	Sign up at: https://replit.com/signup
@@ -33,7 +32,7 @@
 2. Build a bedrock room with X5 Y3 Z5 somewhere and stay in there.
 3. Go to [Repl It](https://replit.com/).
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
-5. Put `https://github.com/JadeMin/aternos-afkbot.git` into `GitHub URL` and click `Create Repl`!
+5. Put `https://github.com/JadeMin/aterbot.git` into `GitHub URL` and click `Create Repl`!
 6. Click `Run` at the top and wait for it done.
 7. Now your bot will join your server. **Then teleport it in the bedrock room as soon as possible and change the gamemode to `Creative` to not die.**
 8. You will see the `Webview` tab on your Repl, then copy the url.
