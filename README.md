@@ -5,7 +5,7 @@
 
 
 ## Deno Extinction
-1. Can't resolve domains that including underscores. Why the fuck?
+1. Can't resolve specific domains that including underscores. What the actual fuck?
 2. `Deno` extension doesn't update the cached packages state until restart VSCode.
 ![image.png](./misc/readme/missing_dep_cache.png)
 3. asdfasdf placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
