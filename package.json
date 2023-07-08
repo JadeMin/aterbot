@@ -1,7 +1,8 @@
 {
 	"private": true,
 	"type": "module",
-	"name": "atornes-afkbot",
+	
+	"name": "aterbot",
 	"version": "0.0.0",
 	"author": "JadeMin",
 	"license": "GPL-3.0",

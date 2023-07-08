@@ -1,4 +1,4 @@
-import HTTP from 'http';
+import HTTP from 'node:http';
 
 const PORT = process.PORT || 5500;
 const server = HTTP.createServer((request, response) => {
