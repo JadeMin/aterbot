@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"start": "deno run --allow-all ./src/index.ts",
-		"dev": "deno run --watch --allow-all ./src/index.ts"
+		"start": "deno run --allow-read --allow-env --allow-net ./src/index.ts",
+		"dev": "deno run --watch --allow-read --allow-env --allow-net ./src/index.ts"
 	}
 }
