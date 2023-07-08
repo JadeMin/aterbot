@@ -1,4 +1,4 @@
-hidden = [".config", ".vscode", "deno.jsonc", "deno.lock", "tsconfig.json", ".gitignore"]
+hidden = [".config", "deno.jsonc", "deno.lock", "tsconfig.json", ".gitignore", ".vscode"]
 compile = "clear"
 run = "deno task start"
 
