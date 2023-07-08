@@ -1,5 +1,5 @@
 hidden = [".config", "pnpm-lock.yaml", "tsconfig.json", ".gitignore"]
-compile = ""
+compile = "clear"
 run = "pnpm run start"
 
 [gitHubImport]
