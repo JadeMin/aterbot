@@ -1,6 +1,5 @@
 hidden = [".config", "pnpm-lock.yaml", "tsconfig.json", ".gitignore"]
-#compile = ""
-compile = "./.config/build.sh"
+compile = ""
 run = "pnpm run start"
 
 [gitHubImport]
