@@ -1,4 +1,5 @@
-const isProd = process.env.NODE_ENV === "production"? true : undefined;
+/** @type {true | undefined} */
+const prod = process.env.NODE_ENV === "production"? true : undefined;
 
 
 
@@ -6,5 +7,5 @@ const isProd = process.env.NODE_ENV === "production"? true : undefined;
 export default {
 	output: "export",
 	distDir: "./docs",
-	basePath: isProd && "/aternos-afkbot",
+	//basePath: prod && "/aternos-afkbot",
 };

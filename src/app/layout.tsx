@@ -6,7 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 export const metadata = {
 	title: "Config Generator",
-	description: "Generate a config file for AternBot",
+	description: "Generate a config file for AterBot",
 } as const;
 
 export default function RootLayout(props: {children: React.ReactNode}) {
