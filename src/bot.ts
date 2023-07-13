@@ -9,6 +9,7 @@ const disconnect = (): void => {
 	clearInterval(loop);
 	bot?.quit?.();
 	bot?.end?.();
+	return;
 };
 const reconnect = async (): Promise<void> => {
 	console.log(`Trying to reconnect in ${CONFIG.action.retryDelay / 1000} seconds...\n`);
@@ -72,4 +73,5 @@ const createBot = (): void => {
 
 export default (): void => {
 	createBot();
+	return;
 };

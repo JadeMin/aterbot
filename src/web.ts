@@ -8,10 +8,12 @@ const server = HTTP.createServer((request, response) => {
 		"Content-Type": "text/html"
 	});
 	response.end("<h3>Copy me, the url above!</h3>");
+	return;
 });
 
 
 
 export default (): void => {
 	server.listen(PORT, () => console.log("Server for UptimeRobot is ready!"));
+	return;
 };
