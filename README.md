@@ -28,7 +28,8 @@
 
 # Setup ⚙
 1. Join your server first.
-2. Build a bedrock room with X5 Y3 Z5 somewhere and stay in there.
+2. Build a bedrock room somewhere and stay in there.  
+(recommended room size: `X5 Y3 Z5`)
 3. Go to [Repl It](https://replit.com/).
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
 5. Put `https://github.com/JadeMin/aterbot.git` into `GitHub URL` and click `Create Repl`!
