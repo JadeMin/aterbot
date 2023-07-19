@@ -6,9 +6,8 @@
 
 
 
-<!--## `01/17/2023`, Now using Repl because Heroku isn't free anymore.-->
-### This AFK bot will keep your Aternos server alive 24/7.
-<!--### If you having any problems or errors, please let me know by creating an Issue.-->
+<!-- ## `01/17/2023`, Now using Repl because Heroku isn't free anymore. -->
+### Keep your Aternos server alive 24/7.
 ### Please star this project <3
 <br/>
 
@@ -34,7 +33,8 @@
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
 5. Put `https://github.com/JadeMin/aterbot.git` into `GitHub URL` and click `Create Repl`!
 6. Click `Run` at the top and wait for it done.
-7. Now your bot will join your server. **Then teleport it in the bedrock room as soon as possible and change the gamemode to `Creative` to not die.**
+7. Now your bot will join your server.  
+**Then teleport it in the bedrock room and change the gamemode to `Creative` to not die.**
 8. You will see the `Webview` tab on your Repl, then copy the url.
 10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
@@ -57,8 +57,8 @@ And UptimeRobot trying to wake it up in every 5 minutes so you can just leave it
 > #### Q2: How to fix `unsupported/unknown protocol version: ###, update minecraft-data`?
 <details><summary>A2:</summary>
 
-This project is using the mineflayer module and it may not supported on your server version **yet**.  
-I'm trying to periodically check for updates so please be patient.
+This project is using the mineflayer module and **it may not supported on your server version yet.**  
+I'm trying to periodically check for updates, so please be patient.
 </details>
 
 <hr/>
@@ -66,11 +66,11 @@ I'm trying to periodically check for updates so please be patient.
 > #### Q3: How to fix `Invalid move player packet received`?
 <details><summary>A3:</summary>
 
-It seems your bot escaped from your bedrock room so it's in invalid pos or moving to it.  
-First you have to wipe the bot's playerdata in your server. 
+It seems your bot escaped from your bedrock room, so they're in invalid location or moving to it.  
+First you have to wipe the bot's playerdata in your server.  
 1. Go to your Aternos server management page.
 2. Click `Files` in the left section.
-3. Delete the `world/playerdata/<UUID>.dat` and `<the same>.dat_old` file that points the bot username.
+3. Delete the `world/playerdata/<UUID>.dat` and `<same>.dat_old` file that points the bot username.
 
 **After it, lock the bot immediately as soon as possible!**  
 **And change the bot's gamemode to `Creative` to not die.**
@@ -78,7 +78,7 @@ First you have to wipe the bot's playerdata in your server.
 
 <hr/>
 
-> #### Q4: My bot leaves after n hours permenantly.
+> #### Q4: My bot leaves permanently after n hours.
 <details><summary>A4:</summary>
 
 I'm not sure but Aternos added a feature to their servers that **auto-ban players who playing too long.**  
