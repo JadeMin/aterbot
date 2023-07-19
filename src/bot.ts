@@ -9,7 +9,6 @@ const disconnect = (): void => {
 	clearInterval(loop);
 	bot?.quit?.();
 	bot?.end?.();
-	return;
 };
 const reconnect = async (): Promise<void> => {
 	console.log(`Trying to reconnect in ${CONFIG.action.retryDelay / 1000} seconds...\n`);
@@ -34,7 +33,7 @@ const createBot = (): void => {
 	bot.once('kicked', rawResponse => {
 		console.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
 	});
-	bot.once('end', () => reconnect());
+	bot.once('end', () => void reconnect());
 
 	bot.once('spawn', () => {
 		const changePos = async (): Promise<void> => {
@@ -66,12 +65,10 @@ const createBot = (): void => {
 	bot.once('login', () => {
 		console.log(`AFKBot logged in ${bot.username}\n\n`);
 	});
-	return;
 };
 
 
 
 export default (): void => {
 	createBot();
-	return;
 };
