@@ -34,7 +34,7 @@
 4. Click `+` in the top right and click `Import from GitHub` at the close button.
 5. Put `https://github.com/JadeMin/aterbot.git` into `GitHub URL` and click `Create Repl`!
 6. Click `Run` at the top then your bot will join your server.  
-7. **Then teleport them in the bedrock room and change the gamemode to `Creative` to not die.**
+7. **Then teleport them into the bedrock room and change the gamemode to `Creative` to not die.**
 8. You'll see the `Webview` tab on your Repl, then copy the url.
 10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor` and select `Monitor Type` to `HTTP(s)`.
