@@ -3,7 +3,7 @@ import HTTP from 'node:http';
 const PORT = process.PORT || 5500;
 const server = HTTP.createServer((request, response) => {
 	response.writeHead(200, {
-		"Access-Control-Allow-Origin": "no-bitches.lol",
+		"Access-Control-Allow-Origin": "https://replit.com",
 		"Access-Control-Allow-Methods": "GET, PING, OPTIONS",
 		"Content-Type": "text/html"
 	});
