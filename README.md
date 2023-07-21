@@ -5,7 +5,7 @@
 
 
 ## Deno Extinction
-1. Can't resolve specific domains that including underscores. What the actual fuck?
-2. `Deno` extension doesn't update the cached packages state until restart VSCode.
+1. Can't resolve specific domains that including underscores. WTF;asap'fjokma'sdlop;fkmj[;psd,w'KLMOP :">JWF
+2. The dependencies even I've just installed are shown as not installed until restart VSCode.
 ![image.png](./misc/readme/missing_dep_cache.png)
 3. asdfasdf placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
