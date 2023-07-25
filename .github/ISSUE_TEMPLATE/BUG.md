@@ -4,14 +4,14 @@ about: Create a bug report for *this project* problems.
 labels: bug
 ---
 
-### I'm sure that this is...
+## I'm sure this is...
 Check the box that applies to you.
 - [ ] This is unexpected behavior from **the code**, not **your** problem.
 
-### Describe the bug
+## Describe the bug
 <!-- A clear and concise description of what the bug is. -->
 
-### To Reproduce
+## To Reproduce
 <!--
 Steps to reproduce the behavior:
 1. Go to '...'
@@ -20,11 +20,11 @@ Steps to reproduce the behavior:
 4. See error
 -->
 
-### Expected behavior
+## Expected behavior
 <!-- A clear and concise description of what you expected to happen. -->
 
-### Screenshots
+## Screenshots
 <!-- If applicable, add screenshots to help explain the bug. -->
 
-### Additional context
+## Additional context
 <!-- Add any other context about the bug here. -->
