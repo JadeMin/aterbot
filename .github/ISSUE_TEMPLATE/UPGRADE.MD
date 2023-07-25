@@ -10,10 +10,10 @@ labels: dependencies
 - [ ] I've tried importing the latest commit into a Repl project.
 
 
-## Describe the upgrade
+## Describe the update
 <!--
-A clear and concise description of what the upgrade is.
-EX: I wanna upgrade `mineflayer` to the official supported version `1.20.1`.
+A clear and concise description of what the update is.
+EX: Please update `Mineflayer` to the official supported version `1.20.1`.
 -->
 
 
