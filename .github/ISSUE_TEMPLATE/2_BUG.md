@@ -6,7 +6,7 @@ labels: bug
 
 
 ## I'm sure this report is...
-- [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
+- [ ] About unexpected behaviors from **the code**, not **your** problem.
 
 If you're not sure, select the `Help, I'm stuck!` template instead.
 
