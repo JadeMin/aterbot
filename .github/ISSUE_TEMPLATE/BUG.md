@@ -5,8 +5,10 @@ labels: bug
 ---
 
 ## I'm sure this is...
-Check the box that applies to you.
-- [ ] This is a bug report about unexpected behaviors from **the code**, not **your** problem.
+- [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
+- [ ] Not related to **your** problem, which should be posted as a question.
+
+If you're not sure, please select the `Help, I'm stuck!` template instead.
 
 ## Describe the bug
 <!-- A clear and concise description of what the bug is. -->
