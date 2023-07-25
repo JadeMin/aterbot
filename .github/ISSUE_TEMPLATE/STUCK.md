@@ -1,5 +1,5 @@
 ---
-name: Help, I'm stuck
+name: Help, I'm stuck!
 about: Ask a question for *your* problems.
 labels: invalid
 ---
