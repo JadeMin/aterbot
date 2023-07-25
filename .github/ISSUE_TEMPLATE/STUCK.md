@@ -1,6 +1,6 @@
 ---
-name: Error or question
-about: If you're getting stuck or any errors, ask a question.
+name: Help, I'm stuck
+about: Create a question to get help *your* problem.
 ---
 
 **Describe the bug**
