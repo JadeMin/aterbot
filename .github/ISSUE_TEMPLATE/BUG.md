@@ -9,7 +9,7 @@ labels: bug
 - [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
 - [ ] Not related to **your** problem, which should be posted as a question.
 
-If you're not sure, please select the `Help, I'm stuck!` template instead.
+If you're not sure, select the `Help, I'm stuck!` template instead.
 
 
 ## Describe the bug
