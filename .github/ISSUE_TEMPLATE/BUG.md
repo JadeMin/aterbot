@@ -8,7 +8,7 @@ labels: bug
 ## I'm sure this is...
 - [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
 - [ ] Not related to **your** problem, which should be posted as a question.
-- [ ] Not related to a feature suggestion, which should be posted as an enhancement.
+- [ ] Not related to **a feature suggestion**, which should be posted as an enhancement.
 
 If you're not sure, select `Help, I'm stuck!` or `Suggest a feature` template instead.
 
