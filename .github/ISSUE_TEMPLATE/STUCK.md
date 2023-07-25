@@ -1,6 +1,6 @@
 ---
 name: Help, I'm stuck
-about: Ask a question for *your* problem.
+about: Ask a question for *your* problems.
 labels: invalid
 ---
 
