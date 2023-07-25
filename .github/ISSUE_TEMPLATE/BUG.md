@@ -1,6 +1,6 @@
 ---
 name: Report a bug
-about: Create a bug report to help *this project* improve.
+about: Create a bug report for *this project*.
 labels: bug
 ---
 
