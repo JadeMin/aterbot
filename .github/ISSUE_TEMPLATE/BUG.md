@@ -6,7 +6,7 @@ labels: bug
 
 ## I'm sure this is...
 Check the box that applies to you.
-- [ ] This is unexpected behavior from **the code**, not **your** problem.
+- [ ] This is a bug report about unexpected behaviors from **the code**, not **your** problem.
 
 ## Describe the bug
 <!-- A clear and concise description of what the bug is. -->
