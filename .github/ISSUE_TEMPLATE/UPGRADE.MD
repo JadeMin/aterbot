@@ -6,13 +6,13 @@ labels: dependencies
 
 
 ## I'm sure that...
-- [ ] I've checked [the latest supported version of `Mineflayer`](https://github.com/PrismarineJS/mineflayer#features)
+- [ ] I've checked [the official latest supported version of `Mineflayer`](https://github.com/PrismarineJS/mineflayer#features).
 - [ ] I've imported the latest now, but it doesn't work.
 
 If you're not sure, select `Help, I'm stuck!` template or `Suggest a feature` template instead.
 
 
-## Describe the bug
+## 
 <!-- A clear and concise description of what the bug is. -->
 
 
