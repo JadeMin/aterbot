@@ -1,6 +1,7 @@
 ---
 name: Help, I'm stuck
-about: Create a question to get help *your* problem.
+about: Ask a question for *your* problem.
+labels: invalid
 ---
 
 **Describe the bug**
