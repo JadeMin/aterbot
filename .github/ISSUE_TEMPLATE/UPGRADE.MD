@@ -11,10 +11,7 @@ labels: dependencies
 
 
 ## Describe the update
-<!--
-A clear and concise description of what the update is.
-EX: Please update `Mineflayer` to the official supported version `1.20.1`.
--->
+<!-- EX: Please update `Mineflayer` to the official supported version `1.20.1`. -->
 
 
 ## Additional context
