@@ -7,7 +7,7 @@ labels: dependencies
 
 ## I'm sure that...
 - [ ] I've checked [the official supported version of `Mineflayer`](https://github.com/PrismarineJS/mineflayer#features).
-- [ ] I've tried importing the latest commit into a Repl project.
+- [ ] I've tried importing the latest commit into [Repl.IT](https://replit.com/).
 
 
 ## Describe the update
