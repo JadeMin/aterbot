@@ -1,6 +1,6 @@
 ---
-name: Request an dependencies upgrade
-about: Request an dependencies upgrade.
+name: Request an upgrade
+about: Request an upgrade to the latest supported version of `Mineflayer`.
 labels: dependencies
 ---
 
