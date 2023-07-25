@@ -1,0 +1,38 @@
+---
+name: Request an dependencies upgrade
+about: Request an dependencies upgrade.
+labels: dependencies
+---
+
+
+## I'm sure that...
+- [ ] I've checked [the latest supported version of `Mineflayer`](https://github.com/PrismarineJS/mineflayer#features)
+- [ ] I've imported the latest now, but it doesn't work.
+
+If you're not sure, select `Help, I'm stuck!` template or `Suggest a feature` template instead.
+
+
+## Describe the bug
+<!-- A clear and concise description of what the bug is. -->
+
+
+## To Reproduce
+<!--
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+-->
+
+
+## Expected behavior
+<!-- A clear and concise description of what you expected to happen. -->
+
+
+## Screenshots
+<!-- If applicable, add screenshots to help explain the bug. -->
+
+
+## Additional context
+<!-- Add any other context about the bug here. -->
