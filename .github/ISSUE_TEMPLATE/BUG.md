@@ -7,8 +7,7 @@ labels: bug
 
 ## I'm sure this report is...
 - [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
-
-If you're not sure, select `Help, I'm stuck!` template or `Suggest a feature` template instead.
+If you're not sure, select the `Help, I'm stuck!` template instead.
 
 
 ## Describe the bug
