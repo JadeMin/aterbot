@@ -4,14 +4,17 @@ about: Create a bug report for *this project* problems.
 labels: bug
 ---
 
+
 ## I'm sure this is...
 - [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
 - [ ] Not related to **your** problem, which should be posted as a question.
 
 If you're not sure, please select the `Help, I'm stuck!` template instead.
 
+
 ## Describe the bug
 <!-- A clear and concise description of what the bug is. -->
+
 
 ## To Reproduce
 <!--
@@ -22,11 +25,14 @@ Steps to reproduce the behavior:
 4. See error
 -->
 
+
 ## Expected behavior
 <!-- A clear and concise description of what you expected to happen. -->
 
+
 ## Screenshots
 <!-- If applicable, add screenshots to help explain the bug. -->
+
 
 ## Additional context
 <!-- Add any other context about the bug here. -->
