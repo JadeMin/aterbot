@@ -5,7 +5,7 @@ labels: bug
 ---
 
 
-## I'm sure this is...
+## I'm sure this report is...
 - [ ] A bug report about unexpected behaviors from **the code**, not **your** problem.
 - [ ] Not related to **your** problem, which should be posted as a question.
 - [ ] Not related to **a feature suggestion**, which should be posted as an enhancement.
