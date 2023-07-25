@@ -1,9 +1,7 @@
 ---
 name: Suggest a feature
 about: Suggest a feature to help us improve.
-title: ""
 labels: enhancement
-assignees: ''
 ---
 
 **Is your feature suggestion related to any bug? Please describe.**

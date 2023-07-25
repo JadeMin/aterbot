@@ -1,7 +1,6 @@
 ---
-name: Report a bug
-about: Create a bug report to help us improve.
-labels: bug
+name: Error or question
+about: If you're getting stuck or any errors, ask a question.
 ---
 
 **Describe the bug**
