@@ -14,7 +14,7 @@
 
 
 # Requirements 🎒
-1. A Repl account.  
+1. A Repl.IT account.  
 	Sign up at: https://replit.com/signup
 
 2. An UptimeRobot account.  
