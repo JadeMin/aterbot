@@ -1,7 +1,7 @@
 ---
 name: Help, I'm stuck!
 about: Ask a question for *your* problems.
-labels: question
+labels: invalid
 ---
 
 ## Software / version
