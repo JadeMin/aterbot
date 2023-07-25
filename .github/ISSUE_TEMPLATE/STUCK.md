@@ -4,8 +4,8 @@ about: Ask a question for *your* problems.
 labels: invalid
 ---
 
-**Describe the bug**
-<!-- A clear and concise description of what the bug is. -->
+**Describe your problem**
+<!-- A clear and concise description of what your problem is. -->
 
 **To Reproduce**
 <!--
@@ -23,4 +23,4 @@ Steps to reproduce the behavior:
 <!-- If applicable, add screenshots to help explain your problem. -->
 
 **Additional context**
-<!-- Add any other context about the problem here. -->
+<!-- Add any other context about your problem here. -->
