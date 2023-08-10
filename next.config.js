@@ -7,5 +7,5 @@ const prod = process.env.NODE_ENV === "production"? true : undefined;
 export default {
 	output: "export",
 	distDir: "./docs",
-	//basePath: prod && "/aternos-afkbot",
+	basePath: prod && "/aterbot",
 };
