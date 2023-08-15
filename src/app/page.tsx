@@ -88,7 +88,7 @@ export default function Home(): React.ReactNode {
 						/>
 					</FormControl>
 
-					<FormControl  isInvalid={isError} marginTop={5} isRequired>
+					<FormControl isInvalid={isError} marginTop={5} isRequired>
 						<FormLabel>Username</FormLabel>
 						<Input
 							value={username}
