@@ -1,8 +1,8 @@
-0:["Gh66MG0L_I4Y_0zK8fZbN",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[[],["$L2",null]]]]]
+0:["fV9hCm47yrw01iVJNg1Fc",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[[],["$L2",null]]]]]
 3:I{"id":4823,"chunks":["628:static/chunks/628-0b71805940b331df.js","335:static/chunks/335-5bc9f40525c1af84.js","185:static/chunks/app/layout-a5d225ee06f2d99c.js"],"name":"","async":false}
-4:I{"id":4640,"chunks":["272:static/chunks/webpack-902befb244c8182a.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-0d9861b573402dd6.js"],"name":"default","async":false}
-5:I{"id":8872,"chunks":["272:static/chunks/webpack-902befb244c8182a.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-0d9861b573402dd6.js"],"name":"default","async":false}
-6:I{"id":9418,"chunks":["272:static/chunks/webpack-902befb244c8182a.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-0d9861b573402dd6.js"],"name":"default","async":false}
+4:I{"id":4640,"chunks":["272:static/chunks/webpack-3db620dfc088c8da.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-592fcc1485eeffda.js"],"name":"default","async":false}
+5:I{"id":8872,"chunks":["272:static/chunks/webpack-3db620dfc088c8da.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-592fcc1485eeffda.js"],"name":"default","async":false}
+6:I{"id":9418,"chunks":["272:static/chunks/webpack-3db620dfc088c8da.js","774:static/chunks/7c8ed547-a68c64eb657454a3.js","597:static/chunks/597-592fcc1485eeffda.js"],"name":"default","async":false}
 7:I{"id":1867,"chunks":["628:static/chunks/628-0b71805940b331df.js","931:static/chunks/app/page-3faf3283b8b11f32.js"],"name":"","async":false}
 1:[["$","$L3",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$L5",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":[["$","$L6",null,{"propsForComponent":{"params":{}},"Component":"$7"}],null],"segment":"__PAGE__"},"styles":[]}],"params":{}}],null]
 2:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
