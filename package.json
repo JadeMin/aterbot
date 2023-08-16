@@ -5,7 +5,6 @@
 	"name": "aterbot",
 	"version": "0.0.0",
 	"author": "JadeMin",
-	"license": "GPL-3.0",
 	
 	"scripts": {
 		"start": "tsx ./src/index.ts",
