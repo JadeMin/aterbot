@@ -3,8 +3,6 @@
 	"type": "module",
 	
 	"name": "aterbot",
-	"version": "0.0.0",
-	"author": "JadeMin",
 	
 	"scripts": {
 		"start": "tsx ./src/index.ts",
