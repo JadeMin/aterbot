@@ -1,8 +1,8 @@
 const validateRE = {
-	host: /^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/,
+	host: /^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z0-9]{2,}$/i,
 	port: /^[0-9]{1,5}$/,
-	username: /^[a-zA-Z0-9_]{3,16}$/
-};
+	username: /^[a-z0-9_]{3,16}$/i,
+} as const;
 
 
 
@@ -29,6 +29,8 @@ export const generateCode = (host: string, port: string, username: string): stri
 	return JSON.stringify(code, null, '\t');
 };
 
-export const validateInputs = (host: string, port: string, username: string): boolean => {
-	return validateRE.host.test(host) && validateRE.port.test(port) && validateRE.username.test(username);
+export const validate = (host: string, port: string, username: string): boolean => {
+	return validateRE.host.test(host) &&
+		validateRE.port.test(port) &&
+		validateRE.username.test(username);
 };

@@ -1,5 +1,5 @@
 'use client';
-import { CacheProvider } from '@chakra-ui/next-js';
+import { RecoilRoot } from 'recoil';
 import { ChakraProvider } from '@chakra-ui/react';
 
 
@@ -7,17 +7,17 @@ import { ChakraProvider } from '@chakra-ui/react';
 export const metadata = {
 	title: "Config Generator",
 	description: "Generate a config file for AterBot",
-} as const;
+};
 
 export default function RootLayout(props: {children: React.ReactNode}) {
 	return (
 		<html lang="en">
 			<body>
-				<CacheProvider>
-					<ChakraProvider>
+				<ChakraProvider>
+					<RecoilRoot>
 						{props.children}
-					</ChakraProvider>
-				</CacheProvider>
+					</RecoilRoot>
+				</ChakraProvider>
 			</body>
 		</html>
 	);
