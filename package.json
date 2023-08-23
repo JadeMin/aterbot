@@ -9,7 +9,7 @@
 		"dev": "node --inspect --loader tsx ./src/index.ts"
 	},
 	"dependencies": {
-		"mineflayer": "^4.11.0",
+		"mineflayer": "^4.12.0",
 		"tsx": "^3.12.7"
 	}
 }

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   mineflayer:
-    specifier: ^4.11.0
-    version: 4.11.0
+    specifier: ^4.12.0
+    version: 4.12.0
   tsx:
     specifier: ^3.12.7
     version: 3.12.7
@@ -534,8 +534,8 @@ packages:
       - supports-color
     dev: false
 
-  /mineflayer@4.11.0:
-    resolution: {integrity: sha512-LFCpvqEcjvVG5U7SpkZybaT0h41yR9W9IWm/QTHM5VBn2VDGsB40zyyZpTOiOI4F57DoOxypGy8048jq5k4u2Q==}
+  /mineflayer@4.12.0:
+    resolution: {integrity: sha512-k7yK+XBWqqaqmSyCIryLoPicr8zAs8lePvMAkgTSne61sFWkNaZ0SLRRN9wAhT/ISAHFmayNVoGG1catKNiNJQ==}
     engines: {node: '>=14'}
     dependencies:
       minecraft-data: 3.39.0
