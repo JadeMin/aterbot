@@ -7,7 +7,7 @@
 
 
 # Important Notice 📢
-### Impossible to maintain the project at least this year. But you can use AterBot as usual. [^0]  
+### Impossible to maintain the project at least this year.<br/>But you can use AterBot as usual. [^0]  
 I'm kinda busy with my personal studies.  
 
 [^0]: That means I can't guarantee it works on the future Aternos updates, not means your bot gonna stopped to working right now.
