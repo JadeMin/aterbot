@@ -1,7 +1,6 @@
 # AterBot ✨  
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
 <br/>
-<br/>
 Keep your Aternos server alive 24/7.  
 
 Please star this project <3
