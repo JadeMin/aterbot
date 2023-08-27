@@ -7,7 +7,7 @@
 
 
 # Important Notice 📢
-### Impossible to maintain the project at least this year.
+Impossible to maintain the project at least this year.
 But you can use AterBot as usual. [^0]  
 
 [^0]: Getting unmaintained means I can't guarantee that'll works on the future Aternos updates,  
