@@ -7,7 +7,7 @@ Please star this project <3
 
 
 # Important Notice 📢
-### I can't maintain the project until at least 2023.<br/>But you can use this as usual. [^0]
+### This project will be unmaintained until at least 2023.<br/>But you can use this as usual. [^0]
 
 [^0]: Getting unmaintained means I can't guarantee that works on the future Aternos updates, not means your bot gonna stopped to working right now.
 
