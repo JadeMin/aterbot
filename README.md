@@ -8,6 +8,6 @@
 
 # Deno Extinction
 1. Can't resolve some random Aternos provided domains that including underscores. WTF;asap'fjokma'sdlop;fkmj[;psd,w'KLMOP :">JWF
-2. All dependencies even I've just installed are shown as missing until restart VSCode.
+2. Every dependencies even I've just installed are shown as missing until restart VSCode.
 ![image.png](./misc/readme/missing_dep_cache.png)
 3. asdfasdf placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
