@@ -1,9 +1,17 @@
 # AterBot ✨  
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
-<!-- ## `01/17/2023`, Now using Repl because Heroku isn't free anymore. -->
 ### Keep your Aternos server alive 24/7.
 ### Please star this project <3
 <br/>
+
+
+
+## Important Notice 📢
+Impossible to maintain the project at least this year.  
+But you can use AterBot as usual.[^*]  
+I'm kinda busy with my personal studies.  
+
+[^*]: Getting unmaintain means I can't guarantee AterBot works on the future Aternos updates, not means your bot gonna stopped to working right now.
 
 
 
