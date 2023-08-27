@@ -7,7 +7,7 @@
 
 
 # Important Notice 📢
-**Impossible to maintain the project at least this year.  **
+**Impossible to maintain the project at least this year.**  
 **But you can use AterBot as usual. [^0]**  
 I'm kinda busy with my personal studies.  
 
