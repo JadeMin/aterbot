@@ -11,7 +11,7 @@
 I'm kinda busy with my personal studies.  
 
 [^0]: Getting unmaintained means I can't guarantee that'll works on the future Aternos updates,  
-Not means your bot gonna stopped to working right now.
+not means your bot gonna stopped to working right now.
 
 
 
