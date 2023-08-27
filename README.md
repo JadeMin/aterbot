@@ -2,9 +2,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)  
 
 ### Still in development.
+<br/>
 
 
-## Deno Extinction
+
+# Deno Extinction
 1. Can't resolve specific domains that including underscores. WTF;asap'fjokma'sdlop;fkmj[;psd,w'KLMOP :">JWF
 2. The dependencies even I've just installed are shown as missing until restart VSCode.
 ![image.png](./misc/readme/missing_dep_cache.png)
