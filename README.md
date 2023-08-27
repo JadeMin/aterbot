@@ -8,10 +8,10 @@
 
 ## Important Notice 📢
 Impossible to maintain the project at least this year.  
-But you can use AterBot as usual.[^*]  
+But you can use AterBot as usual.[^1]  
 I'm kinda busy with my personal studies.  
 
-[^*]: Getting unmaintain means I can't guarantee AterBot works on the future Aternos updates, not means your bot gonna stopped to working right now.
+[^1]: Getting unmaintain means I can't guarantee AterBot works on the future Aternos updates, not means your bot gonna stopped to working right now.
 
 
 
