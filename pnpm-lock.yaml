@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   mineflayer:
-    specifier: ^4.12.0
-    version: 4.12.0
+    specifier: ^4.13.0
+    version: 4.13.0
   tsx:
     specifier: ^3.12.7
     version: 3.12.7
@@ -534,8 +534,8 @@ packages:
       - supports-color
     dev: false
 
-  /mineflayer@4.12.0:
-    resolution: {integrity: sha512-k7yK+XBWqqaqmSyCIryLoPicr8zAs8lePvMAkgTSne61sFWkNaZ0SLRRN9wAhT/ISAHFmayNVoGG1catKNiNJQ==}
+  /mineflayer@4.13.0:
+    resolution: {integrity: sha512-PmFnW+hzkYMdPtqcplRfk/OjwWrRXSC2g1tNyn3lAHCmKXpmSKlJYx0FYC8ivU1FgxZ8ToOMg3xUSMWcJR3T5w==}
     engines: {node: '>=14'}
     dependencies:
       minecraft-data: 3.39.0
@@ -544,7 +544,7 @@ packages:
       prismarine-block: 1.17.0
       prismarine-chat: 1.8.0
       prismarine-chunk: 1.34.0(minecraft-data@3.39.0)
-      prismarine-entity: 2.2.0
+      prismarine-entity: 2.3.1
       prismarine-item: 1.14.0
       prismarine-nbt: 2.2.1
       prismarine-physics: 1.7.0
@@ -667,10 +667,9 @@ packages:
       - minecraft-data
     dev: false
 
-  /prismarine-entity@2.2.0:
-    resolution: {integrity: sha512-boqJbMpGHG2ddFUUo9aKkKPUHQbFMWkUCw8SRdZ+jrZxABsstL9619I8ujwPYoOMJjMyfYWgdEPNyHGiUqqukA==}
+  /prismarine-entity@2.3.1:
+    resolution: {integrity: sha512-HOv8l7IetHNf4hwZ7V/W4vM3GNl+e6VCtKDkH9h02TRq7jWngsggKtJV+VanCce/sNwtJUhJDjORGs728ep4MA==}
     dependencies:
-      minecraft-data: 3.39.0
       prismarine-chat: 1.8.0
       prismarine-item: 1.14.0
       prismarine-registry: 1.7.0
