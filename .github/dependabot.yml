@@ -1,12 +1,12 @@
 version: 2
 updates:
-	- package-ecosystem: "pnpm"
-		directory: "/"
-		schedule:
-			interval: "weekly"
-		allow:
-			- dependency-name: "mineflayer"
-				dependency-type: "all"
-		commit-message:
-			prefix: "chore(deps): update mineflayer to "
-		open-pull-requests-limit: 0
+  - package-ecosystem: "pnpm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-name: "mineflayer"
+        dependency-type: "all"
+    commit-message:
+      prefix: "chore(deps): update mineflayer to "
+    open-pull-requests-limit: 0
