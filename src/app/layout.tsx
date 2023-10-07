@@ -1,4 +1,4 @@
-import Providers from "./providers.tsx"
+import Providers from "./providers.tsx";
 
 
 
