@@ -18,7 +18,6 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
 
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -32,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (Clone)
+      - name: Download repository
         uses: actions/checkout@v3
       
       - name: Install Node.js
