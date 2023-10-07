@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && cd . > ./docs/.nojekyll",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
