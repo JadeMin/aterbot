@@ -18,7 +18,6 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
 
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -47,10 +46,10 @@ jobs:
           static_site_generator: next
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build with Next.js
-        run: pnpm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
