@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js site to Pages
+name: Deploy Next.js to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -27,7 +27,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -57,13 +56,10 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
     needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
