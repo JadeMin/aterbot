@@ -33,6 +33,8 @@ jobs:
     steps:
       - name: Download repository
         uses: actions/checkout@v3
+        with:
+          ref: gh-pages
       
       - name: Install Node.js
         uses: actions/setup-node@v3
