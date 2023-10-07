@@ -5,15 +5,6 @@
 name: Deploy Next.js to GitHub Pages
 
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["gh-pages"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -21,12 +12,21 @@ permissions:
   id-token: write
 
 
-
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+
+# Controls when the action will run. Triggers the workflow on "push" or "pull request".
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["gh-pages"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 
 jobs:
@@ -48,6 +48,19 @@ jobs:
         with:
           version: 8
           run_install: false
+      
+      - name: Get pnpm store path (cache)
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm config get store)" >> $GITHUB_ENV
+        
+      - name: Setup pnpm store (cache)
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-store-
+          path: ${{ env.STORE_PATH }}
+
 
       - name: Install dependencies
         run: pnpm install
