@@ -1,5 +1,4 @@
-import { RecoilRoot } from 'recoil';
-import { ChakraProvider } from '@chakra-ui/react';
+import Providers from "./providers.tsx"
 
 
 
@@ -12,11 +11,7 @@ export default function RootLayout(props: {children: React.ReactNode}) {
 	return (
 		<html lang="en">
 			<body>
-				<ChakraProvider>
-					<RecoilRoot>
-						{props.children}
-					</RecoilRoot>
-				</ChakraProvider>
+				<Providers>{props.children}</Providers>
 			</body>
 		</html>
 	);
