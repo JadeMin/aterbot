@@ -58,8 +58,8 @@ jobs:
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
-          restore-keys: ${{ runner.os }}-pnpmcache-
-          key: ${{ runner.os }}-pnpmcache-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm_cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm_cache-
           path: |
             ${{ env.STORE_PATH }}
 
@@ -74,7 +74,7 @@ jobs:
         with:
           path: ./out
 
-          
+
   deploy:
     runs-on: ubuntu-latest
 
