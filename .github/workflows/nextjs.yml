@@ -32,6 +32,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Download repository
         uses: actions/checkout@v3
@@ -48,19 +49,19 @@ jobs:
         with:
           version: 8
           run_install: false
-      
-      - name: Get pnpm store path
+
+      - name: Get pnpm cache path
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm config get store)" >> $GITHUB_ENV
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
         
-      - name: Setup pnpm caching
+      - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-nextjs-
+          restore-keys: ${{ runner.os }}-pnpmcache-
+          key: ${{ runner.os }}-pnpmcache-${{ hashFiles('**/pnpm-lock.yaml') }}
           path: |
-            .next/cache
+            ${{ env.STORE_PATH }}
 
       - name: Install dependencies
         run: pnpm install
@@ -74,11 +75,14 @@ jobs:
           path: ./out
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+
+    needs: build
+    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
