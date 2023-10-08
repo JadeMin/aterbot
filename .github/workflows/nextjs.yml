@@ -50,12 +50,12 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Get pnpm cache path
+      - name: Get pnpm store path
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
         
-      - name: Setup pnpm cache
+      - name: Cache pnpm store
         uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-pnpm_cache-${{ hashFiles('**/pnpm-lock.yaml') }}
