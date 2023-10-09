@@ -49,8 +49,13 @@ jobs:
         with:
           version: 8
           run_install: false
+
+      - name: Get pnpm store path
+        shell: bash
+        run: |
+          echo "pnpm store path"
         
-      - name: Setup caching (pnpm, Next.js)
+      - name: Cache pnpm store
         uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-caches
