@@ -55,13 +55,13 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)"
         
-      - name: Cache pnpm store
+      - name: Setup caches
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-caches
           restore-keys: ${{ runner.os }}-caches
+          key: ${{ runner.os }}-caches
           path: |
-            ~/.pnpm-store
+            $(pnpm store path)
             .next/cache
 
 
