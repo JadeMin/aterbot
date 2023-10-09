@@ -61,7 +61,7 @@ jobs:
           restore-keys: ${{ runner.os }}-caches-
           key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml') }}}
           path: |
-            ${{ env.STORE_PATH }}
+            ${{ env.PNPM_HOME }}/store
             .next/cache
 
 
