@@ -50,7 +50,7 @@ jobs:
           version: 8
           run_install: false
         
-      - name: Restore caches
+      - name: Setup caches
         uses: actions/cache@v3
         with:
           restore-keys: ${{ runner.os }}-caches-
