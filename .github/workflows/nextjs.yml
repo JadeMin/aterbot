@@ -49,17 +49,12 @@ jobs:
         with:
           version: 8
           run_install: false
-
-      - name: Get pnpm store path
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_ENV
         
       - name: Setup caches
         uses: actions/cache@v3
         with:
           restore-keys: ${{ runner.os }}-caches-
-          key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml') }}}
+          key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml') }}
           path: |
             ${{ env.PNPM_HOME }}/store
             .next/cache
