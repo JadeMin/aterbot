@@ -16,7 +16,7 @@ permissions:
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "deploy-pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 
 # Controls when the action will run. Triggers the workflow on "push" or "pull request".
