@@ -59,7 +59,7 @@ jobs:
         uses: actions/cache@v3
         with:
           restore-keys: ${{ runner.os }}-caches-
-          key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml', '.next/cache') }}}
+          key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml') }}}
           path: |
             ${{ env.STORE_PATH }}
             .next/cache
