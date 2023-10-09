@@ -53,15 +53,15 @@ jobs:
       - name: Get pnpm store path
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path)"
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_ENV
         
       - name: Setup caches
         uses: actions/cache@v3
         with:
-          restore-keys: ${{ runner.os }}-caches
-          key: ${{ runner.os }}-caches
+          restore-keys: ${{ runner.os }}-caches-
+          key: ${{ runner.os }}-caches-${{ hashFiles('pnpm-lock.yaml', '.next/cache') }}}
           path: |
-            $(pnpm store path)
+            ${{ env.STORE_PATH }}
             .next/cache
 
 
