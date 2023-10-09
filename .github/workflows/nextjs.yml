@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js to GitHub Pages
+name: Deploy to GitHub Pages
 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -15,7 +15,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: "deploy-pages"
   cancel-in-progress: false
 
 
@@ -58,7 +58,6 @@ jobs:
           path: |
             ${{ env.PNPM_HOME }}/store
             .next/cache
-
 
       - name: Install dependencies
         run: pnpm install
