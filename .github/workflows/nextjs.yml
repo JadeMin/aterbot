@@ -53,7 +53,7 @@ jobs:
       - name: Get pnpm store path
         shell: bash
         run: |
-          echo "pnpm store path"
+          echo "STORE_PATH=$(pnpm store path)"
         
       - name: Cache pnpm store
         uses: actions/cache@v3
