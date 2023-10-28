@@ -10,15 +10,15 @@
 	"dependencies": {
 		"@chakra-ui/next-js": "^2.1.5",
 		"@chakra-ui/react": "^2.8.1",
-		"next": "13.5.4",
+		"next": "14.0.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"recoil": "^0.7.7",
 		"typescript": "5.2.2"
 	},
 	"devDependencies": {
-		"@types/node": "20.8.6",
-		"@types/react": "18.2.28",
-		"@types/react-dom": "18.2.13"
+		"@types/node": "20.8.9",
+		"@types/react": "18.2.33",
+		"@types/react-dom": "18.2.14"
 	}
 }
