@@ -58,7 +58,7 @@ So you can just leave it even if it's not working for a while.
 <details><summary>A2:</summary>
 
 This project is using the `mineflayer` module.  
-And **it may not supported on your server version yet.**  
+**It may not supported on your server version yet.**  
 I'm trying to periodically check for updates, so please be patient.
 </details>
 
