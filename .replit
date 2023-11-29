@@ -17,4 +17,4 @@ run = "pnpm run start"
 	[packager.features]
 		packageSearch = true
 		guessImports = true
-		enabledForHosting = false
+		enabledForHosting = true
