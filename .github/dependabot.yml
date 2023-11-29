@@ -8,5 +8,5 @@ updates:
       - dependency-name: "mineflayer"
         dependency-type: "all"
     commit-message:
-      prefix: "chore(deps): update mineflayer to "
+      prefix: "bump(deps): bump `mineflayer` to "
     open-pull-requests-limit: 0
