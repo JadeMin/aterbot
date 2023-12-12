@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.14.0
     version: 4.14.0
   tsx:
-    specifier: ^4.6.0
-    version: 4.6.0
+    specifier: ^4.6.2
+    version: 4.6.2
 
 packages:
 
@@ -825,8 +825,8 @@ packages:
     dev: false
     optional: true
 
-  /tsx@4.6.0:
-    resolution: {integrity: sha512-HLHaDQ78mly4Pd5co6tWQOiNVYoYYAPUcwSSZK4bcs3zSEsg+/67LS/ReHook0E7DKPfe1J5jc0ocIhUrnaR4w==}
+  /tsx@4.6.2:
+    resolution: {integrity: sha512-QPpBdJo+ZDtqZgAnq86iY/PD2KYCUPSUGIunHdGwyII99GKH+f3z3FZ8XNFLSGQIA4I365ui8wnQpl8OKLqcsg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
