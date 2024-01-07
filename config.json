@@ -1,15 +1,15 @@
 {
-	"client": {
-		"host": "code.ajiehost.rf.gd",
-		"port": "51560",
-		"username": "medofGod"
-	},
-	
-	"! DO NOT EDIT BELOW !": "ONLY IF YOU KNOW WHAT YOU ARE DOING",
-	"logLevel": ["error", "log", "debug"],
-	"action": {
-		"commands": ["forward", "back", "left", "right", "jump"],
-		"holdDuration": 5000,
-		"retryDelay": 15000
-	}
+  "client": {
+    "host": "code.ajiehost.rf.gd",
+    "port": "51560",
+    "username": "AchriGK"
+  },
+
+  "! DO NOT EDIT BELOW !": "ONLY IF YOU KNOW WHAT YOU ARE DOING",
+  "logLevel": ["error", "log", "debug"],
+  "action": {
+    "commands": ["forward", "back", "left", "right", "jump"],
+    "holdDuration": 5000,
+    "retryDelay": 15000
+  }
 }
