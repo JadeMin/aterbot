@@ -28,10 +28,10 @@ const createBot = (): void => {
 
 
 	bot.once('error', error => {
-		console.error(`AFKBot got an error: ${error}`);
+		console.error(`Code got an error: ${error}`);
 	});
 	bot.once('kicked', rawResponse => {
-		console.error(`\n\nAFKbot is disconnected: ${rawResponse}`);
+		console.error(`\n\nCode is disconnected: ${rawResponse}`);
 	});
 	bot.once('end', () => void reconnect());
 
@@ -63,7 +63,7 @@ const createBot = (): void => {
 		}, CONFIG.action.holdDuration);
 	});
 	bot.once('login', () => {
-		console.log(`AFKBot logged in ${bot.username}\n\n`);
+		console.log(`Code logged in ${bot.username}\n\n`);
 	});
 };
 
