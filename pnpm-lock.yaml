@@ -6,24 +6,24 @@ settings:
 
 dependencies:
   mineflayer:
-    specifier: ^4.18.0
-    version: 4.18.0
+    specifier: ^4.20.0
+    version: 4.20.0
   tsx:
-    specifier: ^4.7.0
-    version: 4.7.0
+    specifier: ^4.7.1
+    version: 4.7.1
 
 packages:
 
-  /@azure/msal-common@14.6.1:
-    resolution: {integrity: sha512-yL97p2La0WrgU3MdXThOLOpdmBMvH8J69vwQ/skOqORYwOW/UYPdp9nZpvvfBO+zFZB5M3JkqA2NKtn4GfVBHw==}
+  /@azure/msal-common@14.7.1:
+    resolution: {integrity: sha512-v96btzjM7KrAu4NSEdOkhQSTGOuNUIIsUdB8wlyB9cdgl5KqEKnTonHUZ8+khvZ6Ap542FCErbnTyDWl8lZ2rA==}
     engines: {node: '>=0.8.0'}
     dev: false
 
-  /@azure/msal-node@2.6.2:
-    resolution: {integrity: sha512-XyP+5lUZxTpWpLCC2wAFGA9wXrUhHp1t4NLmQW0mQZzUdcSay3rG7kGGqxxeLf8mRdwoR0B70TCLmIGX6cfK/g==}
+  /@azure/msal-node@2.6.4:
+    resolution: {integrity: sha512-nNvEPx009/80UATCToF+29NZYocn01uKrB91xtFr7bSqkqO1PuQGXRyYwryWRztUrYZ1YsSbw9A+LmwOhpVvcg==}
     engines: {node: '>=16'}
     dependencies:
-      '@azure/msal-common': 14.6.1
+      '@azure/msal-common': 14.7.1
       jsonwebtoken: 9.0.2
       uuid: 8.3.2
     dev: false
@@ -235,8 +235,8 @@ packages:
     dev: false
     optional: true
 
-  /@types/node@20.11.14:
-    resolution: {integrity: sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==}
+  /@types/node@20.11.24:
+    resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
     dependencies:
       undici-types: 5.26.5
     dev: false
@@ -244,7 +244,7 @@ packages:
   /@types/readable-stream@4.0.10:
     resolution: {integrity: sha512-AbUKBjcC8SHmImNi4yK2bbjogQlkFSg7shZCcicxPQapniOlajG8GCc39lvXzCWX4lLRRs7DM3VAeSlqmEVZUA==}
     dependencies:
-      '@types/node': 20.11.14
+      '@types/node': 20.11.24
       safe-buffer: 5.1.2
     dev: false
 
@@ -447,7 +447,7 @@ packages:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.5.4
+      semver: 7.6.0
     dev: false
 
   /jwa@1.4.1:
@@ -516,16 +516,16 @@ packages:
     resolution: {integrity: sha512-vGBKTA+jwM4KgjGZ+S/8/Mkj9rWzePyGY6jManXPGhiWu63RYwW8dKPyk5koP+8qNVhPhHgFa1y/MJ4wrjsNrg==}
     dev: false
 
-  /minecraft-data@3.60.0:
-    resolution: {integrity: sha512-zTS2DsFZBvHsYCUaKL+E0mSbrgAAX5DJzYmlskh/6WnVV7lxftW7jDjR8SMgGoBBS1V0TZ79BWp3+aD3r8wKIg==}
+  /minecraft-data@3.62.0:
+    resolution: {integrity: sha512-jJXZ/WgyX79tIHlqvfyqG+sJDUekHiA3e9NRUCMGUno4NDrZMcpRI065DnkrI720RHTMb8iadf0NmnBP4Rla5A==}
     dev: false
 
   /minecraft-folder-path@1.2.0:
     resolution: {integrity: sha512-qaUSbKWoOsH9brn0JQuBhxNAzTDMwrOXorwuRxdJKKKDYvZhtml+6GVCUrY5HRiEsieBEjCUnhVpDuQiKsiFaw==}
     dev: false
 
-  /minecraft-protocol@1.45.0:
-    resolution: {integrity: sha512-vnw78FShBljUziQY8dNElJHJvQIscEPa97wEOiykOodUJKQiBDWB3ZETAd0CYzEFapS7SAlEiNuqFgJdG9o5aQ==}
+  /minecraft-protocol@1.47.0:
+    resolution: {integrity: sha512-IHL8faXLLIWv1O+2v2NgyKlooilu/OiSL9orI8Kqed/rZvVOrFPzs2PwMAYjpQX9gxLPhiSU19KqZ8CjfNuqhg==}
     engines: {node: '>=14'}
     dependencies:
       '@types/readable-stream': 4.0.10
@@ -535,11 +535,12 @@ packages:
       endian-toggle: 0.0.0
       lodash.get: 4.4.2
       lodash.merge: 4.6.2
-      minecraft-data: 3.60.0
+      minecraft-data: 3.62.0
       minecraft-folder-path: 1.2.0
       node-fetch: 2.7.0
       node-rsa: 0.4.2
-      prismarine-auth: 2.4.0
+      prismarine-auth: 2.4.1
+      prismarine-chat: 1.10.0
       prismarine-nbt: 2.5.0
       prismarine-realms: 1.3.2
       protodef: 1.15.0
@@ -551,24 +552,24 @@ packages:
       - supports-color
     dev: false
 
-  /mineflayer@4.18.0:
-    resolution: {integrity: sha512-Vj+qjqaAejZSOIp/J/67RnkXj4XsWjO6iWb2+8CrZDeUjxHWOnPbR5uJIN8VxiHSFycNpoXRCeTEo2qKu5tKKQ==}
+  /mineflayer@4.20.0:
+    resolution: {integrity: sha512-X2cRjbPnAXFlz+byXs3yIFiGTCkB1v4Ei+BhMurfmVy16Wvz9wC1Wd/e+QAex6KOJ8BIPu7JIoq+47VyFmcrDA==}
     engines: {node: '>=18'}
     dependencies:
-      minecraft-data: 3.60.0
-      minecraft-protocol: 1.45.0
-      prismarine-biome: 1.3.0(minecraft-data@3.60.0)(prismarine-registry@1.7.0)
+      minecraft-data: 3.62.0
+      minecraft-protocol: 1.47.0
+      prismarine-biome: 1.3.0(minecraft-data@3.62.0)(prismarine-registry@1.7.0)
       prismarine-block: 1.17.1
-      prismarine-chat: 1.9.1
-      prismarine-chunk: 1.35.0(minecraft-data@3.60.0)
+      prismarine-chat: 1.10.0
+      prismarine-chunk: 1.35.0(minecraft-data@3.62.0)
       prismarine-entity: 2.4.0
       prismarine-item: 1.14.0
       prismarine-nbt: 2.5.0
       prismarine-physics: 1.8.0
       prismarine-recipe: 1.3.1(prismarine-registry@1.7.0)
       prismarine-registry: 1.7.0
-      prismarine-windows: 2.8.0
-      prismarine-world: 3.6.2
+      prismarine-windows: 2.9.0
+      prismarine-world: 3.6.3
       protodef: 1.15.0
       typed-emitter: 1.4.0
       vec3: 0.1.10
@@ -623,10 +624,10 @@ packages:
       asn1: 0.2.3
     dev: false
 
-  /prismarine-auth@2.4.0:
-    resolution: {integrity: sha512-4tUtvfvVlymRG/KNCm7E8XZWqbmDme6BrfHDmuC11bXQJKZmfkvyrRcblXuq/Vv87jdhD3HokgWZZcjriZTP0w==}
+  /prismarine-auth@2.4.1:
+    resolution: {integrity: sha512-DwDI3Ucxf/eThJJo5QVzlywFrJulL1fK1z6F8bybvddim8YgudRksQc3w4cE2m0hPPHfE1BRd5lh1NpedrixMQ==}
     dependencies:
-      '@azure/msal-node': 2.6.2
+      '@azure/msal-node': 2.6.4
       '@xboxreplay/xboxlive-auth': 3.3.3(debug@4.3.4)
       debug: 4.3.4
       jose: 4.15.4
@@ -638,41 +639,40 @@ packages:
       - supports-color
     dev: false
 
-  /prismarine-biome@1.3.0(minecraft-data@3.60.0)(prismarine-registry@1.7.0):
+  /prismarine-biome@1.3.0(minecraft-data@3.62.0)(prismarine-registry@1.7.0):
     resolution: {integrity: sha512-GY6nZxq93mTErT7jD7jt8YS1aPrOakbJHh39seYsJFXvueIOdHAmW16kYQVrTVMW5MlWLQVxV/EquRwOgr4MnQ==}
     peerDependencies:
       minecraft-data: ^3.0.0
       prismarine-registry: ^1.1.0
     dependencies:
-      minecraft-data: 3.60.0
+      minecraft-data: 3.62.0
       prismarine-registry: 1.7.0
     dev: false
 
   /prismarine-block@1.17.1:
     resolution: {integrity: sha512-r1TIn/b5v77BX4a+qd+Yv+4/vZpsC/Jp5ElYxd6++2wpCnqiuxVG7BlS2Eo14vez1M2gt3qoNEl54Hr8qox/rQ==}
     dependencies:
-      minecraft-data: 3.60.0
-      prismarine-biome: 1.3.0(minecraft-data@3.60.0)(prismarine-registry@1.7.0)
-      prismarine-chat: 1.9.1
+      minecraft-data: 3.62.0
+      prismarine-biome: 1.3.0(minecraft-data@3.62.0)(prismarine-registry@1.7.0)
+      prismarine-chat: 1.10.0
       prismarine-item: 1.14.0
       prismarine-nbt: 2.5.0
       prismarine-registry: 1.7.0
     dev: false
 
-  /prismarine-chat@1.9.1:
-    resolution: {integrity: sha512-x7WWa5MNhiLZSO6tw+YyKpzquFZ+DNISVgiV6K3SU0GsishMXe+nto02WhF/4AuFerKdugm9u1d/r4C4zSkJOg==}
+  /prismarine-chat@1.10.0:
+    resolution: {integrity: sha512-f9ESzi2Kkf4GJadtgBl+SmvtAlmOXaso6Fxt4M/vUXDKgQNSk66APmIHnBkKWyjzG9X2VXsbDGeIIPf/d3guxA==}
     dependencies:
       mojangson: 2.0.4
-      prismarine-item: 1.14.0
       prismarine-nbt: 2.5.0
       prismarine-registry: 1.7.0
     dev: false
 
-  /prismarine-chunk@1.35.0(minecraft-data@3.60.0):
+  /prismarine-chunk@1.35.0(minecraft-data@3.62.0):
     resolution: {integrity: sha512-Q1lElMUle7wWxWdQjbZo3j2/dLNG325j90IcbbMmBTnHdQSWIjWFe792XOz3RVBlvrhRJEiZk38S6/eQTQ9esw==}
     engines: {node: '>=14'}
     dependencies:
-      prismarine-biome: 1.3.0(minecraft-data@3.60.0)(prismarine-registry@1.7.0)
+      prismarine-biome: 1.3.0(minecraft-data@3.62.0)(prismarine-registry@1.7.0)
       prismarine-block: 1.17.1
       prismarine-nbt: 2.5.0
       prismarine-registry: 1.7.0
@@ -687,7 +687,7 @@ packages:
   /prismarine-entity@2.4.0:
     resolution: {integrity: sha512-DBwjmoCX1IYAhN99KwYkk2rMArn65JHTzuuGXchr4GLWQs7UN4Pf9tELqBwNOu4r57x3RaW0+9+0sI3FvJQWzQ==}
     dependencies:
-      prismarine-chat: 1.9.1
+      prismarine-chat: 1.10.0
       prismarine-item: 1.14.0
       prismarine-registry: 1.7.0
       vec3: 0.1.10
@@ -709,7 +709,7 @@ packages:
   /prismarine-physics@1.8.0:
     resolution: {integrity: sha512-gbM+S+bmVtOKVv+Z0WGaHMeEeBHISIDsRDRlv8sr0dex3ZJRhuq8djA02CBreguXtI18ZKh6q3TSj2qDr45NHA==}
     dependencies:
-      minecraft-data: 3.60.0
+      minecraft-data: 3.62.0
       prismarine-nbt: 2.5.0
       vec3: 0.1.10
     dev: false
@@ -735,20 +735,20 @@ packages:
   /prismarine-registry@1.7.0:
     resolution: {integrity: sha512-yyva0FpWI078nNeMhx8ekVza5uUTYhEv+C+ADu3wUQXiG8qhXkvrf0uzsnhTgZL8BLdsi2axgCEiKw9qSKIuxQ==}
     dependencies:
-      minecraft-data: 3.60.0
+      minecraft-data: 3.62.0
       prismarine-nbt: 2.5.0
     dev: false
 
-  /prismarine-windows@2.8.0:
-    resolution: {integrity: sha512-9HVhJ8tfCeRubYwQzgz8oiHNAebMJ5hDdjm45PZwrOgewaislnR2HDsbPMWiCcyWkYL7J8bVLVoSzEzv5pH98g==}
+  /prismarine-windows@2.9.0:
+    resolution: {integrity: sha512-fm4kOLjGFPov7TEJRmXHoiPabxIQrG36r2mDjlNxfkcLfMHFb3/1ML6mp4iRQa7wL0GK4DIAyiBqCWoeWDxARg==}
     dependencies:
       prismarine-item: 1.14.0
       prismarine-registry: 1.7.0
       typed-emitter: 2.1.0
     dev: false
 
-  /prismarine-world@3.6.2:
-    resolution: {integrity: sha512-xNNo3bd8EnCMjiPbVrh3jYa1Upa8Krkb13BgO7FOOfD5ZYf+iYDZewBtDbHYWzZZB2N0JlTtimMOHRhZhDJirw==}
+  /prismarine-world@3.6.3:
+    resolution: {integrity: sha512-zqdqPEYCDHzqi6hglJldEO63bOROXpbZeIdxBmoQq7o04Lf81t016LU6stFHo3E+bmp5+xU74eDFdOvzYNABkA==}
     engines: {node: '>=8.0.0'}
     dependencies:
       vec3: 0.1.10
@@ -838,8 +838,8 @@ packages:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
     dev: false
 
-  /semver@7.5.4:
-    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
+  /semver@7.6.0:
+    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -867,8 +867,8 @@ packages:
     dev: false
     optional: true
 
-  /tsx@4.7.0:
-    resolution: {integrity: sha512-I+t79RYPlEYlHn9a+KzwrvEwhJg35h/1zHsLC2JXvhC2mdynMv6Zxzvhv5EMV6VF5qJlLlkSnMVvdZV3PSIGcg==}
+  /tsx@4.7.1:
+    resolution: {integrity: sha512-8d6VuibXHtlN5E3zFkgY8u4DX7Y3Z27zvvPKVmLon/D4AjuKzarkUBTLDBgj9iTQ0hg5xM7c/mYiRVM+HETf0g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
