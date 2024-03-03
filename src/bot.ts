@@ -2,7 +2,7 @@ import Mineflayer from 'mineflayer';
 import { sleep, getRandom } from "./utils.ts";
 import CONFIG from "../config.json" assert {type: 'json'};
 
-let loop: NodeJS.Timer;
+let loop: NodeJS.Timeout;
 let bot: Mineflayer.Bot;
 
 const disconnect = (): void => {
