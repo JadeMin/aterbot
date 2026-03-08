@@ -6,7 +6,7 @@ Please star this project <3
 
 
 
-# Important Notice 📢
+# This project will no longer be maintained
 1. Since Repl.it became a paid service now, this project will no longer be maintained.
 2. Aternos will force shut down your server if its on for a long time. Good luck!
 
