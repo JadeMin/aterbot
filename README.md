@@ -7,7 +7,8 @@ Please star this project <3
 
 
 # Important Notice 📢
-### This project will be unmaintained until at least 2024.<br/>But you can use it as usual.
+1. Since Repl.it became a paid service now, this project will no longer be maintained.
+2. Aternos will force shut down your server if its on for a long time. Good luck!
 
 
 
@@ -34,6 +35,7 @@ Please star this project <3
 6. Click `Run` at the top, your bot will join your server.  
 7. **Teleport the bot into the bedrock room, change the bot's gamemode to `Creative` to not die!**
 8. You'll see the `Webview` tab on Repl, copy the url.
+9. Edit `config.json` 
 10. Go to [UptimeRobot](https://uptimerobot.com/dashboard).
 11. Click `Add New Monitor`, select `Monitor Type` to `HTTP(s)`.
 12. Paste the url copied in `Step 8` into `URL (or IP)`.
